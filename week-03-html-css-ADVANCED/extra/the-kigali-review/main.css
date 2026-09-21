@@ -1,0 +1,248 @@
+/* The Kigali Review — CSS Grid Editorial
+   Concepts: grid-template-columns, grid-template-areas, gap, grid-area, spanning */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --paper: #faf6ef;
+    --ink: #1a1a18;
+    --rule: #1a1a18;
+    --muted: #6b6257;
+    --red: #c0392b;
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+}
+
+/* — Masthead — */
+.masthead {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 20px 0;
+    text-align: center;
+    border-bottom: 3px double var(--rule);
+}
+
+.masthead-top {
+    display: flex;
+    justify-content: space-between;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+}
+
+.masthead-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(36px, 7vw, 64px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 16px 0 6px;
+}
+
+.masthead-tagline {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    color: var(--muted);
+    padding-bottom: 14px;
+}
+
+.masthead code {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 1px 5px;
+    font-size: 11px;
+}
+
+/* — Paper: THE grid — */
+.paper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 20px 28px;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    grid-template-areas:
+        "lead  lead  side"
+        "a     b     c"
+        "strip strip strip";
+    gap: 18px;
+}
+
+.story {
+    border: 1.5px solid var(--ink);
+    padding: 18px 18px 16px;
+    background: #fff;
+}
+
+.kicker {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+}
+
+.story h2 {
+    font-size: 28px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 8px 0 8px;
+}
+
+.story h3 {
+    font-size: 17px;
+    line-height: 1.2;
+    margin: 8px 0 8px;
+}
+
+.deck {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.byline {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0;
+    margin: 12px 0;
+}
+
+.lead-art {
+    background: #111;
+    color: #fff;
+    font-family: monospace;
+    font-size: 11px;
+    text-align: center;
+    padding: 48px 12px;
+    margin: 12px 0;
+    letter-spacing: 0.06em;
+}
+
+.story p { font-size: 14px; line-height: 1.6; }
+
+.read-more {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--ink);
+}
+
+/* — Grid area assignments — */
+.story--lead { grid-area: lead; }
+.story--side { grid-area: side; background: #fffbeb; }
+.story--a    { grid-area: a; }
+.story--b    { grid-area: b; }
+.story--c    { grid-area: c; }
+.story--strip{ grid-area: strip; }
+
+.story--side h3 { font-size: 15px; }
+
+.toc {
+    list-style: none;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toc li {
+    font-size: 13px;
+    line-height: 1.4;
+    border-top: 1px solid #e5ddd0;
+    padding-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.toc-num {
+    font-family: monospace;
+    font-weight: 700;
+    color: var(--red);
+    flex-shrink: 0;
+}
+
+.toc code { font-size: 11px; background: #f1ece2; padding: 1px 4px; }
+
+.pull-quote {
+    margin-top: 16px;
+    border-left: 3px solid var(--red);
+    padding: 10px 14px;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.4;
+    background: #fff;
+}
+
+/* strip: grid inside grid */
+.story--strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding: 0;
+    background: var(--ink);
+    border: 1.5px solid var(--ink);
+}
+
+.strip-item {
+    background: var(--paper);
+    padding: 12px 14px;
+    font-family: monospace;
+    font-size: 13px;
+    text-align: center;
+    border-right: 1.5px solid var(--ink);
+}
+
+.strip-item:last-child { border-right: none; }
+
+/* — Responsive: 3 cols → 1 col — */
+@media (max-width: 800px) {
+    .paper {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "lead"
+            "side"
+            "a"
+            "b"
+            "c"
+            "strip";
+    }
+
+    .story--strip {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.colophon {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 20px 32px;
+    border-top: 1px solid var(--ink);
+    font-family: monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+}
+
+code { font-family: ui-monospace, monospace; }

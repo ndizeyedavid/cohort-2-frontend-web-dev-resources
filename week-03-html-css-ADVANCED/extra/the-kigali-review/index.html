@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Kigali Review — CSS Grid Editorial</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <header class="masthead">
+        <div class="masthead-top">
+            <span class="masthead-date">Kigali — Friday, 20 September 2026 — Vol. 03</span>
+            <span class="masthead-price">Rwf 1,500</span>
+        </div>
+        <h1 class="masthead-title">The Kigali Review</h1>
+        <p class="masthead-tagline">An editorial layout built with <code>CSS Grid</code> — <code>grid-template-areas</code> + spanning + <code>gap</code></p>
+    </header>
+
+    <main class="paper">
+
+        <!-- Lead story spans 2 columns -->
+        <article class="story story--lead">
+            <span class="kicker">Cover Story</span>
+            <h2>After the rain, the city codes</h2>
+            <p class="deck">How a generation of students in Kigali is learning to build the web — one semantic tag at a
+                time.</p>
+            <div class="byline">By M. Uwase — Photograph by D. Ndizeye</div>
+            <div class="lead-art" aria-hidden="true"><span>LEAD PHOTO — grid-column: span 2</span></div>
+            <p>It starts with a blank <code>&lt;body&gt;</code>. Then a header, a main, a section — each tag chosen for
+                meaning, not just shape. In Week 03, that choice becomes the whole point.</p>
+        </article>
+
+        <aside class="story story--side">
+            <span class="kicker">Inside</span>
+            <h3>Inside this issue</h3>
+            <ul class="toc">
+                <li><span class="toc-num">01</span> Semantic HTML — why <code>&lt;div&gt;</code> is never enough</li>
+                <li><span class="toc-num">02</span> Flexbox — the one-dimensional workhorse</li>
+                <li><span class="toc-num">03</span> Grid — rows and columns, together</li>
+                <li><span class="toc-num">04</span> Motion — when to animate and when to stop</li>
+            </ul>
+            <div class="pull-quote">“Grid is not a replacement for Flexbox. It is a different tool.”</div>
+        </aside>
+
+        <article class="story story--a">
+            <span class="kicker">Technique</span>
+            <h3>Flexbox vs Grid — when to use which</h3>
+            <p>Flexbox arranges in one direction. Grid arranges in two. Use flex for a row of tags, a navbar, a card
+                shelf. Use grid for a page, a gallery, a timetable.</p>
+            <a class="read-more" href="#">Read more</a>
+        </article>
+
+        <article class="story story--b">
+            <span class="kicker">Detail</span>
+            <h3>The timetable that taught a class</h3>
+            <p>A <code>&lt;table&gt;</code> with <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> — 6 columns, 10
+                rows, empty cells where the campus sleeps. It is the most honest layout on the page.</p>
+            <a class="read-more" href="#">Read more</a>
+        </article>
+
+        <article class="story story--c">
+            <span class="kicker">Craft</span>
+            <h3>Pseudo-elements — decoration without markup</h3>
+            <p><code>::before</code> and <code>::after</code> add quotes, underlines, bullets, and badges — all from CSS.
+                No extra <code>&lt;div&gt;</code> needed.</p>
+            <a class="read-more" href="#">Read more</a>
+        </article>
+
+        <section class="story story--strip">
+            <div class="strip-item"><strong>09:00</strong> — Frontend</div>
+            <div class="strip-item"><strong>11:00</strong> — SDL</div>
+            <div class="strip-item"><strong>13:00</strong> — E-Lab</div>
+            <div class="strip-item"><strong>15:00</strong> — Web Infra</div>
+        </section>
+
+    </main>
+
+    <footer class="colophon">
+        <p>Built with <code>display: grid</code> + <code>grid-template-areas</code> + <code>gap</code>. Resize the window — the paper reflows from 3 columns to 1. No JavaScript.</p>
+    </footer>
+
+</body>
+
+</html>

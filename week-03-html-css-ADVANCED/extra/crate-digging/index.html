@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crate Digging — Flexbox Record Shelf</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo">
+                <span class="logo-mark">◉</span>
+                <span class="logo-type">CRATE<br>DIGGING</span>
+                <span class="logo-sub">Kigali — Est. 2024</span>
+            </div>
+            <nav class="header-nav" aria-label="Primary">
+                <a href="#">Crates</a>
+                <a href="#">Wants</a>
+                <a href="#">Trades</a>
+                <span class="crate-count">6 in crate</span>
+            </nav>
+        </div>
+    </header>
+
+    <section class="intro">
+        <div class="intro-inner">
+            <h1>New arrivals.<br><span class="accent">Dusty fingers only.</span></h1>
+            <p>All flexbox. No grid. The shelf wraps with <code>flex-wrap: wrap</code> — resize the window and watch the
+                records reflow like a real crate.</p>
+            <div class="filter-row">
+                <button class="pill pill--active">All</button>
+                <button class="pill">Jazz</button>
+                <button class="pill">Afro</button>
+                <button class="pill">Electronic</button>
+                <button class="pill">Hip-Hop</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="shelf">
+        <!-- Each .record is a flex column inside a flex-wrap parent -->
+        <article class="record">
+            <div class="record-cover cover--1">
+                <span class="record-label">STERLING</span>
+            </div>
+            <div class="record-info">
+                <h2>Mulatu Astatke</h2>
+                <p>Ethio Jazz — Vol. 1</p>
+                <div class="record-meta">
+                    <span class="tag">Afro</span>
+                    <span class="price">28,000 Rwf</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="record">
+            <div class="record-cover cover--2">
+                <span class="record-label">BLUE NOTE</span>
+            </div>
+            <div class="record-info">
+                <h2>Alice Coltrane</h2>
+                <p>Journey in Satchidananda</p>
+                <div class="record-meta">
+                    <span class="tag">Jazz</span>
+                    <span class="price">35,000 Rwf</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="record">
+            <div class="record-cover cover--3">
+                <span class="record-label">ECM</span>
+            </div>
+            <div class="record-info">
+                <h2>Burial</h2>
+                <p>Untrue</p>
+                <div class="record-meta">
+                    <span class="tag">Electronic</span>
+                    <span class="price">22,000 Rwf</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="record">
+            <div class="record-cover cover--4">
+                <span class="record-label">STONES THROW</span>
+            </div>
+            <div class="record-info">
+                <h2>Madlib</h2>
+                <p>Shades of Blue</p>
+                <div class="record-meta">
+                    <span class="tag">Hip-Hop</span>
+                    <span class="price">30,000 Rwf</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="record">
+            <div class="record-cover cover--5">
+                <span class="record-label">SOUNDWAY</span>
+            </div>
+            <div class="record-info">
+                <h2>William Onyeabor</h2>
+                <p>Atomic Bomb</p>
+                <div class="record-meta">
+                    <span class="tag">Afro</span>
+                    <span class="price">42,000 Rwf</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="record">
+            <div class="record-cover cover--6">
+                <span class="record-label">IMPULSE!</span>
+            </div>
+            <div class="record-info">
+                <h2>Pharoah Sanders</h2>
+                <p>Karma</p>
+                <div class="record-meta">
+                    <span class="tag">Jazz</span>
+                    <span class="price">31,000 Rwf</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>Built with <code>display: flex</code> + <code>flex-wrap: wrap</code> + <code>gap</code>. No media queries needed for the shelf — flex does the work.</p>
+    </footer>
+
+</body>
+
+</html>

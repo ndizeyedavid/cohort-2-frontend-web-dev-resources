@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Late Night Menu — Transitions, Animations & Pseudo-elements</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <p class="hero-kicker">Kigali — Open till 2am — Week 03 Extra</p>
+        <h1 class="neon" aria-label="Late Night Menu">Late Night Menu</h1>
+        <p class="hero-sub">Hover the items. Watch the transitions. The neon flickers with <code>@keyframes</code>.</p>
+    </header>
+
+    <main class="menu-wrap">
+
+        <section class="menu" aria-label="Menu">
+            <div class="menu-head">
+                <h2>Yummy After Dark</h2>
+                <span class="menu-badge">No. 03</span>
+            </div>
+
+            <!-- Each row uses ::after for dotted leaders + ::before for badges -->
+            <div class="menu-section">
+                <h3>Small Plates</h3>
+
+                <div class="item">
+                    <span class="item-name">Fries — loaded</span>
+                    <span class="item-price">8,500</span>
+                    <p class="item-desc">Crispy, salt, rosemary. Add cheese +1,000</p>
+                </div>
+
+                <div class="item item--new">
+                    <span class="item-name">Samossas (3)</span>
+                    <span class="item-price">6,000</span>
+                    <p class="item-desc">Beef or veg. Tamarind on the side.</p>
+                </div>
+
+                <div class="item">
+                    <span class="item-name">Bruschetta</span>
+                    <span class="item-price">7,500</span>
+                    <p class="item-desc">Tomato, garlic, basil, grilled bread.</p>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h3>Mains</h3>
+
+                <div class="item">
+                    <span class="item-name">Smash Burger</span>
+                    <span class="item-price">14,000</span>
+                    <p class="item-desc">Double patty, pickles, yummy sauce.</p>
+                </div>
+
+                <div class="item item--sold">
+                    <span class="item-name">Steak — grilled</span>
+                    <span class="item-price">28,000</span>
+                    <p class="item-desc">250g, fries + salad. Till stock lasts.</p>
+                </div>
+
+                <div class="item">
+                    <span class="item-name">Pizza — margherita</span>
+                    <span class="item-price">16,000</span>
+                    <p class="item-desc">San Marzano, mozzarella, fresh basil.</p>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h3>Drinks</h3>
+
+                <div class="item">
+                    <span class="item-name">Soda</span>
+                    <span class="item-price">2,500</span>
+                    <p class="item-desc">Coke, Fanta, Sprite — ice cold.</p>
+                </div>
+
+                <div class="item">
+                    <span class="item-name">Fresh juice</span>
+                    <span class="item-price">5,000</span>
+                    <p class="item-desc">Passion, mango, or pineapple.</p>
+                </div>
+            </div>
+
+            <div class="menu-foot">
+                <span>Cash & MoMo — No cards after midnight</span>
+                <span class="dot">●</span>
+                <span>Tell your server about allergies</span>
+            </div>
+        </section>
+
+        <aside class="side">
+            <div class="side-card lift">
+                <h3>How this menu is built</h3>
+                <ul>
+                    <li><code>::after</code> draws the dotted line between name and price</li>
+                    <li><code>::before</code> adds NEW / SOLD OUT badges</li>
+                    <li><code>transition</code> lifts the card and reveals the description on hover</li>
+                    <li><code>@keyframes flicker</code> makes the neon sign stutter</li>
+                </ul>
+            </div>
+            <div class="side-card">
+                <h3>Try this</h3>
+                <p>Hover any menu item. Resize the page. Open DevTools and delete a <code>::before</code> — see what disappears.</p>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Pseudo-elements + Transitions + Animations — all CSS, no JavaScript.</p>
+    </footer>
+
+</body>
+
+</html>

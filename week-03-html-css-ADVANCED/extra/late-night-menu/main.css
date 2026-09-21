@@ -1,0 +1,325 @@
+/* Late Night Menu — Pseudo-elements + Transitions + Animations */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg: #0a0a0b;
+    --card: #fff8e7;
+    --ink: #111;
+    --muted: #8a7e6b;
+    --pink: #ff2e63;
+    --cyan: #00e5ff;
+    --yellow: #ffcc00;
+}
+
+body {
+    background: var(--bg);
+    color: var(--card);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    line-height: 1.6;
+}
+
+/* — Hero — */
+.hero {
+    text-align: center;
+    padding: 40px 20px 28px;
+    border-bottom: 1px solid #222;
+}
+
+.hero-kicker {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.neon {
+    font-family: Impact, Haettenschweiler, sans-serif;
+    font-size: clamp(36px, 8vw, 64px);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--card);
+    text-shadow:
+        0 0 8px rgba(255, 46, 99, 0.9),
+        0 0 24px rgba(255, 46, 99, 0.5),
+        0 0 48px rgba(0, 229, 255, 0.35);
+    animation: flicker 3.5s infinite;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+    20%, 24%, 55% { opacity: 0.4; }
+}
+
+.hero-sub {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #888;
+}
+
+.hero-sub code {
+    background: #222;
+    color: var(--card);
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+/* — Layout: grid — */
+.menu-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 28px 20px 32px;
+    display: grid;
+    grid-template-columns: 1.5fr 0.85fr;
+    gap: 20px;
+    align-items: start;
+}
+
+@media (max-width: 760px) {
+    .menu-wrap { grid-template-columns: 1fr; }
+}
+
+/* — Menu card — */
+.menu {
+    background: var(--card);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 28px 28px 20px;
+    position: relative;
+    /* subtle paper texture via pseudo-element could go here */
+}
+
+.menu-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2.5px solid var(--ink);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.menu-head h2 {
+    font-family: Impact, sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.menu-badge {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    border: 1.5px solid var(--ink);
+    padding: 4px 8px;
+    border-radius: 999px;
+}
+
+.menu-section + .menu-section {
+    margin-top: 22px;
+    padding-top: 22px;
+    border-top: 1px dashed #c9b896;
+}
+
+.menu-section h3 {
+    font-family: Impact, sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 14px;
+}
+
+/* — Item row: flex + pseudo-element leaders — */
+.item {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+    padding: 10px 10px 10px 12px;
+    border-radius: 6px;
+    transition: background-color 200ms ease, transform 200ms ease;
+}
+
+/* dotted leader between name and price — ::after */
+.item::after {
+    content: "";
+    flex: 1;
+    border-bottom: 2px dotted #c9b896;
+    margin: 0 6px;
+    order: 2;
+    min-width: 20px;
+    align-self: center;
+}
+
+.item-name {
+    font-weight: 700;
+    font-size: 15px;
+    order: 1;
+}
+
+.item-price {
+    font-weight: 800;
+    font-size: 14px;
+    order: 3;
+}
+
+.item-price::before {
+    content: "Rwf ";
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+}
+
+.item-desc {
+    width: 100%;
+    order: 4;
+    font-size: 12px;
+    color: var(--muted);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 250ms ease, opacity 200ms ease, margin 200ms ease;
+}
+
+.item:hover {
+    background: #fff1c7;
+    transform: translateX(4px);
+}
+
+.item:hover .item-desc {
+    max-height: 40px;
+    opacity: 1;
+    margin-top: 4px;
+}
+
+/* NEW badge — ::before */
+.item--new::before {
+    content: "NEW";
+    position: absolute;
+    left: -6px;
+    top: 8px;
+    background: var(--yellow);
+    color: var(--ink);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 2px 6px;
+    border: 1px solid var(--ink);
+    transform: rotate(-2deg);
+}
+
+/* SOLD OUT — ::before overlay + dim */
+.item--sold {
+    opacity: 0.55;
+}
+
+.item--sold::before {
+    content: "SOLD OUT";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    translate: 0 -50%;
+    background: var(--ink);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 3px 7px;
+    transform: rotate(2deg);
+    z-index: 1;
+}
+
+.menu-foot {
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 2.5px solid var(--ink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.dot { color: var(--pink); }
+
+/* — Side cards — */
+.side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.side-card {
+    background: #1a1a1e;
+    border: 1px solid #2a2a2e;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.side-card h3 {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 10px;
+}
+
+.side-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.side-card li {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #bbb;
+    padding-left: 18px;
+    position: relative;
+}
+
+.side-card li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--pink);
+}
+
+.side-card p {
+    font-size: 13px;
+    color: #bbb;
+    line-height: 1.6;
+}
+
+.side-card code {
+    background: #2a2a2e;
+    color: #fff;
+    padding: 1px 5px;
+    font-size: 12px;
+}
+
+.lift {
+    transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.lift:hover {
+    transform: translateY(-4px);
+    border-color: #3a3a3e;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 18px 20px 32px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #666;
+    border-top: 1px solid #222;
+    margin-top: 8px;
+}

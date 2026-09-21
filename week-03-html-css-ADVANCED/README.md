@@ -9,15 +9,18 @@ In Week 02 you built a form and made it responsive. This week you go deeper: sem
 
 ## What's Included
 
-| # | Folder | Files | What You Learn |
-|---|--------|-------|----------------|
-| 1 | [semantic-html](semantic-html) | `index.html` | Semantic tags — `header`, `nav`, `main`, `section`, `footer` |
-| 2 | [lists](lists) | `index.html` | Ordered and unordered lists — `<ol>`, `<ul>`, `<li>` |
-| 3 | [tables](tables) | `index.html` | Data tables — `<table>`, `<thead>`, `<tbody>`, `<th>`, `<td>` |
-| 4 | [pseudo-elements](pseudo-elements) | `index.html` · `main.css` | `::before` and `::after` — decorative content without extra HTML |
-| 5 | [flexbox](flexbox) | `index.html` · `main.css` | Flexbox — main axis, cross axis, wrapping, centering |
-| 6 | [grid](grid) | `index.html` · `main.css` | CSS Grid — rows, columns, `gap`, `grid-area`, spanning |
-| 7 | [animations](animations) | `index.html` · `main.css` | Transitions and `@keyframes` animations |
+| #   | Folder                                               | Files                     | What You Learn                                                                        |
+| --- | ---------------------------------------------------- | ------------------------- | ------------------------------------------------------------------------------------- |
+| 1   | [semantic-html](semantic-html)                       | `index.html`              | Semantic tags — `header`, `nav`, `main`, `section`, `footer`                          |
+| 2   | [lists](lists)                                       | `index.html`              | Ordered and unordered lists — `<ol>`, `<ul>`, `<li>`                                  |
+| 3   | [tables](tables)                                     | `index.html`              | Data tables — `<table>`, `<thead>`, `<tbody>`, `<th>`, `<td>`                         |
+| 4   | [pseudo-elements](pseudo-elements)                   | `index.html` · `main.css` | `::before` and `::after` — decorative content without extra HTML                      |
+| 5   | [flexbox](flexbox)                                   | `index.html` · `main.css` | Flexbox — main axis, cross axis, wrapping, centering                                  |
+| 6   | [grid](grid)                                         | `index.html` · `main.css` | CSS Grid — rows, columns, `gap`, `grid-area`, spanning                                |
+| 7   | [animations](animations)                             | `index.html` · `main.css` | Transitions and `@keyframes` animations                                               |
+| 8   | [extra / crate-digging](extra/crate-digging)         | `index.html` · `main.css` | Extra — Flexbox record shelf (wrapping, `flex: 1 1 260px`, `gap`)                     |
+| 9   | [extra / the-kigali-review](extra/the-kigali-review) | `index.html` · `main.css` | Extra — Grid editorial / newspaper ( `grid-template-areas`, spanning)                 |
+| 10  | [extra / late-night-menu](extra/late-night-menu)     | `index.html` · `main.css` | Extra — Animations + pseudo-elements diner menu ( `::before`/`::after`, `@keyframes`) |
 
 > All folders are self-contained — open any `index.html` in the browser to see the result.
 
@@ -31,7 +34,7 @@ A landing page that uses semantic tags instead of generic `<div>` everywhere:
 
 ```html
 <header>
-  <div id="logo-container"><img src="..." alt="Logo"></div>
+  <div id="logo-container"><img src="..." alt="Logo" /></div>
   <nav>
     <a href="#">Courses</a>
     <a href="#">Pricing</a>
@@ -48,7 +51,7 @@ A landing page that uses semantic tags instead of generic `<div>` everywhere:
 </main>
 
 <section id="testimonial">
-  <img src="..." alt="testimonial image">
+  <img src="..." alt="testimonial image" />
   <div id="quote">
     <blockquote>"Those tutorials are concise ..."</blockquote>
     <div id="author">
@@ -59,26 +62,27 @@ A landing page that uses semantic tags instead of generic `<div>` everywhere:
 </section>
 
 <footer>
-  <img src="..." alt="logo">
-  <img src="..." alt="social icons">
+  <img src="..." alt="logo" />
+  <img src="..." alt="social icons" />
   <span>&copy;Mellow 2026 | Made with 🍟 and Care ...</span>
 </footer>
 ```
 
 **What each tag means:**
 
-| Tag | Purpose | Why not just `<div>`? |
-|-----|---------|----------------------|
-| `<header>` | Intro area — logo + navigation | Screen readers know this is the page header |
-| `<nav>` | Navigation links | Screen readers can jump directly to navigation |
-| `<main>` | Primary content (only one per page) | Search engines know this is the most important section |
-| `<section>` | Thematic grouping (testimonial) | Gives structure that `<div>` does not |
-| `<blockquote>` | A quote from someone else | Browsers and screen readers announce it as a quotation |
-| `<footer>` | Closing area — copyright, links | Same as header but at the bottom |
+| Tag            | Purpose                             | Why not just `<div>`?                                  |
+| -------------- | ----------------------------------- | ------------------------------------------------------ |
+| `<header>`     | Intro area — logo + navigation      | Screen readers know this is the page header            |
+| `<nav>`        | Navigation links                    | Screen readers can jump directly to navigation         |
+| `<main>`       | Primary content (only one per page) | Search engines know this is the most important section |
+| `<section>`    | Thematic grouping (testimonial)     | Gives structure that `<div>` does not                  |
+| `<blockquote>` | A quote from someone else           | Browsers and screen readers announce it as a quotation |
+| `<footer>`     | Closing area — copyright, links     | Same as header but at the bottom                       |
 
-**Takeaway:** `<div>` says nothing. Semantic tags tell browsers, search engines, and screen readers what each part *is*. The page looks the same either way — the difference is meaning.
+**Takeaway:** `<div>` says nothing. Semantic tags tell browsers, search engines, and screen readers what each part _is_. The page looks the same either way — the difference is meaning.
 
 **How to improve this file:**
+
 - Add `aria-label` to `<nav>` if you have more than one nav on a page.
 - Use `<figure>` + `<figcaption>` around the testimonial image and quote for even better semantics.
 
@@ -114,6 +118,7 @@ Two lists that show the difference between ordered and unordered:
 - You can nest lists — a `<ul>` inside an `<li>` creates a sub-list. Useful for dropdown menus or grouped content.
 
 **Try it:**
+
 - Change `<ol>` to `<ul>` and see the numbers become bullets.
 - Add `type="A"` to `<ol>` — it counts A, B, C instead of 1, 2, 3. Try `type="i"` for roman numerals.
 - Add `start="5"` to `<ol>` — it starts counting from 5.
@@ -130,7 +135,10 @@ A weekly class timetable (09:00–05:00, Monday to Friday), built with proper ta
 <table border="1">
   <thead>
     <tr>
-      <th>Time</th><th>Mon</th><th>Tue</th>...
+      <th>Time</th>
+      <th>Mon</th>
+      <th>Tue</th>
+      ...
     </tr>
   </thead>
   <tbody>
@@ -145,14 +153,15 @@ A weekly class timetable (09:00–05:00, Monday to Friday), built with proper ta
 
 This expands on Week 02's `Extras/Table.html`:
 
-| What's new vs Week 02 | Why it matters |
-|-----------------------|----------------|
-| `<thead>` and `<tbody>` | Splits header from body — helps screen readers and makes CSS targeting easier |
-| `<th>` for every header cell | Screen readers announce `<th>` as headers; `<td>` is just data |
-| 6 columns (Time + Mon–Fri), 10 rows | More realistic — shows how tables handle lots of data |
-| Empty `<td></td>` for free periods | An empty cell still needs a `<td>` — if you skip it, columns misalign |
+| What's new vs Week 02               | Why it matters                                                                |
+| ----------------------------------- | ----------------------------------------------------------------------------- |
+| `<thead>` and `<tbody>`             | Splits header from body — helps screen readers and makes CSS targeting easier |
+| `<th>` for every header cell        | Screen readers announce `<th>` as headers; `<td>` is just data                |
+| 6 columns (Time + Mon–Fri), 10 rows | More realistic — shows how tables handle lots of data                         |
+| Empty `<td></td>` for free periods  | An empty cell still needs a `<td>` — if you skip it, columns misalign         |
 
 **Hints:**
+
 - `border="1"` is the quick HTML way to add borders. For production, prefer CSS: `table, th, td { border: 1px solid #ccc; border-collapse: collapse; }`.
 - Add `scope="col"` on header `<th>` cells (e.g., `<th scope="col">Mon</th>`) so screen readers know the header applies to the column below it.
 - For responsive tables on mobile, wrap the table in a `<div style="overflow-x: auto;">` so it scrolls horizontally instead of breaking the layout.
@@ -167,50 +176,82 @@ Pseudo-elements let you add decorative content before or after an element withou
 
 ```css
 /* Adds content before the element */
-h2::before { content: "→ "; color: #2563eb; }
+h2::before {
+  content: "→ ";
+  color: #2563eb;
+}
 
 /* Adds content after the element */
-h2::after  { content: ""; display: block; width: 40px; height: 3px; background: #2563eb; }
+h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #2563eb;
+}
 ```
 
 > `::before` and `::after` both require `content` — even if it is just `content: ""` for a shape. Without `content`, nothing renders.
 
 **What the demo page shows:**
 
-| # | Demo | Technique |
-|---|------|-----------|
-| 1 | Fancy quote with opening/closing quotes | `content: "\201C"` / `"\201D"` (unicode quotes) + `position: absolute` |
-| 2 | Heading with coloured underline bar | `content: ""` + `position: absolute` + `width`/`height`/`background` |
-| 3 | Custom bullets (🍟 instead of dots) | `list-style: none` + `li::before { content: "🍟"; }` |
-| 4 | Tooltip on hover | `attr(data-tip)` reads the HTML attribute + `opacity` transition on hover |
-| 5 | "NEW" badge on a card | `content: "NEW"` + `position: absolute` in the corner |
+| #   | Demo                                    | Technique                                                                 |
+| --- | --------------------------------------- | ------------------------------------------------------------------------- |
+| 1   | Fancy quote with opening/closing quotes | `content: "\201C"` / `"\201D"` (unicode quotes) + `position: absolute`    |
+| 2   | Heading with coloured underline bar     | `content: ""` + `position: absolute` + `width`/`height`/`background`      |
+| 3   | Custom bullets (🍟 instead of dots)     | `list-style: none` + `li::before { content: "🍟"; }`                      |
+| 4   | Tooltip on hover                        | `attr(data-tip)` reads the HTML attribute + `opacity` transition on hover |
+| 5   | "NEW" badge on a card                   | `content: "NEW"` + `position: absolute` in the corner                     |
 
 **Fun snippets to try yourself:**
 
 **Gradient underline that grows on hover:**
+
 ```css
-h2 { position: relative; display: inline-block; }
+h2 {
+  position: relative;
+  display: inline-block;
+}
 h2::after {
   content: "";
   position: absolute;
-  left: 0; bottom: -4px;
-  width: 0; height: 3px;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
   background: linear-gradient(90deg, #2563eb, #f59e0b);
   transition: width 0.3s ease;
 }
-h2:hover::after { width: 100%; }
+h2:hover::after {
+  width: 100%;
+}
 ```
 
 **Numbered steps with circles:**
+
 ```css
-.steps { counter-reset: step; list-style: none; }
-.steps li { counter-increment: step; position: relative; padding-left: 36px; }
+.steps {
+  counter-reset: step;
+  list-style: none;
+}
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 36px;
+}
 .steps li::before {
   content: counter(step);
-  position: absolute; left: 0; top: 0;
-  width: 24px; height: 24px;
-  background: #2563eb; color: #fff;
-  border-radius: 50%; text-align: center; line-height: 24px; font-size: 12px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 12px;
 }
 ```
 
@@ -232,25 +273,26 @@ Cross axis ↓
 
 **Key properties from the slides:**
 
-| Property | Axis | What it does |
-|----------|------|--------------|
-| `justify-content` | Main axis | Aligns items along the row (or column if `flex-direction: column`) |
-| `align-items` | Cross axis | Aligns items perpendicular to the main axis |
-| `flex-wrap` | — | Allows items to wrap to the next line instead of shrinking |
+| Property          | Axis       | What it does                                                       |
+| ----------------- | ---------- | ------------------------------------------------------------------ |
+| `justify-content` | Main axis  | Aligns items along the row (or column if `flex-direction: column`) |
+| `align-items`     | Cross axis | Aligns items perpendicular to the main axis                        |
+| `flex-wrap`       | —          | Allows items to wrap to the next line instead of shrinking         |
 
 **What the demo page shows:**
 
-| # | Demo | Key CSS |
-|---|------|---------|
-| 1 | Perfect centering (both axes) | `display: flex; justify-content: center; align-items: center; height: 160px;` |
-| 2 | `justify-content` — `space-between`, `space-around`, `center` | Three rows, same children, different `justify-content` |
-| 3 | `align-items` — `flex-start`, `center`, `stretch` | Tall container with different-height items |
-| 4 | `flex-wrap: wrap` + `flex: 1 1 160px` | Cards that wrap responsively — resize the window |
-| 5 | Real navbar | `display: flex; justify-content: space-between; align-items: center;` |
+| #   | Demo                                                          | Key CSS                                                                       |
+| --- | ------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| 1   | Perfect centering (both axes)                                 | `display: flex; justify-content: center; align-items: center; height: 160px;` |
+| 2   | `justify-content` — `space-between`, `space-around`, `center` | Three rows, same children, different `justify-content`                        |
+| 3   | `align-items` — `flex-start`, `center`, `stretch`             | Tall container with different-height items                                    |
+| 4   | `flex-wrap: wrap` + `flex: 1 1 160px`                         | Cards that wrap responsively — resize the window                              |
+| 5   | Real navbar                                                   | `display: flex; justify-content: space-between; align-items: center;`         |
 
 **Fun snippets to try yourself:**
 
 **Equal-height cards that wrap:**
+
 ```css
 .card-row {
   display: flex;
@@ -258,11 +300,12 @@ Cross axis ↓
   gap: 16px;
 }
 .card-row .card {
-  flex: 1 1 200px;  /* grow, shrink, minimum width */
+  flex: 1 1 200px; /* grow, shrink, minimum width */
 }
 ```
 
 **Centering anything (the classic Flexbox trick):**
+
 ```css
 .center-everything {
   display: flex;
@@ -273,9 +316,14 @@ Cross axis ↓
 ```
 
 **Auto-margin for pushing one item to the end:**
+
 ```css
-.navbar { display: flex; }
-.navbar .logout { margin-left: auto; } /* pushes logout to the far right */
+.navbar {
+  display: flex;
+}
+.navbar .logout {
+  margin-left: auto;
+} /* pushes logout to the far right */
 ```
 
 **Common pitfall:** Forgetting that `justify-content` and `align-items` swap meaning when you change `flex-direction`. If you set `flex-direction: column`, then `justify-content` controls vertical alignment and `align-items` controls horizontal.
@@ -290,25 +338,26 @@ Grid is a **two-dimensional** system — you control rows and columns at the sam
 
 **Key properties from the slides:**
 
-| Property | What it does |
-|----------|--------------|
-| `grid-template-columns` | Defines number and width of columns |
-| `grid-template-rows` | Defines number and height of rows |
-| `gap` | Space between rows and columns (replaces old margin hacks) |
-| `grid-area` | Names an area so you can place items by name |
+| Property                | What it does                                               |
+| ----------------------- | ---------------------------------------------------------- |
+| `grid-template-columns` | Defines number and width of columns                        |
+| `grid-template-rows`    | Defines number and height of rows                          |
+| `gap`                   | Space between rows and columns (replaces old margin hacks) |
+| `grid-area`             | Names an area so you can place items by name               |
 
 **What the demo page shows:**
 
-| # | Demo | Key CSS |
-|---|------|---------|
-| 1 | 3 equal columns | `grid-template-columns: 1fr 1fr 1fr; gap: 12px;` |
-| 2 | Responsive gallery (no media query) | `repeat(auto-fit, minmax(140px, 1fr))` — columns appear/disappear as you resize |
-| 3 | Named areas layout | `grid-template-areas: "header header header" "nav main side" "footer footer footer"` |
-| 4 | Spanning | `grid-column: span 2; grid-row: span 2;` — featured card takes 2x2 |
+| #   | Demo                                | Key CSS                                                                              |
+| --- | ----------------------------------- | ------------------------------------------------------------------------------------ |
+| 1   | 3 equal columns                     | `grid-template-columns: 1fr 1fr 1fr; gap: 12px;`                                     |
+| 2   | Responsive gallery (no media query) | `repeat(auto-fit, minmax(140px, 1fr))` — columns appear/disappear as you resize      |
+| 3   | Named areas layout                  | `grid-template-areas: "header header header" "nav main side" "footer footer footer"` |
+| 4   | Spanning                            | `grid-column: span 2; grid-row: span 2;` — featured card takes 2x2                   |
 
 **Fun snippets to try yourself:**
 
 **Holy grail layout in 5 lines:**
+
 ```css
 .page {
   display: grid;
@@ -321,21 +370,37 @@ Grid is a **two-dimensional** system — you control rows and columns at the sam
   gap: 12px;
   min-height: 100vh;
 }
-.page header { grid-area: header; }
-.page nav    { grid-area: nav; }
-.page main   { grid-area: main; }
-.page aside  { grid-area: aside; }
-.page footer { grid-area: footer; }
+.page header {
+  grid-area: header;
+}
+.page nav {
+  grid-area: nav;
+}
+.page main {
+  grid-area: main;
+}
+.page aside {
+  grid-area: aside;
+}
+.page footer {
+  grid-area: footer;
+}
 ```
 
 **Masonry-style gallery:**
+
 ```css
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
 }
-.gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
 ```
 
 **The `auto-fit` vs `auto-fill` difference:** Both create as many columns as fit. `auto-fit` collapses empty tracks (items stretch to fill), `auto-fill` keeps them (items stay their size with empty space). Try swapping them in Demo 2 to see the difference.
@@ -353,7 +418,9 @@ Two ways to add motion: **transitions** (smooth change between two states) and *
 ```css
 .button {
   background: #2563eb;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
 }
 .button:hover {
   background: #1d4ed8;
@@ -361,12 +428,12 @@ Two ways to add motion: **transitions** (smooth change between two states) and *
 }
 ```
 
-| Property | Meaning |
-|----------|---------|
-| `transition-property` | What to animate (e.g., `background-color`, `transform`, `opacity`) |
-| `transition-duration` | How long it takes (e.g., `0.3s`, `500ms`) |
-| `transition-delay` | Wait before starting (e.g., `0.1s`) |
-| `transition-timing-function` | Speed curve (`ease`, `ease-in-out`, `linear`) |
+| Property                     | Meaning                                                            |
+| ---------------------------- | ------------------------------------------------------------------ |
+| `transition-property`        | What to animate (e.g., `background-color`, `transform`, `opacity`) |
+| `transition-duration`        | How long it takes (e.g., `0.3s`, `500ms`)                          |
+| `transition-delay`           | Wait before starting (e.g., `0.1s`)                                |
+| `transition-timing-function` | Speed curve (`ease`, `ease-in-out`, `linear`)                      |
 
 Shorthand: `transition: background-color 0.3s ease 0s;` — property, duration, easing, delay.
 
@@ -374,8 +441,14 @@ Shorthand: `transition: background-color 0.3s ease 0s;` — property, duration, 
 
 ```css
 @keyframes slideIn {
-  from { transform: translateX(-100%); opacity: 0; }
-  to   { transform: translateX(0);     opacity: 1; }
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 .box {
   animation: slideIn 0.8s ease-out;
@@ -385,53 +458,111 @@ Shorthand: `transition: background-color 0.3s ease 0s;` — property, duration, 
 ```css
 /* Infinite bounce */
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
-.ball { animation: bounce 0.8s ease-in-out infinite; }
+.ball {
+  animation: bounce 0.8s ease-in-out infinite;
+}
 ```
 
 **What the demo page shows:**
 
-| # | Demo | Technique |
-|---|------|-----------|
-| 1 | Button that scales and changes colour on hover | `transition: background-color, transform` |
-| 2 | Box that slides in from the left on page load | `@keyframes slideIn` + `animation: slideIn 0.8s ease-out` |
-| 3 | Pulsing dot (infinite) | `@keyframes pulse` + `animation: pulse 1.5s infinite` |
-| 4 | Bouncing basketball | `@keyframes bounce` + `animation: bounce 0.8s infinite` |
-| 5 | Loading spinner | `border-top-color` + `@keyframes spin { to { rotate: 360deg } }` |
-| 6 | Card that lifts with shadow on hover | `transition: transform, box-shadow` + `transform: translateY(-6px)` |
+| #   | Demo                                           | Technique                                                           |
+| --- | ---------------------------------------------- | ------------------------------------------------------------------- |
+| 1   | Button that scales and changes colour on hover | `transition: background-color, transform`                           |
+| 2   | Box that slides in from the left on page load  | `@keyframes slideIn` + `animation: slideIn 0.8s ease-out`           |
+| 3   | Pulsing dot (infinite)                         | `@keyframes pulse` + `animation: pulse 1.5s infinite`               |
+| 4   | Bouncing basketball                            | `@keyframes bounce` + `animation: bounce 0.8s infinite`             |
+| 5   | Loading spinner                                | `border-top-color` + `@keyframes spin { to { rotate: 360deg } }`    |
+| 6   | Card that lifts with shadow on hover           | `transition: transform, box-shadow` + `transform: translateY(-6px)` |
 
 **Fun snippets to try yourself:**
 
 **Fade-in on page load:**
+
 ```css
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-.hero { animation: fadeIn 1s ease-in; }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hero {
+  animation: fadeIn 1s ease-in;
+}
 ```
 
 **Shake on error:**
+
 ```css
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25%  { transform: translateX(-6px); }
-  75%  { transform: translateX(6px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
 }
-.input-error { animation: shake 0.3s ease; border-color: #ef4444; }
+.input-error {
+  animation: shake 0.3s ease;
+  border-color: #ef4444;
+}
 ```
 
 **Underline that draws itself:**
+
 ```css
-.link { position: relative; }
+.link {
+  position: relative;
+}
 .link::after {
-  content: ""; position: absolute; left: 0; bottom: -2px;
-  width: 0; height: 2px; background: #2563eb;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #2563eb;
   transition: width 0.3s ease;
 }
-.link:hover::after { width: 100%; }
+.link:hover::after {
+  width: 100%;
+}
 ```
 
 **Hint:** Use `transform` and `opacity` for animations — they are GPU-accelerated and stay smooth at 60fps. Avoid animating `width`, `height`, `top`, or `left` for large elements, as those trigger layout recalculation and can feel janky.
+
+---
+
+## 8 — Extra Projects — Putting It All Together
+
+Three non-generic projects that combine the week's concepts into something you would actually want to show someone. Each has a distinct style, palette, and personality. Open them, steal the patterns, remix them.
+
+| Project           | Folder                                               | Main Concepts                                                                                                                     | Vibe                                                                            |
+| ----------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Crate Digging     | [`extra/crate-digging`](extra/crate-digging)         | Flexbox (`flex-wrap`, `flex: 1 1 260px`, `gap`, `justify-content`/`align-items`) + pseudo-element vinyl peek + `transition` hover | Brutalist record store — cream paper, chunky borders, vinyl that peeks on hover |
+| The Kigali Review | [`extra/the-kigali-review`](extra/the-kigali-review) | Grid (`grid-template-areas`, spanning, responsive reflow) + semantic structure                                                    | Editorial newspaper — serif headlines, double-rule masthead, 3-col to 1-col     |
+| Late Night Menu   | [`extra/late-night-menu`](extra/late-night-menu)     | Pseudo-elements (`::before` badges, `::after` dotted leaders) + `transition` + `@keyframes` flicker                               | Diner at 1am — dark, neon, dotted leaders between name and price                |
+
+**What to steal from each:**
+
+- **Crate Digging** — The shelf needs no media queries. `display: flex; flex-wrap: wrap; gap: 20px` + `flex: 1 1 260px` on each card does all the responsive work. The vinyl peek is a single `::after` with `opacity` + `right` transition.
+- **The Kigali Review** — The whole page is one grid with `grid-template-areas: "lead lead side" "a b c" "strip strip strip"`. To rearrange, you change one line. The strip at the bottom is a nested grid (`repeat(4, 1fr)`). On mobile it collapses to `1fr`.
+- **Late Night Menu** — The dotted line between dish name and price is a flex `::after` (`flex: 1; border-bottom: 2px dotted`), not a hack. The description reveals with `max-height` + `opacity` transition on hover. The neon uses `@keyframes flicker` with staggered `opacity` stops. NEW and SOLD OUT are `::before` — no extra HTML.
+
+Try opening all three and resizing the window — each responds differently, and each does it with a different layout system.
 
 ---
 
@@ -446,7 +577,7 @@ Styled inputs   ─────────►  Pseudo-elements (decoration with
 Static page     ─────────►  Transitions & Animations (motion)
 ```
 
-Week 02 taught you to build one layout (a form). Week 03 gives you the tools to build *any* layout and make it feel alive.
+Week 02 taught you to build one layout (a form). Week 03 gives you the tools to build _any_ layout and make it feel alive.
 
 ---
 
@@ -461,6 +592,9 @@ Open any `index.html` in the browser:
 - `flexbox/index.html` — 5 flexbox layouts (resize to see wrapping)
 - `grid/index.html` — 4 grid layouts (resize to see responsive gallery)
 - `animations/index.html` — 6 motion demos (hover and watch)
+- `extra/crate-digging/index.html` — flexbox record shelf
+- `extra/the-kigali-review/index.html` — grid editorial
+- `extra/late-night-menu/index.html` — diner menu with motion + pseudo-elements
 
 Or use VS Code Live Server for instant reload.
 
