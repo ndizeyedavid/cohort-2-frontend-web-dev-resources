@@ -22,7 +22,7 @@
 | ----------- | -------------------------------------------------- | ----------------------------------------------------------------- |
 | **Week 01** | [Regular Expressions](week-01-regular-expressions) | Pattern matching, character classes, word boundaries, quantifiers |
 | **Week 02** | [Basic HTML and CSS](week-02-html-css-basics)      | HTML structure, forms, CSS Grid, responsive design, regex + JS validation |
-| **Week 03** | Advanced HTML and CSS                              | CSS Grid, responsive navigation, media queries                    |
+| **Week 03** | [Advanced HTML and CSS](week-03-html-css-ADVANCED) | Semantic HTML, lists, tables, pseudo-elements, Flexbox, Grid, transitions & animations |
 | **Week 04** | JavaScript Deep Dive                               | Event listeners, DOM manipulation, OOP concepts                   |
 | **Week 05** | Browser Debugging & Projects                       | Console debugging, advanced DOM API, bug-hunting challenges       |
 
@@ -34,7 +34,7 @@
 
 - **[Week 01 — Regular Expressions](week-01-regular-expressions)** — Start with pattern matching and text validation
 - **[Week 02 — Basic HTML and CSS](week-02-html-css-basics)** — From raw HTML structure to styled, validated forms
-- **Week 03 — Advanced HTML and CSS** — Master complex layouts and responsiveness
+- **[Week 03 — Advanced HTML and CSS](week-03-html-css-ADVANCED)** — Semantic markup, tables, Flexbox, Grid, pseudo-elements, and motion
 - **Week 04 — JavaScript Deep Dive** — Bring your pages to life with interactivity
 - **Week 05 — Browser Debugging & Projects** — Debug like a pro and tackle capstone challenges
 
