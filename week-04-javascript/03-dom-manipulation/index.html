@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation  -  Selecting and Modifying Elements</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="page-header">
+        <h1>DOM Manipulation</h1>
+        <p>Selecting elements and modifying content with JavaScript.</p>
+        <p class="hint">Open DevTools Console (F12) to see additional logs.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Target elements for selection demos -->
+        <section class="demo" id="selection-demo">
+            <h2>Selection Targets</h2>
+            <p id="greeting">Hello, this is identified by <code>getElementById</code></p>
+            <p class="highlight">I have class <code>highlight</code>  -  found by <code>querySelector</code></p>
+            <p class="highlight">I also have class <code>highlight</code>  -  found by <code>querySelectorAll</code></p>
+            <ul class="item-list">
+                <li class="item">Item 1</li>
+                <li class="item">Item 2</li>
+                <li class="item">Item 3</li>
+            </ul>
+        </section>
+
+        <!-- Text modification -->
+        <section class="demo">
+            <h2>Modify Text</h2>
+            <p id="text-target">Original text  -  click a button to change me.</p>
+            <div class="btn-row">
+                <button id="btn-text">textContent</button>
+                <button id="btn-html">innerHTML</button>
+                <button id="btn-reset">Reset</button>
+            </div>
+        </section>
+
+        <!-- Value + input -->
+        <section class="demo">
+            <h2>Modify Value</h2>
+            <input id="name-input" type="text" placeholder="Type your name">
+            <div class="btn-row">
+                <button id="btn-read-value">Read value</button>
+                <button id="btn-set-value">Set to "Mellow"</button>
+                <button id="btn-clear-value">Clear</button>
+            </div>
+            <p id="value-output" class="output">Output will appear here.</p>
+        </section>
+
+        <!-- Style + classList -->
+        <section class="demo">
+            <h2>Modify Style and Classes</h2>
+            <div id="style-box" class="style-box">Style me</div>
+            <div class="btn-row">
+                <button id="btn-style">Change style</button>
+                <button id="btn-toggle">Toggle class</button>
+                <button id="btn-add-item">Add list item</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
