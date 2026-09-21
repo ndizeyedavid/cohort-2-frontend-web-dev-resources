@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-elements - ::before & ::after</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <header class="page-header">
+        <h1>Pseudo-elements</h1>
+        <p>Add content before or after an element without touching the HTML.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- 1 - Decorative quote -->
+        <section class="demo">
+            <h2>1 - Fancy Quote with ::before / ::after</h2>
+            <blockquote class="fancy-quote">
+                Those tutorials are concise and go straight to the point.
+            </blockquote>
+        </section>
+
+        <!-- 2 - Heading underline -->
+        <section class="demo">
+            <h2 class="underline-heading">Heading with underline</h2>
+            <p>The coloured bar below the heading is a <code>::after</code> - no extra HTML needed.</p>
+        </section>
+
+        <!-- 3 - Custom bullets -->
+        <section class="demo">
+            <h2>3 - Custom Bullets with ::before</h2>
+            <ul class="custom-bullets">
+                <li>Ghost of Yotei</li>
+                <li>GTA VI</li>
+                <li>Euro Truck Simulator</li>
+            </ul>
+        </section>
+
+        <!-- 4 - Tooltip -->
+        <section class="demo">
+            <h2>4 - Tooltip with ::after</h2>
+            <p>Hover the button to see a tooltip created entirely with CSS.</p>
+            <button class="tooltip-btn" data-tip="I'm a ::after pseudo-element!">Hover me</button>
+        </section>
+
+        <!-- 5 - Badge on a card -->
+        <section class="demo">
+            <h2>5 - "NEW" Badge with ::before</h2>
+            <div class="card badge-card">
+                <h3>Yummy Registration</h3>
+                <p>This card has a badge added via <code>::before</code>.</p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions & Animations</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <header class="page-header">
+        <h1>Transitions & Animations</h1>
+        <p>Smooth motion with <code>transition</code> and custom movement with <code>@keyframes</code>.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- 1 - Transition on hover -->
+        <section class="demo">
+            <h2>1 - Hover Transition</h2>
+            <p class="hint">Hover the button - <code>transition: background-color 0.3s ease, transform 0.3s ease;</code>
+            </p>
+            <button class="btn-transition">Hover me</button>
+        </section>
+
+        <!-- 2 - Slide in -->
+        <section class="demo">
+            <h2>2 - Slide In with <code>@keyframes</code></h2>
+            <div class="slide-box">I slide in!</div>
+        </section>
+
+        <!-- 3 - Pulse -->
+        <section class="demo">
+            <h2>3 - Pulse Animation</h2>
+            <p class="hint">Infinite loop - great for notifications or call-to-action.</p>
+            <div class="pulse">●</div>
+        </section>
+
+        <!-- 4 - Bounce -->
+        <section class="demo">
+            <h2>4 - Bounce (fun!)</h2>
+            <div class="bounce">🏀</div>
+        </section>
+
+        <!-- 5 - Loading spinner -->
+        <section class="demo">
+            <h2>5 - Loading Spinner</h2>
+            <div class="spinner"></div>
+        </section>
+
+        <!-- 6 - Card lift on hover -->
+        <section class="demo">
+            <h2>6 - Card Lift (transition + transform)</h2>
+            <p class="hint">Hover the card - it lifts with a shadow.</p>
+            <div class="lift-card">
+                <h3>Hover this card</h3>
+                <p>Combines <code>transition</code> + <code>transform: translateY()</code> + <code>box-shadow</code>.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

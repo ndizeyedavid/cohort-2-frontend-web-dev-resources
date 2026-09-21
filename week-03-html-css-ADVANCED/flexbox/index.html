@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Deep Dive</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <header class="page-header">
+        <h1>Flexbox - Deep Dive</h1>
+        <p>One-dimensional layout. Main axis vs cross axis. Perfect centering, wrapping, and equal spacing.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- 1 - Perfect centering -->
+        <section class="demo">
+            <h2>1 - Perfect Centering</h2>
+            <p class="hint">Parent: <code>display: flex; justify-content: center; align-items: center;</code></p>
+            <div class="flex-center">
+                <div class="box">Centered</div>
+            </div>
+        </section>
+
+        <!-- 2 - justify-content variants -->
+        <section class="demo">
+            <h2>2 - Main Axis - <code>justify-content</code></h2>
+
+            <h3>space-between</h3>
+            <div class="flex-row between">
+                <div class="pill">One</div>
+                <div class="pill">Two</div>
+                <div class="pill">Three</div>
+            </div>
+
+            <h3>space-around</h3>
+            <div class="flex-row around">
+                <div class="pill">One</div>
+                <div class="pill">Two</div>
+                <div class="pill">Three</div>
+            </div>
+
+            <h3>center</h3>
+            <div class="flex-row center">
+                <div class="pill">One</div>
+                <div class="pill">Two</div>
+                <div class="pill">Three</div>
+            </div>
+        </section>
+
+        <!-- 3 - align-items -->
+        <section class="demo">
+            <h2>3 - Cross Axis - <code>align-items</code></h2>
+            <p class="hint">All three rows use the same children but different <code>align-items</code>.</p>
+
+            <h3>flex-start</h3>
+            <div class="flex-row tall start">
+                <div class="pill tall-1">Short</div>
+                <div class="pill tall-2">A bit taller</div>
+                <div class="pill tall-3">Tallest item here</div>
+            </div>
+
+            <h3>center</h3>
+            <div class="flex-row tall center-v">
+                <div class="pill tall-1">Short</div>
+                <div class="pill tall-2">A bit taller</div>
+                <div class="pill tall-3">Tallest item here</div>
+            </div>
+
+            <h3>stretch (default)</h3>
+            <div class="flex-row tall stretch">
+                <div class="pill tall-1">Short</div>
+                <div class="pill tall-2">A bit taller</div>
+                <div class="pill tall-3">Tallest item here</div>
+            </div>
+        </section>
+
+        <!-- 4 - flex-wrap -->
+        <section class="demo">
+            <h2>4 - Wrapping with <code>flex-wrap</code></h2>
+            <p class="hint">Resize the window - cards wrap to the next line instead of overflowing.</p>
+            <div class="flex-wrap">
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+                <div class="card">Card 6</div>
+            </div>
+        </section>
+
+        <!-- 5 - Real layout: navbar -->
+        <section class="demo">
+            <h2>5 - Real Layout - Navbar</h2>
+            <nav class="navbar">
+                <span class="logo">Yummy</span>
+                <div class="nav-links">
+                    <a href="#">Courses</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Login</a>
+                </div>
+            </nav>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

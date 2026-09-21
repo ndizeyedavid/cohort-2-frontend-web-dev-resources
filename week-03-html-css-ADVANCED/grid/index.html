@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid - Basics</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <header class="page-header">
+        <h1>CSS Grid - Basics</h1>
+        <p>Two-dimensional layout - rows and columns at the same time.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- 1 - Equal columns -->
+        <section class="demo">
+            <h2>1 - Equal Columns</h2>
+            <p class="hint"><code>grid-template-columns: 1fr 1fr 1fr; gap: 12px;</code></p>
+            <div class="grid grid-3">
+                <div class="cell">1</div>
+                <div class="cell">2</div>
+                <div class="cell">3</div>
+                <div class="cell">4</div>
+                <div class="cell">5</div>
+                <div class="cell">6</div>
+            </div>
+        </section>
+
+        <!-- 2 - Responsive auto-fit -->
+        <section class="demo">
+            <h2>2 - Responsive Gallery (no media query)</h2>
+            <p class="hint"><code>grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));</code> - try resizing the
+                window.</p>
+            <div class="grid gallery">
+                <div class="gallery-card">A</div>
+                <div class="gallery-card">B</div>
+                <div class="gallery-card">C</div>
+                <div class="gallery-card">D</div>
+                <div class="gallery-card">E</div>
+                <div class="gallery-card">F</div>
+            </div>
+        </section>
+
+        <!-- 3 - Named areas -->
+        <section class="demo">
+            <h2>3 - Named Areas with <code>grid-area</code></h2>
+            <p class="hint">The layout below uses <code>grid-template-areas</code> - rearrange by changing one line.</p>
+            <div class="layout">
+                <header class="area-header">Header</header>
+                <nav class="area-nav">Nav</nav>
+                <main class="area-main">Main Content</main>
+                <aside class="area-side">Sidebar</aside>
+                <footer class="area-footer">Footer</footer>
+            </div>
+        </section>
+
+        <!-- 4 - Spanning -->
+        <section class="demo">
+            <h2>4 - Spanning Rows & Columns</h2>
+            <p class="hint">The first item spans 2 columns and 2 rows.</p>
+            <div class="grid span-grid">
+                <div class="cell featured">Featured</div>
+                <div class="cell">2</div>
+                <div class="cell">3</div>
+                <div class="cell">4</div>
+                <div class="cell">5</div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
