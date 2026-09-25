@@ -1,12 +1,14 @@
 <a id="top"></a>
 
 # Frontend Web Development Class Resources
-
+<div align="center"> 
+   
 [![Checks](https://github.com/ndizeyedavid/cohort-2-frontend-web-dev-resources/actions/workflows/checks.yml/badge.svg)](https://github.com/ndizeyedavid/cohort-2-frontend-web-dev-resources/actions/workflows/checks.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Weeks](https://img.shields.io/badge/weeks-5%20complete-blue.svg)](#course-roadmap)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
-
+   
+</div>
 Every link, script, and example in this repository is verified automatically on each push. If the badge at the top is green, the whole repository is working.
 
 Welcome. This repository is a friendly companion for our frontend web development course.
