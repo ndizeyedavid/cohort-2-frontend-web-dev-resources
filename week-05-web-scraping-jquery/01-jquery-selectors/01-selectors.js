@@ -1,6 +1,9 @@
-$('*').css('--selection', '#ff4d00');
-
 $(function () {
+    // Set the CSS variable on :root rather than on every element.
+    // $('*') would apply the change to all elements, which is wasteful
+    // and makes the intent unclear.
+    document.documentElement.style.setProperty('--selection', '#ff4d00');
+
     const cards = $('.course-card');
     const output = $('#selector-output');
     const count = $('#selected-count');
