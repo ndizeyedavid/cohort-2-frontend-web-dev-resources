@@ -609,4 +609,6 @@ Please do not add graded assessments, personal data, or content from another web
 
 ## License
 
-Free for anyone in our class to use, share, and adapt for learning purposes.
+Released under the [MIT License](LICENSE). Any classmate may reuse, adapt, and share this material for learning purposes.
+
+The practice websites in this repository are fictional and were created for teaching. Please respect the terms of any real website before scraping it.
