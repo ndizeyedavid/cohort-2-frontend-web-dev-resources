@@ -198,7 +198,7 @@ git push -u origin your-branch-name
 
 **Step 6: Open a pull request.**
 
-Go to your fork on GitHub, click **Compare and pull request**, and fill in the template below.
+Go to your fork on GitHub, click **Compare and pull request**. GitHub fills in the template from [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md) automatically. Keep the headings and delete any section that does not apply, then write a sentence or two under each one.
 
 **Step 7: Respond to review.**
 
@@ -206,30 +206,18 @@ If someone suggests a change, push new commits to the same branch. The pull requ
 
 ---
 
-## Pull Request Description Template
+## Pull Request Template
 
-Keep it short. Reviewers want to know what changed and why.
+The template lives at [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md) and appears automatically when you open a pull request. It asks for:
 
-```markdown
-## What I changed
+- **What I changed** and **Why**
+- **Type of change** and **Files touched**
+- **How I verified it**, as a checklist
+- **Week and concept** this belongs to
+- A **Checklist** confirming the contribution follows the rules below
+- **Related issue**, if there is one
 
-One or two sentences describing the change.
-
-## Why
-
-The reason this change helps a student.
-
-## How I verified it
-
-- [ ] Opened the affected files in a browser
-- [ ] Ran the affected Node examples
-- [ ] Checked that links resolve
-- [ ] Read my own diff
-
-## Related issue
-
-Closes #12, or "None"
-```
+Keep each answer short. Reviewers want to know what changed and how you confirmed it works.
 
 ---
 
