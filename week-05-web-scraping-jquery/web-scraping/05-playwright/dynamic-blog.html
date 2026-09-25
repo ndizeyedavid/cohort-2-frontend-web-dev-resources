@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Dispatch | Playwright Practice Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <p>Playwright practice fixture</p>
+        <h1>Async Dispatch</h1>
+        <p>Articles are generated after page load. A scraper must wait for the content and interact with the button.</p>
+    </header>
+
+    <main>
+        <p id="status" role="status">Loading initial reports...</p>
+        <section id="post-list" class="post-list" aria-live="polite"></section>
+        <button id="load-more" type="button">Load more reports</button>
+    </main>
+
+    <script src="demo.js"></script>
+</body>
+</html>

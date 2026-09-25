@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacktrace Journal | Independent Technology Coverage</title>
+    <meta name="description" content="A detailed local technology publication for web scraping practice.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="#top">
+            <span class="brand-mark">ST</span>
+            <span>Stacktrace<br>Journal</span>
+        </a>
+        <nav aria-label="Primary navigation">
+            <a href="#latest">Latest</a>
+            <a href="#topics">Topics</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+            <p class="kicker">Independent technology coverage</p>
+            <h1 id="hero-title">Read the system.<br>Understand the story.</h1>
+            <p>Long-form reporting for people who build, maintain, and question software.</p>
+            <div class="hero-stats" aria-label="Publication statistics">
+                <span><strong>12</strong> field reports</span>
+                <span><strong>5</strong> technology desks</span>
+                <span><strong>Weekly</strong> dispatches</span>
+            </div>
+        </section>
+
+        <section class="signal-strip" aria-label="Current topics">
+            <span>Now tracking</span>
+            <a href="#topic-ai">AI infrastructure</a>
+            <a href="#topic-web">Web engineering</a>
+            <a href="#topic-security">Security</a>
+            <a href="#topic-data">Data systems</a>
+        </section>
+
+        <section class="publication" aria-labelledby="latest-heading">
+            <div class="section-heading">
+                <div>
+                    <p class="kicker">Latest stories</p>
+                    <h2 id="latest-heading">The Stacktrace archive</h2>
+                </div>
+                <p>Every article below exposes stable classes and data attributes so scrapers can extract information without guessing.</p>
+            </div>
+
+            <div class="post-list" id="latest">
+                <article class="post featured" data-id="st-001" data-category="Artificial Intelligence" data-author="Nadia Uwimana" data-read-time="9 min" data-date="2026-09-24" data-score="98">
+                    <div class="post-index">01</div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Artificial Intelligence</span>
+                            <span>2026-09-24</span>
+                            <span>9 min read</span>
+                        </div>
+                        <h3 class="post-title"><a class="post-link" href="#article-001">The hidden cost of an always-on AI product</a></h3>
+                        <p class="post-excerpt">Inference bills do not tell the whole story. Teams are learning to measure retries, context growth, evaluation runs, and the human time spent supervising generated output.</p>
+                        <div class="post-footer">
+                            <span class="post-author">By Nadia Uwimana</span>
+                            <span class="tag-list"><span class="tag">LLM</span><span class="tag">Cost</span><span class="tag">Operations</span></span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post" data-id="st-002" data-category="Web Engineering" data-author="David Nizeye" data-read-time="7 min" data-date="2026-09-22" data-score="94">
+                    <div class="post-index">02</div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Web Engineering</span>
+                            <span>2026-09-22</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3 class="post-title"><a class="post-link" href="#article-002">Your scraper broke because the class name changed</a></h3>
+                        <p class="post-excerpt">A reliable extraction strategy separates content discovery from content interpretation, so a small frontend redesign does not destroy the whole data pipeline.</p>
+                        <div class="post-footer">
+                            <span class="post-author">By David Nizeye</span>
+                            <span class="tag-list"><span class="tag">Scraping</span><span class="tag">Selectors</span></span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post" data-id="st-003" data-category="Security" data-author="Ibrahim Mutesi" data-read-time="11 min" data-date="2026-09-19" data-score="97">
+                    <div class="post-index">03</div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Security</span>
+                            <span>2026-09-19</span>
+                            <span>11 min read</span>
+                        </div>
+                        <h3 class="post-title"><a class="post-link" href="#article-003">What dependency scanners miss</a></h3>
+                        <p class="post-excerpt">Known vulnerabilities dominate reports, but reachability, runtime behavior, and abandoned packages often create the real risk in a modern application.</p>
+                        <div class="post-footer">
+                            <span class="post-author">By Ibrahim Mutesi</span>
+                            <span class="tag-list"><span class="tag">Supply Chain</span><span class="tag">Node.js</span></span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post" data-id="st-004" data-category="Data Systems" data-author="Aline Habimana" data-read-time="8 min" data-date="2026-09-16" data-score="91">
+                    <div class="post-index">04</div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Data Systems</span>
+                            <span>2026-09-16</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3 class="post-title"><a class="post-link" href="#article-004">A database index is a promise about time</a></h3>
+                        <p class="post-excerpt">Indexes trade storage and write cost for faster reads. Understanding the promise means seeing how query planners turn table scans into targeted lookups.</p>
+                        <div class="post-footer">
+                            <span class="post-author">By Aline Habimana</span>
+                            <span class="tag-list"><span class="tag">SQL</span><span class="tag">Performance</span></span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post" data-id="st-005" data-category="Developer Tools" data-author="Merveille Iby'Rwiho" data-read-time="6 min" data-date="2026-09-12" data-score="89">
+                    <div class="post-index">05</div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Developer Tools</span>
+                            <span>2026-09-12</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3 class="post-title"><a class="post-link" href="#article-005">The terminal is an application programming interface</a></h3>
+                        <p class="post-excerpt">Small command-line tools become dependable when output is structured, errors are specific, and exit codes communicate whether automation should continue.</p>
+                        <div class="post-footer">
+                            <span class="post-author">By Merveille Iby'Rwiho</span>
+                            <span class="tag-list"><span class="tag">CLI</span><span class="tag">Automation</span></span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post" data-id="st-006" data-category="Web Engineering" data-author="Sandrine Umutoni" data-read-time="10 min" data-date="2026-09-08" data-score="93">
+                    <div class="post-index">06</div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Web Engineering</span>
+                            <span>2026-09-08</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3 class="post-title"><a class="post-link" href="#article-006">Accessibility is a data architecture problem</a></h3>
+                        <p class="post-excerpt">Semantic HTML, useful names, and predictable relationships are not decoration. They are the interface between an application and every user who depends on structure.</p>
+                        <div class="post-footer">
+                            <span class="post-author">By Sandrine Umutoni</span>
+                            <span class="tag-list"><span class="tag">HTML</span><span class="tag">A11y</span></span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post" data-id="st-007" data-category="Artificial Intelligence" data-author="Eric Mugabo" data-read-time="12 min" data-date="2026-09-04" data-score="96">
+                    <div class="post-index">07</div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Artificial Intelligence</span>
+                            <span>2026-09-04</span>
+                            <span>12 min read</span>
+                        </div>
+                        <h3 class="post-title"><a class="post-link" href="#article-007">RAG pipelines fail quietly</a></h3>
+                        <p class="post-excerpt">The demo can look accurate while chunking, freshness, ranking, and citations introduce errors that only appear under real user questions.</p>
+                        <div class="post-footer">
+                            <span class="post-author">By Eric Mugabo</span>
+                            <span class="tag-list"><span class="tag">RAG</span><span class="tag">Evaluation</span></span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post" data-id="st-008" data-category="Data Systems" data-author="Patrick Nsengimana" data-read-time="7 min" data-date="2026-08-31" data-score="88">
+                    <div class="post-index">08</div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Data Systems</span>
+                            <span>2026-08-31</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3 class="post-title"><a class="post-link" href="#article-008">ETL is a contract between changing systems</a></h3>
+                        <p class="post-excerpt">Schemas drift, timestamps disagree, and edge cases arrive without warning. A good pipeline makes those assumptions visible and testable.</p>
+                        <div class="post-footer">
+                            <span class="post-author">By Patrick Nsengimana</span>
+                            <span class="tag-list"><span class="tag">ETL</span><span class="tag">Data Quality</span></span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post" data-id="st-009" data-category="Security" data-author="Claudeine Mukamana" data-read-time="9 min" data-date="2026-08-27" data-score="92">
+                    <div class="post-index">09</div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Security</span>
+                            <span>2026-08-27</span>
+                            <span>9 min read</span>
+                        </div>
+                        <h3 class="post-title"><a class="post-link" href="#article-009">The browser is a hostile message bus</a></h3>
+                        <p class="post-excerpt">Cross-site scripting, insecure embeds, and unexpected browser extensions show why frontend security requires clear boundaries instead of a few blocked words.</p>
+                        <div class="post-footer">
+                            <span class="post-author">By Claudeine Mukamana</span>
+                            <span class="tag-list"><span class="tag">XSS</span><span class="tag">Browser</span></span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post" data-id="st-010" data-category="Developer Tools" data-author="Yves Iradukunda" data-read-time="5 min" data-date="2026-08-22" data-score="86">
+                    <div class="post-index">10</div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Developer Tools</span>
+                            <span>2026-08-22</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3 class="post-title"><a class="post-link" href="#article-010">Small scripts should fail loudly</a></h3>
+                        <p class="post-excerpt">Useful automation does not hide partial results. It validates inputs, reports the failing step, and returns a status the next tool can understand.</p>
+                        <div class="post-footer">
+                            <span class="post-author">By Yves Iradukunda</span>
+                            <span class="tag-list"><span class="tag">Node.js</span><span class="tag">Reliability</span></span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post" data-id="st-011" data-category="Web Engineering" data-author="Lydia Mukeshimana" data-read-time="8 min" data-date="2026-08-18" data-score="90">
+                    <div class="post-index">11</div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Web Engineering</span>
+                            <span>2026-08-18</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3 class="post-title"><a class="post-link" href="#article-011">CSS selectors are an API with a compatibility promise</a></h3>
+                        <p class="post-excerpt">Selecting by meaning rather than appearance keeps code resilient. IDs, stable attributes, and semantic relationships create more durable automation hooks.</p>
+                        <div class="post-footer">
+                            <span class="post-author">By Lydia Mukeshimana</span>
+                            <span class="tag-list"><span class="tag">CSS</span><span class="tag">Selectors</span></span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post" data-id="st-012" data-category="Data Systems" data-author="Fabrice Bizimana" data-read-time="10 min" data-date="2026-08-13" data-score="95">
+                    <div class="post-index">12</div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Data Systems</span>
+                            <span>2026-08-13</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3 class="post-title"><a class="post-link" href="#article-012">Streaming data needs boundaries</a></h3>
+                        <p class="post-excerpt">Backpressure, retries, idempotency, and dead-letter queues turn an endless stream into a system people can operate with confidence.</p>
+                        <div class="post-footer">
+                            <span class="post-author">By Fabrice Bizimana</span>
+                            <span class="tag-list"><span class="tag">Streams</span><span class="tag">Architecture</span></span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="topic-section" id="topics" aria-labelledby="topics-title">
+            <p class="kicker">Browse the desks</p>
+            <h2 id="topics-title">Topics represented in this archive</h2>
+            <div class="topic-grid" id="topic-ai">
+                <a href="#topic-ai"><strong>Artificial Intelligence</strong><span>2 stories</span></a>
+                <a href="#topic-web"><strong>Web Engineering</strong><span>3 stories</span></a>
+                <a href="#topic-security"><strong>Security</strong><span>2 stories</span></a>
+                <a href="#topic-data"><strong>Data Systems</strong><span>3 stories</span></a>
+                <a href="#topic-data"><strong>Developer Tools</strong><span>2 stories</span></a>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div>
+                <p class="kicker">About this practice site</p>
+                <h2>A safe target for learning.</h2>
+            </div>
+            <div>
+                <p>Stacktrace Journal is a fictional publication created for this class. It contains no tracking, no network requests, and no third-party content. Students can inspect the page, scrape the local file, and compare results without collecting data from anyone else's website.</p>
+                <p class="ethics-note">Always check a site's terms and permissions before collecting public data. Public visibility does not automatically mean unrestricted reuse.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Stacktrace Journal is a fictional educational website built for Week 05 scraping activities.</p>
+        <p>Last issue: 2026-09-24 | 12 articles | Local fixture</p>
+    </footer>
+</body>
+</html>

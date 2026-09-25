@@ -1,0 +1,13 @@
+{
+  "name": "week-05-cheerio-scraping",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cheerio scraping practice for the local Stacktrace Journal fixture",
+  "type": "commonjs",
+  "scripts": {
+    "scrape": "node scrape-with-cheerio.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2"
+  }
+}
