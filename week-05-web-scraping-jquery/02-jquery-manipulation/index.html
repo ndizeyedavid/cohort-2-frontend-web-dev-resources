@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Manipulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <p class="eyebrow">jQuery concept 02</p>
+        <h1>Change the page on purpose</h1>
+        <p>Read and update content, attributes, classes, CSS, and elements.</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <div class="section-label">Try each operation</div>
+            <div class="button-list">
+                <button id="change-text">Change text</button>
+                <button id="change-html">Add HTML</button>
+                <button id="change-attribute">Change attribute</button>
+                <button id="add-class">Add class</button>
+                <button id="toggle-class">Toggle class</button>
+                <button id="change-css">Change CSS</button>
+                <button id="add-element">Create element</button>
+                <button id="remove-element">Remove last item</button>
+            </div>
+        </section>
+
+        <section class="preview-card">
+            <div class="card-topline">
+                <span class="status" id="status">Live preview</span>
+                <code id="attribute-preview">data-state="ready"</code>
+            </div>
+            <h2 id="preview-title">Your first manipulation</h2>
+            <p id="preview-copy">This paragraph is a jQuery target. Try each button above and watch what changes.</p>
+            <div class="tag-area" id="tag-area">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+            </div>
+            <ul class="created-list" id="created-list">
+                <li>Original item</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="../shared/jquery-3.7.1.min.js"></script>
+    <script src="02-manipulation.js"></script>
+</body>
+</html>

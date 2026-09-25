@@ -24,7 +24,7 @@
 | **Week 02** | [Basic HTML and CSS](week-02-html-css-basics)      | HTML structure, forms, CSS Grid, responsive design, regex + JS validation |
 | **Week 03** | [Advanced HTML and CSS](week-03-html-css-ADVANCED) | Semantic HTML, lists, tables, pseudo-elements, Flexbox, Grid, transitions & animations |
 | **Week 04** | [JavaScript Deep Dive](week-04-javascript)         | Variables and scopes, data types, DOM manipulation, arrays and strings, objects, ES6 classes, functions, map / filter / reduce |
-| **Week 05** | Browser Debugging & Projects                       | Console debugging, advanced DOM API, bug-hunting challenges       |
+| **Week 05** | [jQuery and Web Scraping](week-05-web-scraping-jquery) | jQuery selectors, manipulation, method chaining, event handling, web scraping |
 
 > **Prerequisites flow:** Week 01 → Week 02 → Week 03 → Week 04 → Week 05
 
@@ -36,7 +36,7 @@
 - **[Week 02 — Basic HTML and CSS](week-02-html-css-basics)** — From raw HTML structure to styled, validated forms
 - **[Week 03 — Advanced HTML and CSS](week-03-html-css-ADVANCED)** — Semantic markup, tables, Flexbox, Grid, pseudo-elements, and motion
 - **[Week 04 — JavaScript Deep Dive](week-04-javascript)** — Variables, data types, DOM, arrays, objects, classes, functions, and map / filter / reduce
-- **Week 05 — Browser Debugging & Projects** — Debug like a pro and tackle capstone challenges
+- **[Week 05 - jQuery and Web Scraping](week-05-web-scraping-jquery)** - jQuery selectors, manipulation, chaining, events, and web scraping
 
 ---
 

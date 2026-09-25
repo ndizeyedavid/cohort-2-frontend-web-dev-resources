@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Selectors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <p class="eyebrow">jQuery concept 01</p>
+        <h1>Find the right element</h1>
+        <p>Use CSS-like selectors to identify one element or a group of elements.</p>
+    </header>
+
+    <main class="container">
+        <section class="demo">
+            <div class="demo-heading">
+                <div>
+                    <p class="eyebrow">Selector playground</p>
+                    <h2>One page, many ways to select</h2>
+                </div>
+                <span id="selected-count" class="count">0 selected</span>
+            </div>
+
+            <div class="selector-toolbar">
+                <button data-target="#featured-card">Select ID</button>
+                <button data-target=".course-card">Select class</button>
+                <button data-target="[data-level]">Select attribute</button>
+                <button data-target=".course-grid .course-card">Select nested</button>
+                <button data-target="button">Select tag</button>
+            </div>
+
+            <div class="course-grid" id="course-grid">
+                <article class="course-card featured" id="featured-card" data-level="beginner">
+                    <span class="level">Beginner</span>
+                    <h3>HTML Foundations</h3>
+                    <p>Build pages with meaningful structure.</p>
+                </article>
+                <article class="course-card" data-level="intermediate">
+                    <span class="level">Intermediate</span>
+                    <h3>CSS Layouts</h3>
+                    <p>Arrange content with Flexbox and Grid.</p>
+                </article>
+                <article class="course-card" data-level="advanced">
+                    <span class="level">Advanced</span>
+                    <h3>JavaScript Patterns</h3>
+                    <p>Build interactive browser experiences.</p>
+                </article>
+            </div>
+
+            <output id="selector-output" class="output">Choose a selector above.</output>
+        </section>
+    </main>
+
+    <script src="../shared/jquery-3.7.1.min.js"></script>
+    <script src="01-selectors.js"></script>
+</body>
+</html>

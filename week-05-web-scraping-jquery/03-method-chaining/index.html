@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Method Chaining</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <p class="eyebrow">jQuery concept 03</p>
+        <h1>One selection. Many actions.</h1>
+        <p>Most jQuery methods return the same collection, so you can connect them in a chain.</p>
+    </header>
+
+    <main class="container">
+        <section class="chain-demo">
+            <div class="demo-header">
+                <div>
+                    <p class="eyebrow">Update existing elements</p>
+                    <h2>One selection, three actions</h2>
+                </div>
+                <button id="run-chain">Run chain</button>
+            </div>
+
+            <div class="code-strip" aria-label="jQuery chain example">
+                <code>$('.chain-target').text('Updated!').addClass('is-complete').css('opacity', 1)</code>
+            </div>
+
+            <div class="chain-panel">
+                <p class="chain-step">Step 1: selected with the .chain-target class</p>
+                <h2 class="chain-target">Waiting for the button</h2>
+                <p class="chain-target">This text will be replaced by the chain.</p>
+                <p class="chain-result" id="chain-result">The chain has not run yet.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="../shared/jquery-3.7.1.min.js"></script>
+    <script src="03-chaining.js"></script>
+</body>
+</html>

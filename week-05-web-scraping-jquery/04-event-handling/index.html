@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Event Handling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <p class="eyebrow">jQuery concept 04</p>
+        <h1>Make the page respond</h1>
+        <p>Use <code>.on()</code> to connect user actions to jQuery behavior.</p>
+    </header>
+
+    <main class="container">
+        <section class="demo-grid">
+            <article class="demo-card">
+                <p class="eyebrow">Click event</p>
+                <h2>Count your clicks</h2>
+                <p>The same button can update several elements with one handler.</p>
+                <button class="count-button" id="count-button">Click me</button>
+                <p class="event-output" id="click-output">No clicks yet.</p>
+            </article>
+
+            <article class="demo-card">
+                <p class="eyebrow">Change event</p>
+                <h2>Read a select value</h2>
+                <label for="mood-select">Choose a mood</label>
+                <select id="mood-select">
+                    <option value="">Choose one</option>
+                    <option value="curious">Curious</option>
+                    <option value="focused">Focused</option>
+                    <option value="ready">Ready to build</option>
+                </select>
+                <p class="event-output" id="mood-output">Waiting for a choice.</p>
+            </article>
+
+            <article class="demo-card event-log-card">
+                <p class="eyebrow">Event object</p>
+                <h2>What did the browser send?</h2>
+                <p>Every handler receives an event object with useful information.</p>
+                <button id="inspect-button">Inspect click event</button>
+                <pre id="event-output">Click the button to inspect event.type and event.which.</pre>
+            </article>
+        </section>
+
+        <section class="delegation-demo">
+            <p class="eyebrow">Event delegation</p>
+            <h2>One handler for future items</h2>
+            <p>Add new buttons, then click them. The handler is attached to the parent, not each button.</p>
+            <div class="button-rack" id="button-rack">
+                <button class="dynamic-button" data-message="First dynamic button">Button 1</button>
+                <button class="dynamic-button" data-message="Second dynamic button">Button 2</button>
+            </div>
+            <button class="add-button" id="add-button">Add another button</button>
+            <p class="event-output" id="delegation-output">Try any button in the rack.</p>
+        </section>
+    </main>
+
+    <script src="../shared/jquery-3.7.1.min.js"></script>
+    <script src="04-events.js"></script>
+</body>
+</html>

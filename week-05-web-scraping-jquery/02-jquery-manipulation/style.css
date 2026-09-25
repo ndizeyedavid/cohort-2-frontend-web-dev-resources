@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --ink: #172033;
+    --muted: #697386;
+    --paper: #fffaf3;
+    --card: #ffffff;
+    --line: #e5dfd4;
+    --accent: #d94841;
+    --highlight: #fff1b8;
+}
+
+body {
+    margin: 0;
+    padding: 32px 20px 56px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.5;
+}
+
+.page-header,
+.container {
+    width: min(900px, 100%);
+    margin: 0 auto;
+}
+
+.page-header {
+    padding: 12px 0 28px;
+}
+
+.eyebrow,
+.section-label,
+.status,
+code,
+.button-list button {
+    font-family: 'Courier New', monospace;
+}
+
+.eyebrow,
+.section-label {
+    color: var(--accent);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+h1 {
+    max-width: 650px;
+    margin: 0 0 10px;
+    font-size: clamp(2.5rem, 7vw, 5.2rem);
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+}
+
+.page-header > p:last-child {
+    max-width: 540px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 18px;
+}
+
+.control-panel,
+.preview-card {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--card);
+}
+
+.control-panel {
+    align-self: start;
+    padding: 18px;
+}
+
+.section-label {
+    margin-bottom: 12px;
+}
+
+.button-list {
+    display: grid;
+    gap: 8px;
+}
+
+.button-list button {
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--ink);
+    cursor: pointer;
+    text-align: left;
+}
+
+.button-list button:hover,
+.button-list button:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.preview-card {
+    min-height: 360px;
+    padding: 28px;
+    transition: background 200ms ease, padding 200ms ease, transform 200ms ease;
+}
+
+.preview-card.is-highlighted {
+    background: var(--highlight);
+}
+
+.preview-card.is-compact {
+    padding: 18px;
+    transform: scale(0.98);
+}
+
+.card-topline {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.status {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+code {
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+.preview-card h2 {
+    margin-bottom: 12px;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.preview-card p {
+    color: var(--muted);
+}
+
+.tag-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 24px 0;
+}
+
+.tag {
+    padding: 6px 10px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    font: 0.75rem 'Courier New', monospace;
+}
+
+.created-list {
+    padding-left: 20px;
+}
+
+.created-list li {
+    margin: 6px 0;
+}
+
+.created-list .new-item {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+@media (max-width: 700px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}

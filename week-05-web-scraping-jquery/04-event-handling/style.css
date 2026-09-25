@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --ink: #201b16;
+    --muted: #746b61;
+    --paper: #f3efe8;
+    --card: #fffdf8;
+    --line: #dcd2c4;
+    --red: #bc4749;
+    --green: #577590;
+    --yellow: #f2cc8f;
+}
+
+body {
+    margin: 0;
+    padding: 32px 20px 56px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Trebuchet MS", system-ui, sans-serif;
+    line-height: 1.5;
+}
+
+.page-header,
+.container {
+    width: min(1000px, 100%);
+    margin: 0 auto;
+}
+
+.page-header {
+    padding: 12px 0 28px;
+}
+
+.eyebrow,
+code,
+pre {
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--red);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+h1 {
+    max-width: 700px;
+    margin: 0 0 10px;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+.page-header > p:last-child {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.demo-card,
+.delegation-demo {
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--card);
+}
+
+.demo-card h2,
+.delegation-demo h2 {
+    margin-bottom: 10px;
+    font-size: 1.35rem;
+}
+
+.demo-card p,
+.delegation-demo p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+button,
+select {
+    padding: 10px 12px;
+    border: 1px solid var(--ink);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+    background: var(--yellow);
+}
+
+label {
+    display: block;
+    margin: 18px 0 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+select {
+    width: 100%;
+}
+
+.event-output {
+    min-height: 24px;
+    margin-top: 18px !important;
+    color: var(--red) !important;
+    font-family: ui-monospace, monospace;
+    font-size: 0.8rem !important;
+}
+
+pre {
+    min-height: 100px;
+    margin: 18px 0 0;
+    padding: 12px;
+    border-radius: 6px;
+    background: var(--ink);
+    color: #e9f1f5;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.delegation-demo {
+    margin-top: 14px;
+    background: #e8f0f3;
+    border-color: #bdd0d9;
+}
+
+.button-rack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0 12px;
+}
+
+.add-button {
+    background: var(--green);
+    color: #fff;
+}
+
+@media (max-width: 800px) {
+    .demo-grid {
+        grid-template-columns: 1fr;
+    }
+}

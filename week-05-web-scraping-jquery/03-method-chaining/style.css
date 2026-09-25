@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --ink: #102a43;
+    --muted: #627d98;
+    --paper: #eef7fb;
+    --card: #ffffff;
+    --line: #c7dce8;
+    --blue: #1f6f8b;
+    --yellow: #ffd166;
+}
+
+body {
+    margin: 0;
+    padding: 32px 20px 56px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Trebuchet MS", system-ui, sans-serif;
+    line-height: 1.5;
+}
+
+.page-header,
+.container {
+    width: min(980px, 100%);
+    margin: 0 auto;
+}
+
+.page-header {
+    padding: 12px 0 30px;
+}
+
+.eyebrow,
+.code-strip,
+.card-number {
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--blue);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+h1 {
+    max-width: 700px;
+    margin: 0 0 10px;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+.page-header > p:last-child {
+    max-width: 600px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.chain-demo {
+    padding: 26px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 12px 12px 0 var(--yellow);
+}
+
+.demo-header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.demo-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#run-chain {
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--blue);
+    color: #fff;
+    cursor: pointer;
+    font: 700 0.85rem ui-monospace, monospace;
+    white-space: nowrap;
+}
+
+#run-chain:hover,
+#run-chain:focus-visible {
+    background: #15516a;
+}
+
+.code-strip {
+    overflow-x: auto;
+    margin: 24px 0;
+    padding: 16px;
+    border-radius: 8px;
+    background: #102a43;
+    color: #d9f0ff;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.chain-panel {
+    padding: 24px;
+    border: 2px dashed var(--line);
+    border-radius: 12px;
+    background: #f8fdff;
+}
+
+.chain-step,
+.chain-result {
+    color: var(--muted);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.8rem;
+}
+
+.chain-panel h2 {
+    margin: 20px 0 8px;
+    font-size: 2rem;
+}
+
+.chain-panel p {
+    margin: 8px 0;
+}
+
+.chain-target {
+    opacity: 0.45;
+    transition: opacity 180ms ease, color 180ms ease;
+}
+
+.chain-target.is-complete {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.chain-result {
+    margin-top: 24px !important;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+}
+
+@media (max-width: 640px) {
+    .demo-header {
+        flex-direction: column;
+    }
+}
