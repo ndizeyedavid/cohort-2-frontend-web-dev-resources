@@ -544,6 +544,25 @@ Shorthand: `transition: background-color 0.3s ease 0s;` - property, duration, ea
 
 **Hint:** Use `transform` and `opacity` for animations - they are GPU-accelerated and stay smooth at 60fps. Avoid animating `width`, `height`, `top`, or `left` for large elements, as those trigger layout recalculation and can feel janky.
 
+**Accessibility: respect reduced motion.** Some people get dizzy or nauseous from moving content. Operating systems let visitors request less motion, and your CSS should listen. The `animations/main.css` file ends with:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  .pulse,
+  .bounce,
+  .spinner {
+    animation: none;
+  }
+
+  .btn-transition,
+  .lift-card {
+    transition: none;
+  }
+}
+```
+
+Note that the infinite loops are switched off completely rather than made faster. A faster infinite bounce is still an infinite bounce. Test it by turning on Reduce Motion in your operating system settings and reloading the page.
+
 ---
 
 ## 8 - Extra Projects - Putting It All Together

@@ -323,3 +323,22 @@ body {
     border-top: 1px solid #222;
     margin-top: 8px;
 }
+
+/* Respect a visitor who asks the operating system to reduce motion.
+   The neon flicker is a repeating light effect, so it is turned off
+   and replaced with a steady glow. */
+@media (prefers-reduced-motion: reduce) {
+    .neon {
+        animation: none;
+    }
+
+    .item,
+    .lift {
+        transition: none;
+    }
+
+    .item:hover,
+    .lift:hover {
+        transform: none;
+    }
+}

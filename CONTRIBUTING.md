@@ -324,6 +324,7 @@ If you add a new example that runs under Node, add it to the checks so future st
 - Name classes after purpose, such as `.form-field`, not appearance, such as `.box-2`.
 - Use Flexbox for one-dimensional layout and Grid for two-dimensional layout.
 - Keep animations on `transform` and `opacity` for smooth performance.
+- Add a `@media (prefers-reduced-motion: reduce)` block to any stylesheet that animates. Switch off infinite loops entirely rather than just speeding them up.
 - Include a responsive breakpoint for anything that must work on a phone.
 
 **JavaScript**

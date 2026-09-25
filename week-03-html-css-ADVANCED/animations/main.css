@@ -194,3 +194,29 @@ code {
   border-radius: 4px;
   font-size: 13px;
 }
+
+/* Respect a visitor who asks the operating system to reduce motion.
+   The infinite loops (pulse, bounce, spin) are the biggest problem,
+   so they are switched off completely instead of being made faster. */
+@media (prefers-reduced-motion: reduce) {
+  .pulse,
+  .bounce,
+  .spinner {
+    animation: none;
+  }
+
+  .slide-box {
+    animation: none;
+    opacity: 1;
+  }
+
+  .btn-transition,
+  .lift-card {
+    transition: none;
+  }
+
+  .btn-transition:hover,
+  .lift-card:hover {
+    transform: none;
+  }
+}
