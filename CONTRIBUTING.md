@@ -98,6 +98,13 @@ The same fix may already exist in another week folder or on another branch.
 
 If you plan to add a new week, a new activity, or a large restructure, discuss it before writing the code. A ten-minute conversation saves a wasted afternoon.
 
+Use the issue forms provided by the repository:
+
+- **Bug report** for something that is broken, wrong, or missing
+- **New activity suggestion** for a concept or exercise you would like to see
+
+If neither form fits, open a blank discussion instead.
+
 ---
 
 ## Setting Up the Repository

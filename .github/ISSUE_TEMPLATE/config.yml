@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or idea (not a bug)
+    url: https://github.com/ndizeyedavid/cohort-2-frontend-web-dev-resources/discussions
+    about: Ask about the material, share a study tip, or propose a learning idea.
