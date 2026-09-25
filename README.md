@@ -26,6 +26,7 @@ You do not need to be in the class to use this. If you are learning frontend dev
 - [Troubleshooting](#troubleshooting)
 - [Frequently Asked Questions](#frequently-asked-questions)
 - [Contributing](#contributing)
+- [Contributing Guidelines](CONTRIBUTING.md)
 - [Project Structure](#project-structure)
 - [Resources](#resources)
 - [License](#license)
@@ -471,6 +472,10 @@ Open an issue or send a message to the class representative. Fixing the document
 ## Contributing
 
 This is a shared class resource. If you found a clearer explanation, fixed an error, or have a helpful tip, contributions are welcome.
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. It explains what a useful contribution looks like, how to set up the repository, naming and commit conventions, documentation and code standards, and what we will not accept.
+
+In short:
 
 1. Fork the repository.
 2. Create a branch with a clear name.
