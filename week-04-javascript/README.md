@@ -1,11 +1,10 @@
 # Week 04 - JavaScript Deep Dive
 
 **Prerequisites:** Week 03 - Advanced HTML and CSS
-**Assessment:** Non-graded practice - this is where your pages become interactive.
 
 In Week 03 you learned to build any layout. This week you learn to make it respond: storing values, choosing types, selecting elements, and transforming data. The first three folders cover the basics. The next five go a bit more advanced but are still explained step by step.
 
-> All code is plain JavaScript. Each folder is self-contained. Folders 01, 02, 04, 05, 06, 07, and 08 run with Node (`node main.js`). Folder 03 needs a browser because it touches the DOM (open `index.html`).
+> All code is plain JavaScript. Each folder is self-contained. Folders 01, 02, 04, 05, 06, 07, and 08 run with Node (each file runs on its own, e.g. `node 01-var-let-const.js`). Folder 03 needs a browser because it touches the DOM (open `index.html`).
 
 ---
 
@@ -13,22 +12,29 @@ In Week 03 you learned to build any layout. This week you learn to make it respo
 
 | # | Folder | Files | What You Learn | How to Run |
 |---|--------|-------|----------------|------------|
-| 1 | [01-variables-and-scopes](01-variables-and-scopes) | `main.js` | `var` vs `let` vs `const`, block scope, function scope, global scope, hoisting, Temporal Dead Zone | `node main.js` |
-| 2 | [02-data-types](02-data-types) | `main.js` | Primitive vs reference types, `typeof`, coercion, `==` vs `===`, truthy and falsy | `node main.js` |
-| 3 | [03-dom-manipulation](03-dom-manipulation) | `index.html` + `style.css` + `main.js` | Selecting elements, `textContent` vs `innerHTML` vs `value`, style and classes, creating elements | Open `index.html` in browser |
-| 4 | [04-array-and-string-methods](04-array-and-string-methods) | `main.js` | Arrays (`push`, `slice`, `splice`, `sort`) and strings (`trim`, `replace`, `split`, `padStart`) | `node main.js` |
-| 5 | [05-objects](05-objects) | `main.js` | Object literals, nested objects, methods, `this`, destructuring, spread | `node main.js` |
-| 6 | [06-es6-classes](06-es6-classes) | `main.js` | Classes, constructor, getters and setters, static, inheritance with `extends` and `super` | `node main.js` |
-| 7 | [07-functions](07-functions) | `main.js` | Normal functions, function expressions, arrow functions, `this` and `arguments`, rest and spread, callbacks | `node main.js` |
-| 8 | [08-map-filter-reduce](08-map-filter-reduce) | `main.js` | `map`, `filter`, `reduce`, chaining them together | `node main.js` |
+| 1 | [01-variables-and-scopes](01-variables-and-scopes) | `01-var-let-const.js` · `02-block-scope.js` · `03-function-and-global-scope.js` · `04-hoisting-and-tdz.js` | `var` vs `let` vs `const`, block scope, function scope, global scope, hoisting, Temporal Dead Zone | `node 01-var-let-const.js` etc |
+| 2 | [02-data-types](02-data-types) | `01-primitive-types.js` · `02-reference-types.js` · `03-typeof-and-checks.js` · `04-coercion-and-equality.js` · `05-truthy-falsy-and-templates.js` | Primitive vs reference types, `typeof`, coercion, `==` vs `===`, truthy and falsy | `node 01-primitive-types.js` etc |
+| 3 | [03-dom-manipulation](03-dom-manipulation) | `index.html` + `style.css` + `01-selecting-elements.js` · `02-modifying-text.js` · `03-modifying-value.js` · `04-style-and-classes.js` · `05-creating-elements.js` | Selecting elements, `textContent` vs `innerHTML` vs `value`, style and classes, creating elements | Open `index.html` in browser |
+| 4 | [04-array-and-string-methods](04-array-and-string-methods) | `01-arrays-adding-removing.js` · `02-arrays-slice-splice.js` · `03-arrays-search-sort.js` · `04-strings.js` | Arrays (`push`, `slice`, `splice`, `sort`) and strings (`trim`, `replace`, `split`, `padStart`) | `node 01-arrays-adding-removing.js` etc |
+| 5 | [05-objects](05-objects) | `01-creating-and-accessing.js` · `02-methods-and-this.js` · `03-nested-objects.js` · `04-destructuring-and-spread.js` · `05-checks-and-example.js` | Object literals, nested objects, methods, `this`, destructuring, spread | `node 01-creating-and-accessing.js` etc |
+| 6 | [06-es6-classes](06-es6-classes) | `01-basic-class.js` · `02-getters-setters.js` · `03-static.js` · `04-inheritance.js` · `05-private-fields.js` | Classes, constructor, getters and setters, static, inheritance with `extends` and `super` | `node 01-basic-class.js` etc |
+| 7 | [07-functions](07-functions) | `01-declaration.js` · `02-expression.js` · `03-arrow.js` · `04-this-and-arguments.js` · `05-rest-spread-callbacks.js` | Normal functions, function expressions, arrow functions, `this` and `arguments`, rest and spread, callbacks | `node 01-declaration.js` etc |
+| 8 | [08-map-filter-reduce](08-map-filter-reduce) | `01-map.js` · `02-filter.js` · `03-reduce.js` · `04-chaining.js` | `map`, `filter`, `reduce`, chaining them together | `node 01-map.js` etc |
 
 ---
 
-## 01 - Variables and Variable Scopes with `01-variables-and-scopes/main.js`
+## 01 - Variables and Variable Scopes
 
-**Run:** `node main.js` from inside the folder.
+**Run:** each file on its own, e.g. `node 01-var-let-const.js` from inside the folder.
 
-**File:** [`01-variables-and-scopes/main.js`](01-variables-and-scopes/main.js)
+**Files:**
+
+| File | Concept |
+|------|---------|
+| [`01-var-let-const.js`](01-variables-and-scopes/01-var-let-const.js) | `var` vs `let` vs `const` |
+| [`02-block-scope.js`](01-variables-and-scopes/02-block-scope.js) | Block scope and loop scope |
+| [`03-function-and-global-scope.js`](01-variables-and-scopes/03-function-and-global-scope.js) | Function scope and global scope |
+| [`04-hoisting-and-tdz.js`](01-variables-and-scopes/04-hoisting-and-tdz.js) | Hoisting and Temporal Dead Zone |
 
 This folder answers: what is the difference between `var`, `let`, and `const`, and what does scope mean?
 
@@ -53,11 +59,19 @@ This folder answers: what is the difference between `var`, `let`, and `const`, a
 
 ---
 
-## 02 - Variable Data Types with `02-data-types/main.js`
+## 02 - Variable Data Types
 
-**Run:** `node main.js`
+**Run:** each file on its own, e.g. `node 01-primitive-types.js` from inside the folder.
 
-**File:** [`02-data-types/main.js`](02-data-types/main.js)
+**Files:**
+
+| File | Concept |
+|------|---------|
+| [`01-primitive-types.js`](02-data-types/01-primitive-types.js) | String, number, bigint, boolean, undefined, null, symbol |
+| [`02-reference-types.js`](02-data-types/02-reference-types.js) | Object, array, function, date and reference copying |
+| [`03-typeof-and-checks.js`](02-data-types/03-typeof-and-checks.js) | `typeof` cheat sheet and proper checks (`Array.isArray`, `Number.isNaN`) |
+| [`04-coercion-and-equality.js`](02-data-types/04-coercion-and-equality.js) | Coercion, explicit conversion, `==` vs `===` |
+| [`05-truthy-falsy-and-templates.js`](02-data-types/05-truthy-falsy-and-templates.js) | Truthy and falsy, template literals |
 
 Covers every type you will use in this course.
 
@@ -99,7 +113,17 @@ Covers every type you will use in this course.
 
 **Run:** Open `index.html` in the browser. Open DevTools Console (F12) for logs.
 
-**Files:** [`index.html`](03-dom-manipulation/index.html) + [`style.css`](03-dom-manipulation/style.css) + [`main.js`](03-dom-manipulation/main.js)
+**Files:** [`index.html`](03-dom-manipulation/index.html) + [`style.css`](03-dom-manipulation/style.css) + 5 JS files:
+
+| File | Concept |
+|------|---------|
+| [`01-selecting-elements.js`](03-dom-manipulation/01-selecting-elements.js) | `getElementById`, `querySelector`, `querySelectorAll` |
+| [`02-modifying-text.js`](03-dom-manipulation/02-modifying-text.js) | `textContent` vs `innerHTML` |
+| [`03-modifying-value.js`](03-dom-manipulation/03-modifying-value.js) | `value` for inputs |
+| [`04-style-and-classes.js`](03-dom-manipulation/04-style-and-classes.js) | `style` and `classList` |
+| [`05-creating-elements.js`](03-dom-manipulation/05-creating-elements.js) | `createElement` and `appendChild` |
+
+All 5 JS files are loaded by `index.html` automatically.
 
 This is the only folder that needs a browser because it touches the Document Object Model. The HTML provides targets, the JS selects and modifies them.
 
@@ -144,11 +168,18 @@ The next five folders build on the basics. They are still beginner friendly, jus
 
 ---
 
-## 04 - Arrays and String Methods with `04-array-and-string-methods/main.js`
+## 04 - Arrays and String Methods
 
-**Run:** `node main.js`
+**Run:** each file on its own, e.g. `node 01-arrays-adding-removing.js` from inside the folder.
 
-**File:** [`04-array-and-string-methods/main.js`](04-array-and-string-methods/main.js)
+**Files:**
+
+| File | Concept |
+|------|---------|
+| [`01-arrays-adding-removing.js`](04-array-and-string-methods/01-arrays-adding-removing.js) | `push`, `pop`, `shift`, `unshift` |
+| [`02-arrays-slice-splice.js`](04-array-and-string-methods/02-arrays-slice-splice.js) | `slice` vs `splice` |
+| [`03-arrays-search-sort.js`](04-array-and-string-methods/03-arrays-search-sort.js) | `indexOf`, `find`, `join`, `sort`, `concat`, spread and destructuring |
+| [`04-strings.js`](04-array-and-string-methods/04-strings.js) | `trim`, case, search, extracting, replacing, padding, template literals |
 
 Two groups, one file, because you often use them together (e.g., `csv.split(",").map(...).join(" | ")`).
 
@@ -187,11 +218,19 @@ Two groups, one file, because you often use them together (e.g., `csv.split(",")
 
 ---
 
-## 05 - Objects with `05-objects/main.js`
+## 05 - Objects
 
-**Run:** `node main.js`
+**Run:** each file on its own, e.g. `node 01-creating-and-accessing.js` from inside the folder.
 
-**File:** [`05-objects/main.js`](05-objects/main.js)
+**Files:**
+
+| File | Concept |
+|------|---------|
+| [`01-creating-and-accessing.js`](05-objects/01-creating-and-accessing.js) | Creating, accessing, adding, updating, deleting |
+| [`02-methods-and-this.js`](05-objects/02-methods-and-this.js) | Methods and `this` (including arrow pitfall) |
+| [`03-nested-objects.js`](05-objects/03-nested-objects.js) | Nested objects, optional chaining, `Object.keys`/`values`/`entries` |
+| [`04-destructuring-and-spread.js`](05-objects/04-destructuring-and-spread.js) | Destructuring and spread |
+| [`05-checks-and-example.js`](05-objects/05-checks-and-example.js) | Checking properties and student records example |
 
 **What the file covers:**
 
@@ -216,11 +255,19 @@ Two groups, one file, because you often use them together (e.g., `csv.split(",")
 
 ---
 
-## 06 - ES6 Classes with `06-es6-classes/main.js`
+## 06 - ES6 Classes
 
-**Run:** `node main.js`
+**Run:** each file on its own, e.g. `node 01-basic-class.js` from inside the folder.
 
-**File:** [`06-es6-classes/main.js`](06-es6-classes/main.js)
+**Files:**
+
+| File | Concept |
+|------|---------|
+| [`01-basic-class.js`](06-es6-classes/01-basic-class.js) | Basic class and constructor |
+| [`02-getters-setters.js`](06-es6-classes/02-getters-setters.js) | Getters and setters |
+| [`03-static.js`](06-es6-classes/03-static.js) | Static methods and properties |
+| [`04-inheritance.js`](06-es6-classes/04-inheritance.js) | Inheritance with `extends` and `super` (includes BankAccount example) |
+| [`05-private-fields.js`](06-es6-classes/05-private-fields.js) | Private fields with `#` |
 
 Classes are templates for creating objects with shared structure and behavior.
 
@@ -246,11 +293,19 @@ Classes are templates for creating objects with shared structure and behavior.
 
 ---
 
-## 07 - Functions with `07-functions/main.js`
+## 07 - Functions
 
-**Run:** `node main.js`
+**Run:** each file on its own, e.g. `node 01-declaration.js` from inside the folder.
 
-**File:** [`07-functions/main.js`](07-functions/main.js)
+**Files:**
+
+| File | Concept |
+|------|---------|
+| [`01-declaration.js`](07-functions/01-declaration.js) | Function declaration and default parameters |
+| [`02-expression.js`](07-functions/02-expression.js) | Function expression |
+| [`03-arrow.js`](07-functions/03-arrow.js) | Arrow functions |
+| [`04-this-and-arguments.js`](07-functions/04-this-and-arguments.js) | Hoisting, `this` and `arguments` |
+| [`05-rest-spread-callbacks.js`](07-functions/05-rest-spread-callbacks.js) | Rest, spread, and callbacks |
 
 Three ways to write a function, and when to use each.
 
@@ -280,11 +335,18 @@ Three ways to write a function, and when to use each.
 
 ---
 
-## 08 - Array Map, Filter, Reduce with `08-map-filter-reduce/main.js`
+## 08 - Array Map, Filter, Reduce
 
-**Run:** `node main.js`
+**Run:** each file on its own, e.g. `node 01-map.js` from inside the folder.
 
-**File:** [`08-map-filter-reduce/main.js`](08-map-filter-reduce/main.js)
+**Files:**
+
+| File | Concept |
+|------|---------|
+| [`01-map.js`](08-map-filter-reduce/01-map.js) | `map` |
+| [`02-filter.js`](08-map-filter-reduce/02-filter.js) | `filter` |
+| [`03-reduce.js`](08-map-filter-reduce/03-reduce.js) | `reduce` |
+| [`04-chaining.js`](08-map-filter-reduce/04-chaining.js) | Chaining `map` + `filter` + `reduce` and other methods |
 
 The three most important array methods. Together they replace most `for` loops.
 
@@ -344,13 +406,16 @@ Each step returns a new array, next step operates on it. Clean and chainable.
 
 ```bash
 cd week-04-javascript/01-variables-and-scopes
-node main.js
+node 01-var-let-const.js
+node 02-block-scope.js
+# each file runs on its own
 
 # or from repo root
-node week-04-javascript/02-data-types/main.js
+node week-04-javascript/02-data-types/01-primitive-types.js
+node week-04-javascript/08-map-filter-reduce/01-map.js
 ```
 
-Each file prints to the console. Read the output alongside the code.
+Each file prints to the console. Run them one by one and read the output alongside the code. Each file focuses on one concept so you can study in small steps.
 
 **With Browser (folder 03):**
 
@@ -459,4 +524,4 @@ W3Schools is recommended because every page has a live Try it Yourself editor.
 
 ## Next Up
 
-After Week 04 you will be ready for Week 05 and beyond. Keep practicing by rebuilding each `main.js` from memory without looking, then compare.
+After Week 04 you will be ready for Week 05 and beyond. Keep practicing by rebuilding each file from memory without looking, then compare.
