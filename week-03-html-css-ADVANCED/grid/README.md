@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # CSS Grid
 
 Four two-dimensional layouts. The named-areas demo is the one to copy when you want to rearrange a whole page later.
@@ -29,3 +31,7 @@ Swap `auto-fit` for `auto-fill` in the gallery and compare. One stretches items,
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 03 guide](../README.md)
+
+---
+
+[Back to top](#top)

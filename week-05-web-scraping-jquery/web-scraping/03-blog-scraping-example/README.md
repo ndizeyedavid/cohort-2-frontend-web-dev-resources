@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Blog Scraping Example
 
 A complete extraction of the practice publication into structured records, with category counts and summary statistics.
@@ -27,3 +29,7 @@ Change the script to print only the articles in the `Web Engineering` category, 
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Web Scraping Guide](../README.md)
+
+---
+
+[Back to top](#top)

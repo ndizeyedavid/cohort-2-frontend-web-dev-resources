@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Shared jQuery Library
 
 A local copy of jQuery 3.7.1 so every jQuery activity works without an internet connection.
@@ -26,3 +28,7 @@ Replace the local path with `https://code.jquery.com/jquery-3.7.1.min.js` in one
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 05 guide](../README.md)
+
+---
+
+[Back to top](#top)

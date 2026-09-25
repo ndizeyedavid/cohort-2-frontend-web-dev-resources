@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Applying Regex: HTML, CSS and JS
 
 Structure, styling, and validation combined. The form is the same one from the earlier activities, now with regex validation using the patterns from Week 01.
@@ -29,3 +31,7 @@ Submit the form with a valid Rwanda phone number typed with spaces, then with a 
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 02 guide](../README.md)
+
+---
+
+[Back to top](#top)

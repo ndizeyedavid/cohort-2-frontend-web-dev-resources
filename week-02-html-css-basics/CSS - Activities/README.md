@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # CSS Activities
 
 The same registration form as the HTML activity, now styled. Open both files side by side to see how much CSS changes without touching the content.
@@ -29,3 +31,7 @@ Change the value of `--primary` in `:root` and watch every button update at once
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 02 guide](../README.md)
+
+---
+
+[Back to top](#top)

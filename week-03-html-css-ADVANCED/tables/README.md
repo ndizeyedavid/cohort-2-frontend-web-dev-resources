@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Data Tables
 
 A full weekly class timetable. This is the practical follow-up to the table extra in Week 02, using proper header sections.
@@ -27,3 +29,7 @@ Add `scope="col"` to each header cell, then open the page with a screen reader t
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 03 guide](../README.md)
+
+---
+
+[Back to top](#top)

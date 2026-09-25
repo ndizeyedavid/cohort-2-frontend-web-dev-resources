@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Variable Data Types
 
 Every type you will meet in the course, plus the coercion and comparison rules that cause the most confusion.
@@ -32,3 +34,7 @@ Add `[]` and `{}` to the truthy list in file 05 and confirm that an empty array 
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 04 guide](../README.md)
+
+---
+
+[Back to top](#top)

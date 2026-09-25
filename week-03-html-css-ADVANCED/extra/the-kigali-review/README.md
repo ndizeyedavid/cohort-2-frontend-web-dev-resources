@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # The Kigali Review
 
 A newspaper front page laid out entirely with named Grid areas. Rearranging the page means editing one line of CSS.
@@ -29,3 +31,7 @@ Swap the `"a b c"` row for `"c b a"` in `grid-template-areas` and reload. Three 
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 03 practice projects](../../README.md)
+
+---
+
+[Back to top](#top)

@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # ES6 Classes
 
 Classes as blueprints for related objects, ending with a bank account example that uses nearly every class feature together.
@@ -32,3 +34,7 @@ In file 04, add a `closeAccount()` method to `BankAccount` and call `savings.clo
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 04 guide](../README.md)
+
+---
+
+[Back to top](#top)

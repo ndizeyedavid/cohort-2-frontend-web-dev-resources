@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 name: Bug report
 description: Something in the repository is broken or wrong
 title: "[Bug] "
@@ -83,3 +85,7 @@ body:
           required: false
         - label: I am not asking for graded assessment content to be added
           required: true
+
+---
+
+[Back to top](#top)

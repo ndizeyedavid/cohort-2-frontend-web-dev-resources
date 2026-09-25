@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Week 01 - Regular Expressions
 
 **Prerequisites:** None - this is our starting week.
@@ -251,3 +253,7 @@ Tick a box when you can do the task without looking at the file.
 - [ ] I can explain what a positive lookahead such as `(?=...)` does
 - [ ] I can debug a broken pattern by isolating one small part at a time
 - [ ] I can test a pattern in regex101 before using it in code
+
+---
+
+[Back to top](#top)

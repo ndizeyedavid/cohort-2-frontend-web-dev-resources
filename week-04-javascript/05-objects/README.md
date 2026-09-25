@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Objects
 
 Objects, how to read and change them, and the two features that save the most typing: destructuring and spread.
@@ -32,3 +34,7 @@ In file 04, merge two objects with spread, then change a nested property in the 
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 04 guide](../README.md)
+
+---
+
+[Back to top](#top)

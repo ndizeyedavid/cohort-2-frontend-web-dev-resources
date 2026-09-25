@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Week 02 - Basic HTML and CSS
 
 **Prerequisites:** Week 01 - Regular Expressions
@@ -528,3 +530,7 @@ Week 03 will extend these fundamentals with more advanced HTML and CSS. Until th
 - [ ] I can validate a form field with a regex in JavaScript
 - [ ] I can show and clear an inline error message
 - [ ] I can build a table with `<thead>`, `<tbody>`, and `colspan`
+
+---
+
+[Back to top](#top)

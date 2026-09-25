@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Playwright Dynamic Scraping Setup
 
 This folder shows how Playwright can open a real Chromium browser, wait for JavaScript-generated content, click a button, and extract the newly rendered articles.
@@ -113,3 +115,7 @@ Use Playwright when a page requires:
 - screenshots, PDFs, or browser testing
 
 Use a normal HTTP request with Cheerio when the required content already exists in the initial HTML response.
+
+---
+
+[Back to top](#top)

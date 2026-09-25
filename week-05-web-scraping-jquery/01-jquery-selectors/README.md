@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # jQuery Selectors
 
 A playground for the different ways to target elements. Click a selector and watch the matches light up.
@@ -30,3 +32,7 @@ Open the console, click the nested selector button, and read what `console.log` 
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 05 guide](../README.md)
+
+---
+
+[Back to top](#top)

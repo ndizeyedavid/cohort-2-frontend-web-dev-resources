@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Crate Digging
 
 A record store shelf that wraps without a single media query. The responsive behaviour comes entirely from Flexbox.
@@ -28,3 +30,7 @@ Change the basis from `260px` to `180px` and see how many records fit before the
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 03 practice projects](../../README.md)
+
+---
+
+[Back to top](#top)

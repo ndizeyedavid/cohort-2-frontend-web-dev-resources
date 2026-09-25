@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Lists
 
 Two short lists that make the difference between ordered and unordered content obvious.
@@ -27,3 +29,7 @@ Change the `<ol>` to a `<ul>` and watch the numbers become bullets, then try `ty
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 03 guide](../README.md)
+
+---
+
+[Back to top](#top)

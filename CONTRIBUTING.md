@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Contributing to This Repository
 
 Thanks for helping out. This repository is a shared learning resource for our class, and it only stays useful when classmates contribute fixes, clearer explanations, and new practice material.
@@ -474,3 +476,7 @@ Useful things to include:
 - Why it would help other students
 
 A question asked early is cheaper than a pull request that gets rejected.
+
+---
+
+[Back to top](#top)

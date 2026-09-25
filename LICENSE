@@ -1,3 +1,17 @@
+# License
+
+## The short, human version 🎉
+
+Do whatever you want with this. Seriously.
+
+Copy it. Change it. Break it. Rebuild it at 2am because you thought you could improve the flexbox. Translate it. Print it out. Teach from it. Use it as a coaster if you insist. 🍕
+
+Just keep the name of the class on it and do not pretend you wrote it. That is the whole deal.
+
+---
+
+## The official, boring, legally binding version
+
 MIT License
 
 Copyright (c) 2026 ALU Frontend Web Development Class
@@ -22,17 +36,48 @@ SOFTWARE.
 
 ---
 
-ADDITIONAL NOTE FOR CLASS MEMBERS
+## The fine print, but friendlier 🧾
 
-This repository is a learning resource created for the Frontend Web Development
-class. The MIT license above covers the code and documentation so that any
-classmate may reuse, adapt, and share the material for learning purposes.
+The MIT license above is the part that actually matters legally. Everything
+else on this page is decoration.
 
-Please note:
+**You may:**
 
-- The fictional websites in this repository (such as Stacktrace Journal) were
-  created for practice. They are not real publications.
-- No content from any third-party website was copied into this repository.
-- Anyone scraping a website is responsible for following that site's terms of
-  use, robots.txt, and applicable law. The practice material here only targets
-  local files.
+- Use this material in your own projects
+- Modify it until it stops resembling the original
+- Show it to your lecturer, your classmates, or a future employer
+- Learn from it without asking anyone for permission
+- Add better explanations than the ones we wrote
+
+**You may not:**
+
+- Claim you wrote it
+- Paste it into a course submission as your own work
+- Collect real people's personal data and call it "an activity" 🚨
+- Scrape a live website just because the code technically works
+
+**A note about the fictional websites in here** 🕵️
+
+Stacktrace Journal and the other practice pages were written by us for this
+class. They are not real publications. Nothing in this repository was copied
+from another website.
+
+**A note about scraping** 🕷️
+
+The scraping activities only ever read local files. If you point a scraper at
+a real site, that site's terms, its robots.txt, and the law in your country
+apply to you. The code is not permission.
+
+**No warranty, in plain English** 🤷
+
+The code is provided as is. It worked on our machines. It is educational
+material, not production software, so please do not use it to run a hospital
+or a bank. If something breaks, fix it and open a pull request. That is what
+the repository is for. 🔧
+
+---
+
+Made with patience, mild caffeine, and too many browser tabs by the Class
+Representative. 🫡
+
+**Questions?** Read [CONTRIBUTING.md](CONTRIBUTING.md), or just open an issue.

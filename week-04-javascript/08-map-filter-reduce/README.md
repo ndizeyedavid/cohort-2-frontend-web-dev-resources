@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Array map, filter, reduce
 
 The three methods that replace most manual loops. The last file chains them together, which is where the real power shows up.
@@ -31,3 +33,7 @@ Write a single chain that takes an array of student objects, keeps only those sc
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 04 guide](../README.md)
+
+---
+
+[Back to top](#top)

@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Stacktrace Journal (practice site)
 
 A fictional technology publication created for the scraping activities. It contains 12 detailed articles with stable class names and `data-*` attributes, so selectors have something reliable to target.
@@ -28,3 +30,7 @@ Open the inspector on any article and read its `data-*` attributes. Those are ex
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Web Scraping Guide](../README.md)
+
+---
+
+[Back to top](#top)

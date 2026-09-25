@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 name: New activity suggestion
 description: Suggest a concept, exercise, or practice project
 title: "[Activity] "
@@ -77,3 +79,7 @@ body:
     attributes:
       label: Anything else
       description: Reference material, difficulty notes, or ideas for hints.
+
+---
+
+[Back to top](#top)

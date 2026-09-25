@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Week 05 - jQuery and Web Scraping
 
 **Prerequisites:** Week 04 - JavaScript Deep Dive
@@ -837,3 +839,7 @@ By the end of Week 05 you should be able to:
 - [ ] I know when browser automation is required instead of a static parser
 - [ ] I can install an npm package and a Playwright browser
 - [ ] I know how to check a website's permissions before scraping it
+
+---
+
+[Back to top](#top)

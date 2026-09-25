@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Week 04 - JavaScript Deep Dive
 
 **Prerequisites:** Week 03 - Advanced HTML and CSS
@@ -539,3 +541,7 @@ After Week 04 you will be ready for Week 05 and beyond. Keep practicing by rebui
 - [ ] I can write a class with a constructor, getters, and a method
 - [ ] I can extend a class and call `super()`
 - [ ] I understand why an arrow function has no own `this`
+
+---
+
+[Back to top](#top)

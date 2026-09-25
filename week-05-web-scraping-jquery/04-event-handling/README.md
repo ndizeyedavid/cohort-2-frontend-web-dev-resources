@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # jQuery Event Handling
 
 Four event examples: a click counter, a select value, an event object inspector, and event delegation for elements created later.
@@ -30,3 +32,7 @@ Add several buttons, then click one created after the page loaded. The delegated
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 05 guide](../README.md)
+
+---
+
+[Back to top](#top)

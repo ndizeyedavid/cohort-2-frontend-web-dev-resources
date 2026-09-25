@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Array and String Methods
 
 The array and string methods you will use most often, including the `slice` versus `splice` distinction that catches everyone.
@@ -31,3 +33,7 @@ In file 03, sort `[30, 1, 100, 4, 200]` with and without a compare function and 
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 04 guide](../README.md)
+
+---
+
+[Back to top](#top)

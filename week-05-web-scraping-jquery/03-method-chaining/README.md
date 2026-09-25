@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # jQuery Method Chaining
 
 One small example showing how a single selection can run several methods in sequence. Deliberately simple, with no element creation to distract from the idea.
@@ -29,3 +31,7 @@ Add `.css('font-weight', 700)` to the end of the chain and reload. Nothing break
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 05 guide](../README.md)
+
+---
+
+[Back to top](#top)

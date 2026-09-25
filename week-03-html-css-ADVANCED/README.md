@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Week 03 - Advanced HTML and CSS
 
 **Prerequisites:** Week 02 - Basic HTML and CSS
@@ -705,3 +707,7 @@ Week 04 covers JavaScript - you will make these layouts interactive with event l
 - [ ] I can rearrange a whole page by editing one `grid-template-areas` line
 - [ ] I can animate with a transition and with `@keyframes`
 - [ ] I know to add a `prefers-reduced-motion` guard to any animation
+
+---
+
+[Back to top](#top)

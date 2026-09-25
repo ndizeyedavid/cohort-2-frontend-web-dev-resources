@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Week 05 - Web Scraping Activities
 
 **Prerequisites:** Week 04 - JavaScript Deep Dive
@@ -438,3 +440,7 @@ Complete the activities in this order:
 6. Change the target data and write one question your scraper should answer.
 
 Do not move to another website until you understand how to check permissions and use an API when one is available.
+
+---
+
+[Back to top](#top)

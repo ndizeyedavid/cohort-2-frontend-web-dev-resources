@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Variables and Variable Scopes
 
 Four small files covering how variables are declared and where they can be seen. Run them one at a time.
@@ -31,3 +33,7 @@ Uncomment the `console.log(role)` after the `if` block in file 02 and read the e
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 04 guide](../README.md)
+
+---
+
+[Back to top](#top)

@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # jQuery Manipulation
 
 Buttons that each perform one manipulation operation on a live preview card, so the effect of every method is visible side by side.
@@ -30,3 +32,7 @@ Click every button in order, then click them again. The last operation wins, whi
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 05 guide](../README.md)
+
+---
+
+[Back to top](#top)

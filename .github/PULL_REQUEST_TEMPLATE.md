@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 ## What I changed
 
 <!-- One or two sentences. What did you add, fix, or rewrite? -->
@@ -50,3 +52,7 @@
 <!-- Example: Closes #12. Write "None" if this is not tied to an issue. -->
 
 None
+
+---
+
+[Back to top](#top)

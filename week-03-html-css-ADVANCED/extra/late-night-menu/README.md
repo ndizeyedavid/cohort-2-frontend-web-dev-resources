@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Late Night Menu
 
 A diner menu where the decorative details come from pseudo-elements and the atmosphere comes from a flickering neon animation.
@@ -29,3 +31,7 @@ Remove the `.item::after` rule and the price jumps next to the dish name. That s
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 03 practice projects](../../README.md)
+
+---
+
+[Back to top](#top)

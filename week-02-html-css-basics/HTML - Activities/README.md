@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # HTML Activities
 
 Two unstyled pages that show what HTML means before any CSS is added. The markup is the message: each tag tells the browser what the content is for.
@@ -28,3 +30,7 @@ Add a ninth field of your own. Give it a matching label and a sensible input typ
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 02 guide](../README.md)
+
+---
+
+[Back to top](#top)

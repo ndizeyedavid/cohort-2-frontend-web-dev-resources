@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Pseudo-elements
 
 Five demonstrations of `::before` and `::after`. Every visual addition here comes from CSS, with no extra markup in the HTML.
@@ -29,3 +31,7 @@ Open DevTools, delete a `::before` rule, and see what disappears. Pseudo-element
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 03 guide](../README.md)
+
+---
+
+[Back to top](#top)

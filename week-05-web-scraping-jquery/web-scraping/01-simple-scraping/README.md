@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Simple Scraping
 
 The smallest useful scraper: read a local HTML file and pull out every article title. No dependencies required.
@@ -27,3 +29,7 @@ Change the pattern to match `<p class="post-excerpt">` instead and compare the o
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Web Scraping Guide](../README.md)
+
+---
+
+[Back to top](#top)

@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Functions
 
 The three ways to write a function, and the two rules that explain when each one behaves differently: hoisting and `this`.
@@ -32,3 +34,7 @@ In file 04, change the `setTimeout` arrow back to a normal function and watch `t
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 04 guide](../README.md)
+
+---
+
+[Back to top](#top)

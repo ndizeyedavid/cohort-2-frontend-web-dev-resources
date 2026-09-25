@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Transitions and Animations
 
 Six motion demonstrations, from a simple hover transition to keyframe loops and a loading spinner.
@@ -29,3 +31,7 @@ Enable Reduce Motion in your operating system settings and reload. The pulse, bo
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 03 guide](../README.md)
+
+---
+
+[Back to top](#top)

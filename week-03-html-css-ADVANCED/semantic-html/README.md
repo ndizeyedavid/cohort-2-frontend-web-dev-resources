@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Semantic HTML
 
 A landing page that uses meaningful tags instead of generic `<div>` wrappers. It looks the same either way, but the structure carries information that browsers and assistive technology can use.
@@ -27,3 +29,7 @@ Replace the semantic tags with plain `<div>` elements and compare. The rendering
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 03 guide](../README.md)
+
+---
+
+[Back to top](#top)

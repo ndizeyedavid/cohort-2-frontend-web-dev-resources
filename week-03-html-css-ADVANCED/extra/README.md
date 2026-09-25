@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Practice Projects
 
 Three complete projects that combine the week's concepts. Each solves a layout problem a different way, which is the point of studying all three.
@@ -28,3 +30,7 @@ Open all three and resize the window. Each responds differently, and each uses a
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 03 guide](../README.md)
+
+---
+
+[Back to top](#top)

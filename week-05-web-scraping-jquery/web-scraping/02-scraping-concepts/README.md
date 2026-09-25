@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Scraping Concepts
 
 The scraping pipeline split into four focused files: read a source, select and extract, clean the data, and behave responsibly.
@@ -30,3 +32,7 @@ Add a function to file 03 that converts a date string such as `2026-09-24` into 
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Web Scraping Guide](../README.md)
+
+---
+
+[Back to top](#top)

@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Using Cheerio
 
 The same extraction rewritten with CSS selectors. This is the readable, maintainable version of the previous example.
@@ -33,3 +35,7 @@ Rewrite the filter at the bottom of the script to select articles with a score o
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Web Scraping Guide](../README.md)
+
+---
+
+[Back to top](#top)

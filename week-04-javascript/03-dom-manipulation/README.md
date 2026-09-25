@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # DOM Manipulation
 
 The only Week 04 folder that needs a browser. The page provides targets, the five scripts select and change them, and the console explains what happened.
@@ -34,3 +36,7 @@ Set the title with `innerHTML` and paste a `<b>` tag. Then repeat it with `textC
 The week guide covers this activity in detail, including hints and common mistakes:
 
 - [Week 04 guide](../README.md)
+
+---
+
+[Back to top](#top)
