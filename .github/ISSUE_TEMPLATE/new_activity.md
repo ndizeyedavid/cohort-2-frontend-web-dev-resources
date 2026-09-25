@@ -1,14 +1,13 @@
-<a id="top"></a>
-
 name: New activity suggestion
 description: Suggest a concept, exercise, or practice project
-title: "[Activity] "
 labels: ["enhancement", "needs triage"]
 body:
   - type: markdown
     attributes:
       value: |
         Use this form to suggest new learning material. Please check the week guides first to avoid duplicating something that already exists.
+
+        Title your issue starting with `[Activity]` so it is easy to scan.
 
   - type: dropdown
     id: week
@@ -79,7 +78,3 @@ body:
     attributes:
       label: Anything else
       description: Reference material, difficulty notes, or ideas for hints.
-
----
-
-[Back to top](#top)

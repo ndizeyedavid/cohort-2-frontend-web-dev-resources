@@ -278,6 +278,7 @@ node scripts/check-syntax.js
 node scripts/check-links.js
 node scripts/check-dashes.js
 node scripts/check-html.js
+node scripts/check-issue-templates.js
 node scripts/run-examples.js week-04
 node scripts/run-examples.js week-05
 ```
@@ -288,6 +289,7 @@ node scripts/run-examples.js week-05
 | `check-links.js` | Every relative link in Markdown, HTML, CSS, and JS resolves |
 | `check-dashes.js` | No em dashes or en dashes anywhere in the content |
 | `check-html.js` | `lang`, `charset`, viewport, `title`, image `alt`, and local asset paths |
+| `check-issue-templates.js` | The GitHub issue forms start with valid YAML and contain usable fields |
 | `run-examples.js` | Every runnable example still executes without crashing |
 
 The Cheerio example is checked separately because it needs its dependency installed:

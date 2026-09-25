@@ -1,12 +1,13 @@
 name: Question or idea
 description: Ask about the material, share a study tip, or suggest an improvement
-title: "[Question] "
 labels: ["question", "needs triage"]
 body:
   - type: markdown
     attributes:
       value: |
         No question is too basic. If something in a guide confused you, that is a bug in the guide, and fixing it helps everyone who reads it after you.
+
+        Title your issue starting with `[Question]` so it is easy to scan.
 
   - type: dropdown
     id: kind
@@ -43,8 +44,6 @@ body:
       label: File, folder, or section
       description: Where did you get stuck? A path or heading name is perfect.
       placeholder: week-04-javascript/06-es6-classes/README.md, the inheritance section
-    validations:
-      required: false
 
   - type: textarea
     id: question

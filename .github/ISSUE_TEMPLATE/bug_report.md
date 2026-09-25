@@ -1,14 +1,13 @@
-<a id="top"></a>
-
 name: Bug report
 description: Something in the repository is broken or wrong
-title: "[Bug] "
 labels: ["bug", "needs triage"]
 body:
   - type: markdown
     attributes:
       value: |
         Thanks for reporting a problem. Please check that it still happens before filing.
+
+        Title your issue starting with `[Bug]` so it is easy to scan.
 
   - type: textarea
     id: what-happened
@@ -85,7 +84,3 @@ body:
           required: false
         - label: I am not asking for graded assessment content to be added
           required: true
-
----
-
-[Back to top](#top)

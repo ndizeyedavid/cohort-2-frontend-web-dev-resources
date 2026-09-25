@@ -35,6 +35,9 @@ jobs:
       - name: Check HTML basics
         run: node scripts/check-html.js
 
+      - name: Check issue templates
+        run: node scripts/check-issue-templates.js
+
       - name: Install scraping dependencies
         working-directory: week-05-web-scraping-jquery/web-scraping/04-cheerio
         run: npm install
