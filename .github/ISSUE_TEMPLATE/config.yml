@@ -1,5 +1,9 @@
+# Every new issue starts from one of the three forms on this page:
+#   1. Bug report          - something is broken or wrong
+#   2. New activity        - suggest a concept or exercise
+#   3. Question or idea    - ask something, or share a tip
+#
+# Questions and ideas use an issue form so a classmate can answer
+# without anyone leaving the repository to open another tab.
 blank_issues_enabled: false
-contact_links:
-  - name: Question or idea (not a bug)
-    url: https://github.com/ndizeyedavid/cohort-2-frontend-web-dev-resources/discussions
-    about: Ask about the material, share a study tip, or propose a learning idea.
+contact_links: []

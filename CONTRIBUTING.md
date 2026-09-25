@@ -100,12 +100,13 @@ The same fix may already exist in another week folder or on another branch.
 
 If you plan to add a new week, a new activity, or a large restructure, discuss it before writing the code. A ten-minute conversation saves a wasted afternoon.
 
-Use the issue forms provided by the repository:
+Use the issue forms provided by the repository. Pick one from the **New issue** button:
 
 - **Bug report** for something that is broken, wrong, or missing
 - **New activity suggestion** for a concept or exercise you would like to see
+- **Question or idea** when you are stuck, something was unclear, or you have a study tip to share
 
-If neither form fits, open a blank discussion instead.
+All three open a form in the same place, so you never need to leave the repository to ask a question.
 
 ---
 
@@ -407,7 +408,7 @@ Open an issue when:
 - A file is missing entirely
 - You are unsure whether a change fits the course
 
-When reporting, include the file path, what you expected, and what happened instead. Add a screenshot when a visual issue is involved.
+When reporting, use the **Bug report** form and include the file path, what you expected, and what happened instead. Add a screenshot when a visual issue is involved. If the cause is a concept you do not understand rather than a fault in the material, use the **Question or idea** form instead.
 
 ---
 
