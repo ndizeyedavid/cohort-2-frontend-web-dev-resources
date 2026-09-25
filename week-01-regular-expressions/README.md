@@ -237,3 +237,17 @@ By the end of Week 01 you should be able to:
 - [regex101.com](https://regex101.com) - interactive tester with step-by-step explanation
 - [RegExr](https://regexr.com) - visual regex builder
 - [Regexle](https://regexle.com) - Crazy Regex Puzzle
+---
+
+## Progress Checklist
+
+Tick a box when you can do the task without looking at the file.
+
+- [ ] I can explain what a character class such as `[a-zA-Z0-9]` matches
+- [ ] I can use `\b` to match a whole word only
+- [ ] I know when to anchor a pattern with `^` and `$`
+- [ ] I can choose the right quantifier (`+`, `*`, `?`, `{n,m}`)
+- [ ] I can write a pattern that validates an email address
+- [ ] I can explain what a positive lookahead such as `(?=...)` does
+- [ ] I can debug a broken pattern by isolating one small part at a time
+- [ ] I can test a pattern in regex101 before using it in code

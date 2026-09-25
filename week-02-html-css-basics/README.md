@@ -515,3 +515,16 @@ W3Schools is recommended for this week because the explanations are short, visua
 ## Next Up
 
 Week 03 will extend these fundamentals with more advanced HTML and CSS. Until then, make sure you can build the Week 02 form from scratch and explain every regex in `main.js` without looking.
+---
+
+## Progress Checklist
+
+- [ ] I can write a valid HTML5 document from memory
+- [ ] I can build a form with correctly paired `<label for>` and `<input id>`
+- [ ] I can explain why the viewport meta tag matters on phones
+- [ ] I can predict how `box-sizing: border-box` changes an element's size
+- [ ] I can lay out a form with CSS Grid and collapse it with a media query
+- [ ] I can use CSS custom properties instead of repeating colour values
+- [ ] I can validate a form field with a regex in JavaScript
+- [ ] I can show and clear an inline error message
+- [ ] I can build a table with `<thead>`, `<tbody>`, and `colspan`

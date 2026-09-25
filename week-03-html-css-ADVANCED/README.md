@@ -691,3 +691,17 @@ W3Schools is recommended because every page has a live "Try it Yourself" editor 
 ## Next Up
 
 Week 04 covers JavaScript - you will make these layouts interactive with event listeners and DOM manipulation. Until then, try rebuilding the flexbox navbar and the grid gallery from memory.
+---
+
+## Progress Checklist
+
+- [ ] I can choose a semantic tag instead of a generic `<div>`
+- [ ] I know when the order in a list matters and when it does not
+- [ ] I can build an accessible data table with `<th>` and `scope`
+- [ ] I can add decoration with `::before` and `::after` without extra HTML
+- [ ] I can explain the difference between the main axis and the cross axis
+- [ ] I can centre anything using Flexbox in one rule
+- [ ] I can build a responsive gallery with `repeat(auto-fit, minmax())`
+- [ ] I can rearrange a whole page by editing one `grid-template-areas` line
+- [ ] I can animate with a transition and with `@keyframes`
+- [ ] I know to add a `prefers-reduced-motion` guard to any animation

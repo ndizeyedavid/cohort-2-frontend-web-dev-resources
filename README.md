@@ -99,6 +99,16 @@ Week 5  jQuery and Web Scraping
 | [Week 4](week-04-javascript) | JavaScript Deep Dive | Variables and scopes, data types, DOM manipulation, arrays, strings, objects, classes, functions, map / filter / reduce |
 | [Week 5](week-05-web-scraping-jquery) | jQuery and Web Scraping | jQuery selectors, manipulation, method chaining, event handling, HTML scraping, Cheerio, Playwright |
 
+Weeks 6 and beyond are not published yet. They will be added here as the course continues, following the same structure and contribution guidelines.
+
+| Week | Topic | Status |
+|------|-------|--------|
+| Week 6 | To be announced | Not started |
+| Week 7 | To be announced | Not started |
+| Week 8 and beyond | To be announced | Not started |
+
+If you are ahead of the class and want to keep practising, the [Resources](#resources) section collects official documentation for every topic covered so far.
+
 ---
 
 ## Week 1: Regular Expressions

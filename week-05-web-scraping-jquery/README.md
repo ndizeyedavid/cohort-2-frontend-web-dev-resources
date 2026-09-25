@@ -814,3 +814,26 @@ By the end of Week 05 you should be able to:
 - [ ] I understand when browser automation is needed.
 - [ ] I can install Playwright and Chromium locally.
 - [ ] I know how to check permissions before scraping a real site.
+---
+
+## Progress Checklist
+
+### jQuery
+
+- [ ] I can select elements by ID, class, attribute, and nesting
+- [ ] I know a jQuery selection is a collection, not one element
+- [ ] I can change content, values, attributes, classes, and CSS
+- [ ] I can create and remove elements
+- [ ] I can chain methods and know when chaining is not possible
+- [ ] I can handle click and change events
+- [ ] I can explain the event object and event delegation
+
+### Web scraping
+
+- [ ] I can read a local HTML file with Node.js
+- [ ] I can separate selection, extraction, and cleaning
+- [ ] I can explain why CSS selectors are easier than large regex patterns
+- [ ] I can run the Cheerio scraper and read its output
+- [ ] I know when browser automation is required instead of a static parser
+- [ ] I can install an npm package and a Playwright browser
+- [ ] I know how to check a website's permissions before scraping it

@@ -525,3 +525,17 @@ W3Schools is recommended because every page has a live Try it Yourself editor.
 ## Next Up
 
 After Week 04 you will be ready for Week 05 and beyond. Keep practicing by rebuilding each file from memory without looking, then compare.
+---
+
+## Progress Checklist
+
+- [ ] I can choose between `const` and `let` and explain why
+- [ ] I know what the temporal dead zone is
+- [ ] I can name every primitive type and check it correctly
+- [ ] I use `===` instead of `==` and know why
+- [ ] I can select elements with `getElementById`, `querySelector`, and `querySelectorAll`
+- [ ] I know when to use `textContent`, `innerHTML`, and `value`
+- [ ] I can chain array methods and decide between `map`, `filter`, and `reduce`
+- [ ] I can write a class with a constructor, getters, and a method
+- [ ] I can extend a class and call `super()`
+- [ ] I understand why an arrow function has no own `this`
