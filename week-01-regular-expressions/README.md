@@ -5,7 +5,9 @@
 
 Regular expressions (regex) are search patterns used to match, validate, and extract text. You will use them in Week 01's Intranet Project, Class Activity (Extraction with `modified_sms_v2.xml`), and again in every future week for form validation.
 
-> **A note on notation:** This README ignores the `/.../` delimiters you see in JavaScript (e.g., `/[a-z]/g`). The files contain the raw pattern only - e.g., `[a-zA-Z0-9]` not `/[a-zA-Z0-9]/`. That is intentional.
+> **A note on notation:** This README ignores the `/.../` delimiters you see in JavaScript (e.g., `/[a-z]/g`). Each file contains the raw pattern only - e.g., `[a-zA-Z0-9]` not `/[a-zA-Z0-9]/`. That is intentional.
+>
+> **A note on file names:** Each pattern lives in its own `.regex` file with a number prefix so the intended study order is obvious. Files are named after what the pattern does, not what it matches.
 
 ---
 
@@ -13,18 +15,18 @@ Regular expressions (regex) are search patterns used to match, validate, and ext
 
 | File                                   | Topic                           | Pattern                                                                |
 | -------------------------------------- | ------------------------------- | ---------------------------------------------------------------------- |
-| [example-1](example-1)                 | Character classes               | `[a-zA-Z0-9]`                                                          |
-| [example-2](example-2)                 | Word boundaries                 | `\borange\b`                                                           |
-| [email-regex](email-regex)             | Email validation                | `^[a-zA-Z0-9._\-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`                      |
-| [password-regex](password-regex)       | Strong password (lookaheads)    | `^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$` |
-| [url-regex](url-regex)                 | URL validation (**fixed**)      | `https?:\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:[^\s]*)?`                   |
-| [credit-card-regex](credit-card-regex) | Credit card - Visa & Mastercard | `4[0-9]{12}(?:[0-9]{3})?` + Mastercard pattern                         |
+| [01-character-classes.regex](01-character-classes.regex)                 | Character classes               | `[a-zA-Z0-9]`                                                          |
+| [02-word-boundaries.regex](02-word-boundaries.regex)                 | Word boundaries                 | `\borange\b`                                                           |
+| [03-email-validation.regex](03-email-validation.regex)             | Email validation                | `^[a-zA-Z0-9._\-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`                      |
+| [04-password-strength.regex](04-password-strength.regex)       | Strong password (lookaheads)    | `^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$` |
+| [05-url-validation.regex](05-url-validation.regex)                 | URL validation (**fixed**)      | `https?:\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:[^\s]*)?`                   |
+| [06-card-numbers.regex](06-card-numbers.regex) | Credit card - Visa & Mastercard | `4[0-9]{12}(?:[0-9]{3})?` + Mastercard pattern                         |
 
 ---
 
 ## 📝 File-by-File Breakdown
 
-### 1) `example-1` - Character Classes: `[a-zA-Z0-9]`
+### 1) `01-character-classes.regex` - Character Classes: `[a-zA-Z0-9]`
 
 **What it does:** Matches **one** alphanumeric character. To match a whole string of them, you would add a quantifier like `+` → `[a-zA-Z0-9]+`.
 
@@ -44,7 +46,7 @@ Regular expressions (regex) are search patterns used to match, validate, and ext
 
 ---
 
-### 2) `example-2` - Word Boundaries: `\borange\b`
+### 2) `02-word-boundaries.regex` - Word Boundaries: `\borange\b`
 
 **What it does:** Matches the word `orange` only when it stands alone.
 
@@ -63,7 +65,7 @@ Regular expressions (regex) are search patterns used to match, validate, and ext
 
 ---
 
-### 3) `email-regex` - `^[a-zA-Z0-9._\-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`
+### 3) `03-email-validation.regex` - `^[a-zA-Z0-9._\-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`
 
 **What it validates:** A basic email address: `local@domain.tld`
 
@@ -92,7 +94,7 @@ Regular expressions (regex) are search patterns used to match, validate, and ext
 
 ---
 
-### 4) `password-regex` - `^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$`
+### 4) `04-password-strength.regex` - `^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$`
 
 **What it validates:** A strong password with at least 8 characters, containing at least one lowercase, one uppercase, one digit, and one special character from `@$!%*?&`.
 
@@ -121,7 +123,7 @@ Regular expressions (regex) are search patterns used to match, validate, and ext
 
 ---
 
-### 5) `url-regex` - `https?:\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:[^\s]*)?` ✅ Fixed
+### 5) `05-url-validation.regex` - `https?:\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:[^\s]*)?` ✅ Fixed
 
 > **Previous version had a bug:** `(https,http):\/\/[a-zA-Z0-9.?#]\.[a-zA-Z]*`
 
@@ -157,7 +159,7 @@ Regular expressions (regex) are search patterns used to match, validate, and ext
 
 ---
 
-### 6) `credit-card-regex` - Visa & Mastercard
+### 6) `06-card-numbers.regex` - Visa & Mastercard
 
 This file contains **two** patterns separated by comments:
 
@@ -224,7 +226,7 @@ By the end of Week 01 you should be able to:
 3. Apply quantifiers `+` `*` `?` `{n}` `{n,m}` correctly (especially not forgetting `+` on character classes)
 4. Use alternation `|` and grouping `(...)` / `(?:...)`
 5. Explain what a lookahead `(?=...)` does and why password validation needs it
-6. Debug a broken regex (like the original `url-regex`) by isolating each bug
+6. Debug a broken regex (like the original `05-url-validation.regex`) by isolating each bug
 
 ---
 

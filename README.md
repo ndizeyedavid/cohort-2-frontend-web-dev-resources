@@ -109,12 +109,12 @@ Regular expressions describe text patterns. You use them to validate input, sear
 
 | File | Topic | Pattern |
 |------|-------|---------|
-| [`example-1`](week-01-regular-expressions/example-1) | Character classes | `[a-zA-Z0-9]` |
-| [`example-2`](week-01-regular-expressions/example-2) | Word boundaries | `\borange\b` |
-| [`email-regex`](week-01-regular-expressions/email-regex) | Email validation | `^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$` |
-| [`password-regex`](week-01-regular-expressions/password-regex) | Strong passwords with lookaheads | 8+ characters with upper, lower, digit, and symbol |
-| [`url-regex`](week-01-regular-expressions/url-regex) | URL validation | `https?://` with an optional path |
-| [`credit-card-regex`](week-01-regular-expressions/credit-card-regex) | Card numbers | Visa and Mastercard prefixes |
+| [`01-character-classes.regex`](week-01-regular-expressions/01-character-classes.regex) | Character classes | `[a-zA-Z0-9]` |
+| [`02-word-boundaries.regex`](week-01-regular-expressions/02-word-boundaries.regex) | Word boundaries | `\borange\b` |
+| [`03-email-validation.regex`](week-01-regular-expressions/03-email-validation.regex) | Email validation | `^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$` |
+| [`04-password-strength.regex`](week-01-regular-expressions/04-password-strength.regex) | Strong passwords with lookaheads | 8+ characters with upper, lower, digit, and symbol |
+| [`05-url-validation.regex`](week-01-regular-expressions/05-url-validation.regex) | URL validation | `https?://` with an optional path |
+| [`06-card-numbers.regex`](week-01-regular-expressions/06-card-numbers.regex) | Card numbers | Visa and Mastercard prefixes |
 
 Test your patterns at [regex101.com](https://regex101.com) before running them in code.
 
@@ -504,12 +504,12 @@ Please do not add graded assessments, personal data, or content from another web
 ├── .gitignore
 ├── week-01-regular-expressions/
 │   ├── README.md
-│   ├── example-1
-│   ├── example-2
-│   ├── email-regex
-│   ├── password-regex
-│   ├── url-regex
-│   └── credit-card-regex
+│   ├── 01-character-classes.regex
+│   ├── 02-word-boundaries.regex
+│   ├── 03-email-validation.regex
+│   ├── 04-password-strength.regex
+│   ├── 05-url-validation.regex
+│   └── 06-card-numbers.regex
 ├── week-02-html-css-basics/
 │   ├── README.md
 │   ├── HTML - Activities/
