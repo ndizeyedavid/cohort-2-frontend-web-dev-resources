@@ -1,4 +1,4 @@
-/* Crate Digging — Flexbox Shelf
+/* Crate Digging - Flexbox Shelf
    Concepts: display:flex, flex-wrap, justify-content, align-items, gap, flex: 1 1 <basis> */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,7 +19,7 @@ body {
     border-top: 6px solid var(--ink);
 }
 
-/* — Header: flexbox space-between — */
+/* Header: flexbox space-between */
 .site-header {
     border-bottom: 2.5px solid var(--line);
     background: var(--paper);
@@ -92,7 +92,7 @@ body {
     border-radius: 999px;
 }
 
-/* — Intro — */
+/* Intro */
 .intro { border-bottom: 2.5px solid var(--line); }
 
 .intro-inner {
@@ -150,7 +150,7 @@ body {
     color: var(--paper);
 }
 
-/* — Shelf: THE flexbox demo — */
+/* Shelf: THE flexbox demo */
 .shelf {
     max-width: 1100px;
     margin: 0 auto;
@@ -162,7 +162,7 @@ body {
 }
 
 .record {
-    /* grow | shrink | basis — basis is the "ideal" width, flex handles the rest */
+    /* grow | shrink | basis - basis is the "ideal" width, flex handles the rest */
     flex: 1 1 260px;
     max-width: 360px;
     background: #fff;
@@ -188,7 +188,7 @@ body {
     overflow: hidden;
 }
 
-/* playful vinyl peek with ::after — pseudo-element */
+/* playful vinyl peek with ::after - pseudo-element */
 .record-cover::after {
     content: "";
     position: absolute;
@@ -221,7 +221,7 @@ body {
     z-index: 1;
 }
 
-/* distinct covers — no images needed */
+/* distinct covers - no images needed */
 .cover--1 { background: #ff3b30; }
 .cover--2 { background: #ffcc00; }
 .cover--3 { background: #111; color: #fff; }

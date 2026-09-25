@@ -1,7 +1,7 @@
-# Week 03 — Advanced HTML and CSS
+# Week 03 - Advanced HTML and CSS
 
-**Prerequisites:** Week 02 — Basic HTML and CSS
-**Assessment:** Non-graded practice — this is where structure and style become professional.
+**Prerequisites:** Week 02 - Basic HTML and CSS
+**Assessment:** Non-graded practice - this is where structure and style become professional.
 
 In Week 02 you built a form and made it responsive. This week you go deeper: semantic markup that machines understand, real data tables, one-dimensional layouts with Flexbox, two-dimensional layouts with Grid, decorative content with pseudo-elements, and motion with transitions and animations.
 
@@ -11,22 +11,22 @@ In Week 02 you built a form and made it responsive. This week you go deeper: sem
 
 | #   | Folder                                               | Files                     | What You Learn                                                                        |
 | --- | ---------------------------------------------------- | ------------------------- | ------------------------------------------------------------------------------------- |
-| 1   | [semantic-html](semantic-html)                       | `index.html`              | Semantic tags — `header`, `nav`, `main`, `section`, `footer`                          |
-| 2   | [lists](lists)                                       | `index.html`              | Ordered and unordered lists — `<ol>`, `<ul>`, `<li>`                                  |
-| 3   | [tables](tables)                                     | `index.html`              | Data tables — `<table>`, `<thead>`, `<tbody>`, `<th>`, `<td>`                         |
-| 4   | [pseudo-elements](pseudo-elements)                   | `index.html` · `main.css` | `::before` and `::after` — decorative content without extra HTML                      |
-| 5   | [flexbox](flexbox)                                   | `index.html` · `main.css` | Flexbox — main axis, cross axis, wrapping, centering                                  |
-| 6   | [grid](grid)                                         | `index.html` · `main.css` | CSS Grid — rows, columns, `gap`, `grid-area`, spanning                                |
+| 1   | [semantic-html](semantic-html)                       | `index.html`              | Semantic tags - `header`, `nav`, `main`, `section`, `footer`                          |
+| 2   | [lists](lists)                                       | `index.html`              | Ordered and unordered lists - `<ol>`, `<ul>`, `<li>`                                  |
+| 3   | [tables](tables)                                     | `index.html`              | Data tables - `<table>`, `<thead>`, `<tbody>`, `<th>`, `<td>`                         |
+| 4   | [pseudo-elements](pseudo-elements)                   | `index.html` · `main.css` | `::before` and `::after` - decorative content without extra HTML                      |
+| 5   | [flexbox](flexbox)                                   | `index.html` · `main.css` | Flexbox - main axis, cross axis, wrapping, centering                                  |
+| 6   | [grid](grid)                                         | `index.html` · `main.css` | CSS Grid - rows, columns, `gap`, `grid-area`, spanning                                |
 | 7   | [animations](animations)                             | `index.html` · `main.css` | Transitions and `@keyframes` animations                                               |
-| 8   | [extra / crate-digging](extra/crate-digging)         | `index.html` · `main.css` | Extra — Flexbox record shelf (wrapping, `flex: 1 1 260px`, `gap`)                     |
-| 9   | [extra / the-kigali-review](extra/the-kigali-review) | `index.html` · `main.css` | Extra — Grid editorial / newspaper ( `grid-template-areas`, spanning)                 |
-| 10  | [extra / late-night-menu](extra/late-night-menu)     | `index.html` · `main.css` | Extra — Animations + pseudo-elements diner menu ( `::before`/`::after`, `@keyframes`) |
+| 8   | [extra / crate-digging](extra/crate-digging)         | `index.html` · `main.css` | Extra - Flexbox record shelf (wrapping, `flex: 1 1 260px`, `gap`)                     |
+| 9   | [extra / the-kigali-review](extra/the-kigali-review) | `index.html` · `main.css` | Extra - Grid editorial / newspaper ( `grid-template-areas`, spanning)                 |
+| 10  | [extra / late-night-menu](extra/late-night-menu)     | `index.html` · `main.css` | Extra - Animations + pseudo-elements diner menu ( `::before`/`::after`, `@keyframes`) |
 
-> All folders are self-contained — open any `index.html` in the browser to see the result.
+> All folders are self-contained - open any `index.html` in the browser to see the result.
 
 ---
 
-## 1 — Semantic HTML with `semantic-html/index.html`
+## 1 - Semantic HTML with `semantic-html/index.html`
 
 **File:** [`semantic-html/index.html`](semantic-html/index.html)
 
@@ -72,14 +72,14 @@ A landing page that uses semantic tags instead of generic `<div>` everywhere:
 
 | Tag            | Purpose                             | Why not just `<div>`?                                  |
 | -------------- | ----------------------------------- | ------------------------------------------------------ |
-| `<header>`     | Intro area — logo + navigation      | Screen readers know this is the page header            |
+| `<header>`     | Intro area - logo + navigation      | Screen readers know this is the page header            |
 | `<nav>`        | Navigation links                    | Screen readers can jump directly to navigation         |
 | `<main>`       | Primary content (only one per page) | Search engines know this is the most important section |
 | `<section>`    | Thematic grouping (testimonial)     | Gives structure that `<div>` does not                  |
 | `<blockquote>` | A quote from someone else           | Browsers and screen readers announce it as a quotation |
-| `<footer>`     | Closing area — copyright, links     | Same as header but at the bottom                       |
+| `<footer>`     | Closing area - copyright, links     | Same as header but at the bottom                       |
 
-**Takeaway:** `<div>` says nothing. Semantic tags tell browsers, search engines, and screen readers what each part _is_. The page looks the same either way — the difference is meaning.
+**Takeaway:** `<div>` says nothing. Semantic tags tell browsers, search engines, and screen readers what each part _is_. The page looks the same either way - the difference is meaning.
 
 **How to improve this file:**
 
@@ -88,21 +88,21 @@ A landing page that uses semantic tags instead of generic `<div>` everywhere:
 
 ---
 
-## 2 — Lists with `lists/index.html`
+## 2 - Lists with `lists/index.html`
 
 **File:** [`lists/index.html`](lists/index.html)
 
 Two lists that show the difference between ordered and unordered:
 
 ```html
-<!-- Ordered — the order matters -->
+<!-- Ordered - the order matters -->
 <ol>
   <li>Fries</li>
   <li>Steak</li>
   <li>Pizza</li>
 </ol>
 
-<!-- Unordered — the order doesn't matter -->
+<!-- Unordered - the order doesn't matter -->
 <ul>
   <li>Ghost of Yotei</li>
   <li>GTA VI</li>
@@ -112,24 +112,24 @@ Two lists that show the difference between ordered and unordered:
 
 **Key points:**
 
-- `<ol>` numbers items automatically (1, 2, 3...). Use it when sequence matters — steps, rankings, instructions.
-- `<ul>` uses bullets. Use it when order does not matter — features, favourites, navigation links.
+- `<ol>` numbers items automatically (1, 2, 3...). Use it when sequence matters - steps, rankings, instructions.
+- `<ul>` uses bullets. Use it when order does not matter - features, favourites, navigation links.
 - `<li>` is the only direct child allowed inside `<ol>` or `<ul>`.
-- You can nest lists — a `<ul>` inside an `<li>` creates a sub-list. Useful for dropdown menus or grouped content.
+- You can nest lists - a `<ul>` inside an `<li>` creates a sub-list. Useful for dropdown menus or grouped content.
 
 **Try it:**
 
 - Change `<ol>` to `<ul>` and see the numbers become bullets.
-- Add `type="A"` to `<ol>` — it counts A, B, C instead of 1, 2, 3. Try `type="i"` for roman numerals.
-- Add `start="5"` to `<ol>` — it starts counting from 5.
+- Add `type="A"` to `<ol>` - it counts A, B, C instead of 1, 2, 3. Try `type="i"` for roman numerals.
+- Add `start="5"` to `<ol>` - it starts counting from 5.
 
 ---
 
-## 3 — Tables with `tables/index.html`
+## 3 - Tables with `tables/index.html`
 
 **File:** [`tables/index.html`](tables/index.html)
 
-A weekly class timetable (09:00–05:00, Monday to Friday), built with proper table semantics:
+A weekly class timetable (09:00 to 05:00, Monday to Friday), built with proper table semantics:
 
 ```html
 <table border="1">
@@ -155,10 +155,10 @@ This expands on Week 02's `Extras/Table.html`:
 
 | What's new vs Week 02               | Why it matters                                                                |
 | ----------------------------------- | ----------------------------------------------------------------------------- |
-| `<thead>` and `<tbody>`             | Splits header from body — helps screen readers and makes CSS targeting easier |
+| `<thead>` and `<tbody>`             | Splits header from body - helps screen readers and makes CSS targeting easier |
 | `<th>` for every header cell        | Screen readers announce `<th>` as headers; `<td>` is just data                |
-| 6 columns (Time + Mon–Fri), 10 rows | More realistic — shows how tables handle lots of data                         |
-| Empty `<td></td>` for free periods  | An empty cell still needs a `<td>` — if you skip it, columns misalign         |
+| 6 columns (Time + Mon-Fri), 10 rows | More realistic - shows how tables handle lots of data                         |
+| Empty `<td></td>` for free periods  | An empty cell still needs a `<td>` - if you skip it, columns misalign         |
 
 **Hints:**
 
@@ -168,9 +168,9 @@ This expands on Week 02's `Extras/Table.html`:
 
 ---
 
-## 4 — Pseudo-elements with `pseudo-elements/`
+## 4 - Pseudo-elements with `pseudo-elements/`
 
-**Folder:** [`pseudo-elements/`](pseudo-elements) — `index.html` + `main.css`
+**Folder:** [`pseudo-elements/`](pseudo-elements) - `index.html` + `main.css`
 
 Pseudo-elements let you add decorative content before or after an element without changing the HTML.
 
@@ -191,7 +191,7 @@ h2::after {
 }
 ```
 
-> `::before` and `::after` both require `content` — even if it is just `content: ""` for a shape. Without `content`, nothing renders.
+> `::before` and `::after` both require `content` - even if it is just `content: ""` for a shape. Without `content`, nothing renders.
 
 **What the demo page shows:**
 
@@ -255,15 +255,15 @@ h2:hover::after {
 }
 ```
 
-**Common pitfall:** `::before` and `::after` are **not** real DOM elements — JavaScript cannot select them with `querySelector`, and screen readers may not announce their `content`. Use them for decoration only, never for important information.
+**Common pitfall:** `::before` and `::after` are **not** real DOM elements - JavaScript cannot select them with `querySelector`, and screen readers may not announce their `content`. Use them for decoration only, never for important information.
 
 ---
 
-## 5 — Flexbox with `flexbox/`
+## 5 - Flexbox with `flexbox/`
 
-**Folder:** [`flexbox/`](flexbox) — `index.html` + `main.css`
+**Folder:** [`flexbox/`](flexbox) - `index.html` + `main.css`
 
-Flexbox is a **one-dimensional** layout system — it arranges items along a single axis (row or column). You control the main axis and the cross axis separately.
+Flexbox is a **one-dimensional** layout system - it arranges items along a single axis (row or column). You control the main axis and the cross axis separately.
 
 ```
 Main axis  → → →  (default: left to right)
@@ -277,16 +277,16 @@ Cross axis ↓
 | ----------------- | ---------- | ------------------------------------------------------------------ |
 | `justify-content` | Main axis  | Aligns items along the row (or column if `flex-direction: column`) |
 | `align-items`     | Cross axis | Aligns items perpendicular to the main axis                        |
-| `flex-wrap`       | —          | Allows items to wrap to the next line instead of shrinking         |
+| `flex-wrap`       | -          | Allows items to wrap to the next line instead of shrinking         |
 
 **What the demo page shows:**
 
 | #   | Demo                                                          | Key CSS                                                                       |
 | --- | ------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | 1   | Perfect centering (both axes)                                 | `display: flex; justify-content: center; align-items: center; height: 160px;` |
-| 2   | `justify-content` — `space-between`, `space-around`, `center` | Three rows, same children, different `justify-content`                        |
-| 3   | `align-items` — `flex-start`, `center`, `stretch`             | Tall container with different-height items                                    |
-| 4   | `flex-wrap: wrap` + `flex: 1 1 160px`                         | Cards that wrap responsively — resize the window                              |
+| 2   | `justify-content` - `space-between`, `space-around`, `center` | Three rows, same children, different `justify-content`                        |
+| 3   | `align-items` - `flex-start`, `center`, `stretch`             | Tall container with different-height items                                    |
+| 4   | `flex-wrap: wrap` + `flex: 1 1 160px`                         | Cards that wrap responsively - resize the window                              |
 | 5   | Real navbar                                                   | `display: flex; justify-content: space-between; align-items: center;`         |
 
 **Fun snippets to try yourself:**
@@ -330,11 +330,11 @@ Cross axis ↓
 
 ---
 
-## 6 — CSS Grid with `grid/`
+## 6 - CSS Grid with `grid/`
 
-**Folder:** [`grid/`](grid) — `index.html` + `main.css`
+**Folder:** [`grid/`](grid) - `index.html` + `main.css`
 
-Grid is a **two-dimensional** system — you control rows and columns at the same time. Flexbox is one row or one column; Grid is both.
+Grid is a **two-dimensional** system - you control rows and columns at the same time. Flexbox is one row or one column; Grid is both.
 
 **Key properties from the slides:**
 
@@ -350,9 +350,9 @@ Grid is a **two-dimensional** system — you control rows and columns at the sam
 | #   | Demo                                | Key CSS                                                                              |
 | --- | ----------------------------------- | ------------------------------------------------------------------------------------ |
 | 1   | 3 equal columns                     | `grid-template-columns: 1fr 1fr 1fr; gap: 12px;`                                     |
-| 2   | Responsive gallery (no media query) | `repeat(auto-fit, minmax(140px, 1fr))` — columns appear/disappear as you resize      |
+| 2   | Responsive gallery (no media query) | `repeat(auto-fit, minmax(140px, 1fr))` - columns appear/disappear as you resize      |
 | 3   | Named areas layout                  | `grid-template-areas: "header header header" "nav main side" "footer footer footer"` |
-| 4   | Spanning                            | `grid-column: span 2; grid-row: span 2;` — featured card takes 2x2                   |
+| 4   | Spanning                            | `grid-column: span 2; grid-row: span 2;` - featured card takes 2x2                   |
 
 **Fun snippets to try yourself:**
 
@@ -407,13 +407,13 @@ Grid is a **two-dimensional** system — you control rows and columns at the sam
 
 ---
 
-## 7 — Transitions and Animations with `animations/`
+## 7 - Transitions and Animations with `animations/`
 
-**Folder:** [`animations/`](animations) — `index.html` + `main.css`
+**Folder:** [`animations/`](animations) - `index.html` + `main.css`
 
 Two ways to add motion: **transitions** (smooth change between two states) and **animations** (custom multi-step movement with `@keyframes`).
 
-**Transitions — smooth property changes:**
+**Transitions - smooth property changes:**
 
 ```css
 .button {
@@ -435,9 +435,9 @@ Two ways to add motion: **transitions** (smooth change between two states) and *
 | `transition-delay`           | Wait before starting (e.g., `0.1s`)                                |
 | `transition-timing-function` | Speed curve (`ease`, `ease-in-out`, `linear`)                      |
 
-Shorthand: `transition: background-color 0.3s ease 0s;` — property, duration, easing, delay.
+Shorthand: `transition: background-color 0.3s ease 0s;` - property, duration, easing, delay.
 
-**Animations — custom movement with `@keyframes`:**
+**Animations - custom movement with `@keyframes`:**
 
 ```css
 @keyframes slideIn {
@@ -542,27 +542,27 @@ Shorthand: `transition: background-color 0.3s ease 0s;` — property, duration, 
 }
 ```
 
-**Hint:** Use `transform` and `opacity` for animations — they are GPU-accelerated and stay smooth at 60fps. Avoid animating `width`, `height`, `top`, or `left` for large elements, as those trigger layout recalculation and can feel janky.
+**Hint:** Use `transform` and `opacity` for animations - they are GPU-accelerated and stay smooth at 60fps. Avoid animating `width`, `height`, `top`, or `left` for large elements, as those trigger layout recalculation and can feel janky.
 
 ---
 
-## 8 — Extra Projects — Putting It All Together
+## 8 - Extra Projects - Putting It All Together
 
 Three non-generic projects that combine the week's concepts into something you would actually want to show someone. Each has a distinct style, palette, and personality. Open them, steal the patterns, remix them.
 
 | Project           | Folder                                               | Main Concepts                                                                                                                     | Vibe                                                                            |
 | ----------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| Crate Digging     | [`extra/crate-digging`](extra/crate-digging)         | Flexbox (`flex-wrap`, `flex: 1 1 260px`, `gap`, `justify-content`/`align-items`) + pseudo-element vinyl peek + `transition` hover | Brutalist record store — cream paper, chunky borders, vinyl that peeks on hover |
-| The Kigali Review | [`extra/the-kigali-review`](extra/the-kigali-review) | Grid (`grid-template-areas`, spanning, responsive reflow) + semantic structure                                                    | Editorial newspaper — serif headlines, double-rule masthead, 3-col to 1-col     |
-| Late Night Menu   | [`extra/late-night-menu`](extra/late-night-menu)     | Pseudo-elements (`::before` badges, `::after` dotted leaders) + `transition` + `@keyframes` flicker                               | Diner at 1am — dark, neon, dotted leaders between name and price                |
+| Crate Digging     | [`extra/crate-digging`](extra/crate-digging)         | Flexbox (`flex-wrap`, `flex: 1 1 260px`, `gap`, `justify-content`/`align-items`) + pseudo-element vinyl peek + `transition` hover | Brutalist record store - cream paper, chunky borders, vinyl that peeks on hover |
+| The Kigali Review | [`extra/the-kigali-review`](extra/the-kigali-review) | Grid (`grid-template-areas`, spanning, responsive reflow) + semantic structure                                                    | Editorial newspaper - serif headlines, double-rule masthead, 3-col to 1-col     |
+| Late Night Menu   | [`extra/late-night-menu`](extra/late-night-menu)     | Pseudo-elements (`::before` badges, `::after` dotted leaders) + `transition` + `@keyframes` flicker                               | Diner at 1am - dark, neon, dotted leaders between name and price                |
 
 **What to steal from each:**
 
-- **Crate Digging** — The shelf needs no media queries. `display: flex; flex-wrap: wrap; gap: 20px` + `flex: 1 1 260px` on each card does all the responsive work. The vinyl peek is a single `::after` with `opacity` + `right` transition.
-- **The Kigali Review** — The whole page is one grid with `grid-template-areas: "lead lead side" "a b c" "strip strip strip"`. To rearrange, you change one line. The strip at the bottom is a nested grid (`repeat(4, 1fr)`). On mobile it collapses to `1fr`.
-- **Late Night Menu** — The dotted line between dish name and price is a flex `::after` (`flex: 1; border-bottom: 2px dotted`), not a hack. The description reveals with `max-height` + `opacity` transition on hover. The neon uses `@keyframes flicker` with staggered `opacity` stops. NEW and SOLD OUT are `::before` — no extra HTML.
+- **Crate Digging** - The shelf needs no media queries. `display: flex; flex-wrap: wrap; gap: 20px` + `flex: 1 1 260px` on each card does all the responsive work. The vinyl peek is a single `::after` with `opacity` + `right` transition.
+- **The Kigali Review** - The whole page is one grid with `grid-template-areas: "lead lead side" "a b c" "strip strip strip"`. To rearrange, you change one line. The strip at the bottom is a nested grid (`repeat(4, 1fr)`). On mobile it collapses to `1fr`.
+- **Late Night Menu** - The dotted line between dish name and price is a flex `::after` (`flex: 1; border-bottom: 2px dotted`), not a hack. The description reveals with `max-height` + `opacity` transition on hover. The neon uses `@keyframes flicker` with staggered `opacity` stops. NEW and SOLD OUT are `::before` - no extra HTML.
 
-Try opening all three and resizing the window — each responds differently, and each does it with a different layout system.
+Try opening all three and resizing the window - each responds differently, and each does it with a different layout system.
 
 ---
 
@@ -585,16 +585,16 @@ Week 02 taught you to build one layout (a form). Week 03 gives you the tools to 
 
 Open any `index.html` in the browser:
 
-- `semantic-html/index.html` — landing page structure
-- `lists/index.html` — ordered vs unordered lists
-- `tables/index.html` — weekly timetable
-- `pseudo-elements/index.html` — 5 decorative demos
-- `flexbox/index.html` — 5 flexbox layouts (resize to see wrapping)
-- `grid/index.html` — 4 grid layouts (resize to see responsive gallery)
-- `animations/index.html` — 6 motion demos (hover and watch)
-- `extra/crate-digging/index.html` — flexbox record shelf
-- `extra/the-kigali-review/index.html` — grid editorial
-- `extra/late-night-menu/index.html` — diner menu with motion + pseudo-elements
+- `semantic-html/index.html` - landing page structure
+- `lists/index.html` - ordered vs unordered lists
+- `tables/index.html` - weekly timetable
+- `pseudo-elements/index.html` - 5 decorative demos
+- `flexbox/index.html` - 5 flexbox layouts (resize to see wrapping)
+- `grid/index.html` - 4 grid layouts (resize to see responsive gallery)
+- `animations/index.html` - 6 motion demos (hover and watch)
+- `extra/crate-digging/index.html` - flexbox record shelf
+- `extra/the-kigali-review/index.html` - grid editorial
+- `extra/late-night-menu/index.html` - diner menu with motion + pseudo-elements
 
 Or use VS Code Live Server for instant reload.
 
@@ -617,58 +617,58 @@ By the end of Week 03 you should be able to:
 
 ## References
 
-W3Schools is recommended because every page has a live "Try it Yourself" editor — change the code and see the result instantly.
+W3Schools is recommended because every page has a live "Try it Yourself" editor - change the code and see the result instantly.
 
 **Semantic HTML**
 
-- [W3Schools — Semantic Elements](https://www.w3schools.com/html/html5_semantic_elements.asp) — `header`, `nav`, `main`, `section`, `footer`, `article`, `aside`
-- [W3Schools — HTML Blockquote](https://www.w3schools.com/tags/tag_blockquote.asp) — quoting with `<blockquote>`
+- [W3Schools - Semantic Elements](https://www.w3schools.com/html/html5_semantic_elements.asp) - `header`, `nav`, `main`, `section`, `footer`, `article`, `aside`
+- [W3Schools - HTML Blockquote](https://www.w3schools.com/tags/tag_blockquote.asp) - quoting with `<blockquote>`
 
 **Lists**
 
-- [W3Schools — HTML Lists](https://www.w3schools.com/html/html_lists.asp) — `<ol>`, `<ul>`, `<li>` overview
-- [W3Schools — Ordered Lists](https://www.w3schools.com/html/html_lists_ordered.asp) — `type`, `start` attributes
-- [W3Schools — Unordered Lists](https://www.w3schools.com/html/html_lists_unordered.asp) — bullet styles, nesting
+- [W3Schools - HTML Lists](https://www.w3schools.com/html/html_lists.asp) - `<ol>`, `<ul>`, `<li>` overview
+- [W3Schools - Ordered Lists](https://www.w3schools.com/html/html_lists_ordered.asp) - `type`, `start` attributes
+- [W3Schools - Unordered Lists](https://www.w3schools.com/html/html_lists_unordered.asp) - bullet styles, nesting
 
 **Tables**
 
-- [W3Schools — HTML Tables](https://www.w3schools.com/html/html_tables.asp) — `<table>`, `<tr>`, `<th>`, `<td>` basics
-- [W3Schools — Table Borders](https://www.w3schools.com/html/html_table_borders.asp) — `border`, `border-collapse`
-- [W3Schools — Table Headers](https://www.w3schools.com/html/html_table_headers.asp) — `<th>` and `scope`
-- [W3Schools — Table Colspan & Rowspan](https://www.w3schools.com/html/html_table_colspan_rowspan.asp) — spanning cells
+- [W3Schools - HTML Tables](https://www.w3schools.com/html/html_tables.asp) - `<table>`, `<tr>`, `<th>`, `<td>` basics
+- [W3Schools - Table Borders](https://www.w3schools.com/html/html_table_borders.asp) - `border`, `border-collapse`
+- [W3Schools - Table Headers](https://www.w3schools.com/html/html_table_headers.asp) - `<th>` and `scope`
+- [W3Schools - Table Colspan & Rowspan](https://www.w3schools.com/html/html_table_colspan_rowspan.asp) - spanning cells
 
 **Pseudo-elements**
 
-- [W3Schools — Pseudo-elements](https://www.w3schools.com/css/css_pseudo_elements.asp) — `::before`, `::after`, `::first-line`, `::selection`
-- [W3Schools — CSS Content Property](https://www.w3schools.com/cssref/pr_content.php) — what `content` can do
+- [W3Schools - Pseudo-elements](https://www.w3schools.com/css/css_pseudo_elements.asp) - `::before`, `::after`, `::first-line`, `::selection`
+- [W3Schools - CSS Content Property](https://www.w3schools.com/cssref/pr_content.php) - what `content` can do
 
 **Flexbox**
 
-- [W3Schools — CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) — `display: flex`, `justify-content`, `align-items`, `flex-wrap`
-- [W3Schools — Flex Container](https://www.w3schools.com/css/css3_flexbox_container.asp) — container properties in detail
-- [W3Schools — Flex Items](https://www.w3schools.com/css/css3_flexbox_items.asp) — `flex`, `order`, `align-self`
+- [W3Schools - CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) - `display: flex`, `justify-content`, `align-items`, `flex-wrap`
+- [W3Schools - Flex Container](https://www.w3schools.com/css/css3_flexbox_container.asp) - container properties in detail
+- [W3Schools - Flex Items](https://www.w3schools.com/css/css3_flexbox_items.asp) - `flex`, `order`, `align-self`
 
 **Grid**
 
-- [W3Schools — CSS Grid](https://www.w3schools.com/css/css_grid.asp) — `display: grid` intro
-- [W3Schools — Grid Container](https://www.w3schools.com/css/css_grid_container.asp) — `grid-template-columns`, `grid-template-rows`, `gap`
-- [W3Schools — Grid Item](https://www.w3schools.com/css/css_grid_item.asp) — `grid-column`, `grid-row`, `grid-area`
+- [W3Schools - CSS Grid](https://www.w3schools.com/css/css_grid.asp) - `display: grid` intro
+- [W3Schools - Grid Container](https://www.w3schools.com/css/css_grid_container.asp) - `grid-template-columns`, `grid-template-rows`, `gap`
+- [W3Schools - Grid Item](https://www.w3schools.com/css/css_grid_item.asp) - `grid-column`, `grid-row`, `grid-area`
 
 **Transitions and Animations**
 
-- [W3Schools — CSS Transitions](https://www.w3schools.com/css/css3_transitions.asp) — `transition`, `transition-delay`, timing functions
-- [W3Schools — CSS Animations](https://www.w3schools.com/css/css3_animations.asp) — `@keyframes`, `animation` shorthand
-- [W3Schools — CSS Transforms (2D)](https://www.w3schools.com/css/css3_2dtransforms.asp) — `translate`, `scale`, `rotate`
+- [W3Schools - CSS Transitions](https://www.w3schools.com/css/css3_transitions.asp) - `transition`, `transition-delay`, timing functions
+- [W3Schools - CSS Animations](https://www.w3schools.com/css/css3_animations.asp) - `@keyframes`, `animation` shorthand
+- [W3Schools - CSS Transforms (2D)](https://www.w3schools.com/css/css3_2dtransforms.asp) - `translate`, `scale`, `rotate`
 
 **Other useful tools**
 
-- [CSS Tricks — A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-complete-guide-to-flexbox/) — visual cheatsheet
-- [CSS Tricks — A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) — visual cheatsheet
-- [Flexbox Froggy](https://flexboxfroggy.com) — learn Flexbox by playing a game
-- [Grid Garden](https://cssgridgarden.com) — learn Grid by playing a game
+- [CSS Tricks - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-complete-guide-to-flexbox/) - visual cheatsheet
+- [CSS Tricks - A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) - visual cheatsheet
+- [Flexbox Froggy](https://flexboxfroggy.com) - learn Flexbox by playing a game
+- [Grid Garden](https://cssgridgarden.com) - learn Grid by playing a game
 
 ---
 
 ## Next Up
 
-Week 04 covers JavaScript — you will make these layouts interactive with event listeners and DOM manipulation. Until then, try rebuilding the flexbox navbar and the grid gallery from memory.
+Week 04 covers JavaScript - you will make these layouts interactive with event listeners and DOM manipulation. Until then, try rebuilding the flexbox navbar and the grid gallery from memory.

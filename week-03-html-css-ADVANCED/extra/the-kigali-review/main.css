@@ -1,4 +1,4 @@
-/* The Kigali Review — CSS Grid Editorial
+/* The Kigali Review - CSS Grid Editorial
    Concepts: grid-template-columns, grid-template-areas, gap, grid-area, spanning */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -18,7 +18,7 @@ body {
     line-height: 1.5;
 }
 
-/* — Masthead — */
+/* Masthead */
 .masthead {
     max-width: 1100px;
     margin: 0 auto;
@@ -62,7 +62,7 @@ body {
     font-size: 11px;
 }
 
-/* — Paper: THE grid — */
+/* Paper: THE grid */
 .paper {
     max-width: 1100px;
     margin: 0 auto;
@@ -149,7 +149,7 @@ body {
     border-bottom: 2px solid var(--ink);
 }
 
-/* — Grid area assignments — */
+/* Grid area assignments */
 .story--lead { grid-area: lead; }
 .story--side { grid-area: side; background: #fffbeb; }
 .story--a    { grid-area: a; }
@@ -216,7 +216,7 @@ body {
 
 .strip-item:last-child { border-right: none; }
 
-/* — Responsive: 3 cols → 1 col — */
+/* Responsive: 3 cols → 1 col */
 @media (max-width: 800px) {
     .paper {
         grid-template-columns: 1fr;

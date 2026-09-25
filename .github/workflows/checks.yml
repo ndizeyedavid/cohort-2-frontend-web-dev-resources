@@ -1,0 +1,50 @@
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: Repository checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check JavaScript syntax
+        run: node scripts/check-syntax.js
+
+      - name: Check relative links
+        run: node scripts/check-links.js
+
+      - name: Check documentation style
+        run: node scripts/check-dashes.js
+
+      - name: Check HTML basics
+        run: node scripts/check-html.js
+
+      - name: Install scraping dependencies
+        working-directory: week-05-web-scraping-jquery/web-scraping/04-cheerio
+        run: npm install
+
+      - name: Run Week 4 examples
+        run: node scripts/run-examples.js week-04
+
+      - name: Run Week 5 scraping examples
+        run: node scripts/run-examples.js week-05
+
+      - name: Run Cheerio scraper
+        working-directory: week-05-web-scraping-jquery/web-scraping/04-cheerio
+        run: npm run scrape

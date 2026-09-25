@@ -1,11 +1,11 @@
-# Week 01 — Regular Expressions
+# Week 01 - Regular Expressions
 
-**Prerequisites:** None — this is our starting week.
-**Assessment:** Non-graded practice — this week is about building intuition for pattern matching.
+**Prerequisites:** None - this is our starting week.
+**Assessment:** Non-graded practice - this week is about building intuition for pattern matching.
 
 Regular expressions (regex) are search patterns used to match, validate, and extract text. You will use them in Week 01's Intranet Project, Class Activity (Extraction with `modified_sms_v2.xml`), and again in every future week for form validation.
 
-> **A note on notation:** This README ignores the `/.../` delimiters you see in JavaScript (e.g., `/[a-z]/g`). The files contain the raw pattern only — e.g., `[a-zA-Z0-9]` not `/[a-zA-Z0-9]/`. That is intentional.
+> **A note on notation:** This README ignores the `/.../` delimiters you see in JavaScript (e.g., `/[a-z]/g`). The files contain the raw pattern only - e.g., `[a-zA-Z0-9]` not `/[a-zA-Z0-9]/`. That is intentional.
 
 ---
 
@@ -18,13 +18,13 @@ Regular expressions (regex) are search patterns used to match, validate, and ext
 | [email-regex](email-regex)             | Email validation                | `^[a-zA-Z0-9._\-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`                      |
 | [password-regex](password-regex)       | Strong password (lookaheads)    | `^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$` |
 | [url-regex](url-regex)                 | URL validation (**fixed**)      | `https?:\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:[^\s]*)?`                   |
-| [credit-card-regex](credit-card-regex) | Credit card — Visa & Mastercard | `4[0-9]{12}(?:[0-9]{3})?` + Mastercard pattern                         |
+| [credit-card-regex](credit-card-regex) | Credit card - Visa & Mastercard | `4[0-9]{12}(?:[0-9]{3})?` + Mastercard pattern                         |
 
 ---
 
 ## 📝 File-by-File Breakdown
 
-### 1) `example-1` — Character Classes: `[a-zA-Z0-9]`
+### 1) `example-1` - Character Classes: `[a-zA-Z0-9]`
 
 **What it does:** Matches **one** alphanumeric character. To match a whole string of them, you would add a quantifier like `+` → `[a-zA-Z0-9]+`.
 
@@ -40,11 +40,11 @@ Regular expressions (regex) are search patterns used to match, validate, and ext
 - ❌ `!` → no match
 - `[a-zA-Z0-9]` on `hello!` → matches `h` (the first alphanumeric char)
 
-**Hint:** Think of the brackets as a menu — the engine picks one item from the menu per position.
+**Hint:** Think of the brackets as a menu - the engine picks one item from the menu per position.
 
 ---
 
-### 2) `example-2` — Word Boundaries: `\borange\b`
+### 2) `example-2` - Word Boundaries: `\borange\b`
 
 **What it does:** Matches the word `orange` only when it stands alone.
 
@@ -63,7 +63,7 @@ Regular expressions (regex) are search patterns used to match, validate, and ext
 
 ---
 
-### 3) `email-regex` — `^[a-zA-Z0-9._\-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`
+### 3) `email-regex` - `^[a-zA-Z0-9._\-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`
 
 **What it validates:** A basic email address: `local@domain.tld`
 
@@ -86,19 +86,19 @@ Regular expressions (regex) are search patterns used to match, validate, and ext
 
 **Hints & pitfalls:**
 
-- `.` inside `[...]` is literal — you do **not** need to escape it inside brackets, but `\.` outside brackets must be escaped.
-- This is a _simplified_ email regex. Real-world email validation is far more complex — for class purposes this pattern is sufficient and expected.
+- `.` inside `[...]` is literal - you do **not** need to escape it inside brackets, but `\.` outside brackets must be escaped.
+- This is a _simplified_ email regex. Real-world email validation is far more complex - for class purposes this pattern is sufficient and expected.
 - The `-` at the end of `[a-zA-Z0-9.-]` is literal. If you put `-` in the middle without escaping (e.g., `[a-z-0-9]`) it creates an unintended range.
 
 ---
 
-### 4) `password-regex` — `^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$`
+### 4) `password-regex` - `^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$`
 
 **What it validates:** A strong password with at least 8 characters, containing at least one lowercase, one uppercase, one digit, and one special character from `@$!%*?&`.
 
 | Part                    | Meaning                                                           |
 | ----------------------- | ----------------------------------------------------------------- |
-| `^` / `$`               | Anchors — whole string must match                                 |
+| `^` / `$`               | Anchors - whole string must match                                 |
 | `(?=.*[a-z])`           | Positive lookahead: "somewhere ahead there is a lowercase letter" |
 | `(?=.*[A-Z])`           | Lookahead: at least one uppercase                                 |
 | `(?=.*\d)`              | Lookahead: at least one digit                                     |
@@ -114,14 +114,14 @@ Regular expressions (regex) are search patterns used to match, validate, and ext
 
 **Hints:**
 
-- Lookaheads `(?=...)` check a condition **without moving** the cursor. All four lookaheads check from the same starting position — that is how we enforce "must contain all of these".
+- Lookaheads `(?=...)` check a condition **without moving** the cursor. All four lookaheads check from the same starting position - that is how we enforce "must contain all of these".
 - Order of lookaheads does not matter.
 - The final `[...]{8,}` defines _what_ is allowed and _how long_. Without it, `@` would pass the lookaheads but the engine would not know what to actually consume.
-- Common mistake: forgetting `^` and `$` — without them, `abc` would pass because `abcStrongPass1@` contains a valid substring.
+- Common mistake: forgetting `^` and `$` - without them, `abc` would pass because `abcStrongPass1@` contains a valid substring.
 
 ---
 
-### 5) `url-regex` — `https?:\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:[^\s]*)?` ✅ Fixed
+### 5) `url-regex` - `https?:\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:[^\s]*)?` ✅ Fixed
 
 > **Previous version had a bug:** `(https,http):\/\/[a-zA-Z0-9.?#]\.[a-zA-Z]*`
 
@@ -138,7 +138,7 @@ Regular expressions (regex) are search patterns used to match, validate, and ext
 | Part             | Meaning                                                                    |
 | ---------------- | -------------------------------------------------------------------------- |
 | `https?`         | `http` + optional `s` → matches `http` or `https`                          |
-| `:\/\/`          | Literal `://` (`\/` is escaped `/` — you can also write `://`)             |
+| `:\/\/`          | Literal `://` (`\/` is escaped `/` - you can also write `://`)             |
 | `[a-zA-Z0-9.-]+` | Domain name: one or more letters/digits/`.`/`-`                            |
 | `\.`             | Literal dot                                                                |
 | `[a-zA-Z]{2,}`   | TLD: at least 2 letters                                                    |
@@ -157,11 +157,11 @@ Regular expressions (regex) are search patterns used to match, validate, and ext
 
 ---
 
-### 6) `credit-card-regex` — Visa & Mastercard
+### 6) `credit-card-regex` - Visa & Mastercard
 
 This file contains **two** patterns separated by comments:
 
-#### Visa — `4[0-9]{12}(?:[0-9]{3})?`
+#### Visa - `4[0-9]{12}(?:[0-9]{3})?`
 
 | Part            | Meaning                                                                               |
 | --------------- | ------------------------------------------------------------------------------------- |
@@ -173,12 +173,12 @@ This file contains **two** patterns separated by comments:
 - ✅ `4222222222222` (13 digits)
 - ❌ `5111111111111111` (starts with 5 → Mastercard, not Visa)
 
-#### Mastercard — `(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}`
+#### Mastercard - `(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}`
 
 This covers the two Mastercard ranges:
 
-- **Legacy:** `51`–`55` → `5[1-5]...`
-- **New (2017+):** `2221`–`2720` → the `222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720` branches
+- **Legacy:** `51` to `55` → `5[1-5]...`
+- **New (2017+):** `2221` to `2720` → the `222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720` branches
 
 All Mastercard numbers are 16 digits → the prefix (4 digits) + `[0-9]{12}` = 16.
 
@@ -186,26 +186,26 @@ All Mastercard numbers are 16 digits → the prefix (4 digits) + `[0-9]{12}` = 1
 - ✅ `2223000048400011` (new range)
 - ❌ `4111111111111111` (Visa)
 
-**Hint:** Use `^` and `$` (or `\b`) when testing, otherwise `4111111111111111` would match inside `x4111111111111111y`. In the file the anchors are omitted because the pattern may be used with word boundaries or full-match checks — just be aware.
+**Hint:** Use `^` and `$` (or `\b`) when testing, otherwise `4111111111111111` would match inside `x4111111111111111y`. In the file the anchors are omitted because the pattern may be used with word boundaries or full-match checks - just be aware.
 
 ---
 
 ## 🔍 How to Test These Patterns
 
-**Option 1 — regex101.com (recommended)**
+**Option 1 - regex101.com (recommended)**
 
 1. Paste the pattern (without `/.../`)
 2. Paste test strings in the "Test String" box
 3. Read the right-side explanation panel
 
-**Option 2 — Browser console (JavaScript)**
+**Option 2 - Browser console (JavaScript)**
 
 ```js
 /^[a-zA-Z0-9._\-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test("test@alu.edu.rw") // true
 /\borange\b/.test("orangutan") // false
 ```
 
-**Option 3 — Python**
+**Option 3 - Python**
 
 ```python
 import re
@@ -230,8 +230,8 @@ By the end of Week 01 you should be able to:
 
 ## 🔗 References
 
-- [MDN — Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [MDN — Regex Cheatsheet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet)
-- [regex101.com](https://regex101.com) — interactive tester with step-by-step explanation
-- [RegExr](https://regexr.com) — visual regex builder
-- [Regexle](https://regexle.com) — Crazy Regex Puzzle
+- [MDN - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [MDN - Regex Cheatsheet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet)
+- [regex101.com](https://regex101.com) - interactive tester with step-by-step explanation
+- [RegExr](https://regexr.com) - visual regex builder
+- [Regexle](https://regexle.com) - Crazy Regex Puzzle

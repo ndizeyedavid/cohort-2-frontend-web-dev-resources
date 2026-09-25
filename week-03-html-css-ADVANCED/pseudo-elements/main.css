@@ -42,7 +42,7 @@ body {
 
 .demo h2 { font-size: 16px; margin-bottom: 14px; }
 
-/* 1 — Fancy quote */
+/* 1 - Fancy quote */
 .fancy-quote {
     position: relative;
     font-size: 18px;
@@ -70,7 +70,7 @@ body {
     margin-left: 4px;
 }
 
-/* 2 — Heading underline */
+/* 2 - Heading underline */
 .underline-heading {
     position: relative;
     display: inline-block;
@@ -88,7 +88,7 @@ body {
     border-radius: 2px;
 }
 
-/* 3 — Custom bullets */
+/* 3 - Custom bullets */
 .custom-bullets { list-style: none; }
 
 .custom-bullets li {
@@ -104,7 +104,7 @@ body {
     top: 0;
 }
 
-/* 4 — Tooltip */
+/* 4 - Tooltip */
 .tooltip-btn {
     position: relative;
     padding: 10px 20px;
@@ -152,7 +152,7 @@ body {
 
 .tooltip-btn:hover::before { opacity: 1; }
 
-/* 5 — Badge card */
+/* 5 - Badge card */
 .card {
     background: #fffbeb;
     border: 1px solid #fde68a;

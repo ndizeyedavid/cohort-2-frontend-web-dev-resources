@@ -15,6 +15,7 @@ This guide explains what a useful contribution looks like, how to submit one, an
 - [Setting Up the Repository](#setting-up-the-repository)
 - [Contribution Workflow](#contribution-workflow)
 - [Documentation Guidelines](#documentation-guidelines)
+- [Running the Checks](#running-the-checks)
 - [Code Guidelines](#code-guidelines)
 - [Commit Message Guidelines](#commit-message-guidelines)
 - [Folder and File Naming](#folder-and-file-naming)
@@ -253,6 +254,50 @@ Most contributions here are documentation, so these rules matter most.
 - When you change code, update the explanation in the same commit.
 - When you move a file, update every link that pointed to it.
 - When you add a file, add it to the folder's contents table.
+
+---
+
+## Running the Checks
+
+This repository has automated checks that run on every push and pull request. Run them yourself before you open a pull request so you catch problems early.
+
+From the repository root:
+
+```bash
+node scripts/check-syntax.js
+node scripts/check-links.js
+node scripts/check-dashes.js
+node scripts/check-html.js
+node scripts/run-examples.js week-04
+node scripts/run-examples.js week-05
+```
+
+| Script | What it verifies |
+|--------|------------------|
+| `check-syntax.js` | Every JavaScript file parses without errors |
+| `check-links.js` | Every relative link in Markdown, HTML, CSS, and JS resolves |
+| `check-dashes.js` | No em dashes or en dashes anywhere in the content |
+| `check-html.js` | `lang`, `charset`, viewport, `title`, image `alt`, and local asset paths |
+| `run-examples.js` | Every runnable example still executes without crashing |
+
+The Cheerio example is checked separately because it needs its dependency installed:
+
+```bash
+cd week-05-web-scraping-jquery/web-scraping/04-cheerio
+npm install
+npm run scrape
+```
+
+Some files are intentionally skipped because they need a browser rather than Node:
+
+- `week-04-javascript/03-dom-manipulation`
+- `week-05-web-scraping-jquery/01-jquery-selectors`
+- `week-05-web-scraping-jquery/02-jquery-manipulation`
+- `week-05-web-scraping-jquery/03-method-chaining`
+- `week-05-web-scraping-jquery/04-event-handling`
+- `week-05-web-scraping-jquery/web-scraping/05-playwright`
+
+If you add a new example that runs under Node, add it to the checks so future students get the same protection.
 
 ---
 

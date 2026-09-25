@@ -1,6 +1,6 @@
-# Week 02 — Basic HTML and CSS
+# Week 02 - Basic HTML and CSS
 
-**Prerequisites:** Week 01 — Regular Expressions
+**Prerequisites:** Week 01 - Regular Expressions
 
 In Week 01 you learned how to describe text with patterns. This week you learn how to **structure** it with HTML, **style** it with CSS, and then **connect the two** by applying your Week 01 regex skills to a real form with JavaScript validation.
 
@@ -8,22 +8,22 @@ In Week 01 you learned how to describe text with patterns. This week you learn h
 
 ## What's Included
 
-This week has three stages. Each one builds on the previous — do them in order.
+This week has three stages. Each one builds on the previous - do them in order.
 
 | #   | Folder                                                                             | Files                                           | What You Learn                                                                |
 | --- | ---------------------------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------- |
 | 1   | [HTML - Activities](HTML%20-%20Activities)                                         | `Basic-html-structure.html` · `Basic-form.html` | HTML document structure and form elements                                     |
 | 2   | [CSS - Activities](CSS%20-%20Activities)                                           | `Designed-Form.html` · `style.css`              | Styling, layout (Grid/Flexbox), and responsive design                         |
 | 3   | [Applying Regex - HTML & CSS & JS](Applying%20Regex%20-%20HTML%20&%20CSS%20&%20JS) | `index.html` · `style.css` · `main.js`          | Connecting regex validation to a styled form with JavaScript                  |
-| 4   | [Extras](Extras)                                                                   | `Table.html`                                    | HTML tables — building structured data tables with `colspan` and nested lists |
+| 4   | [Extras](Extras)                                                                   | `Table.html`                                    | HTML tables - building structured data tables with `colspan` and nested lists |
 
 ---
 
-## Stage 1 — HTML - Activities
+## Stage 1 - HTML - Activities
 
 Raw HTML with no styling. The goal is to understand structure and semantics before worrying about how things look.
 
-### `Basic-html-structure.html` — The HTML Skeleton
+### `Basic-html-structure.html` - The HTML Skeleton
 
 The smallest valid HTML document:
 
@@ -46,34 +46,34 @@ What each line does:
 | `<!DOCTYPE html>`        | Tells the browser this is an HTML5 document                       |
 | `<html lang="en">`       | Root element, `lang` helps screen readers and search engines      |
 | `<meta charset="UTF-8">` | Allows all characters (accents, emoji, etc.)                      |
-| `<meta name="viewport">` | Makes the page responsive on mobile — without it, phones zoom out |
+| `<meta name="viewport">` | Makes the page responsive on mobile - without it, phones zoom out |
 | `<title>`                | Text shown in the browser tab                                     |
 
-This file is intentionally empty inside `<body>` — it is a starting template you copy for every new page.
+This file is intentionally empty inside `<body>` - it is a starting template you copy for every new page.
 
 ---
 
-### `Basic-form.html` — An Unstyled Registration Form
+### `Basic-form.html` - An Unstyled Registration Form
 
 A working form built with only HTML. Contains 8 fields: Name, Email, Username, Gender, Password, Address, Phone, and Date of Birth.
 
 **Key concepts to notice:**
 
-- **`<label for="...">` paired with `<input id="...">`** — Clicking the label focuses the input. This is essential for accessibility. Every input should have a matching label.
-- **Input `type` attributes** — `type="text"`, `type="email"`, `type="password"`, `type="tel"`, `type="date"` — each type gives the browser hints (e.g., `type="email"` triggers email keyboard on mobile, `type="date"` shows a date picker).
-- **`<select>` with `<option>`** — Used for Gender. It restricts the user to predefined choices.
-- **`<br><br>` for spacing** — This works, but it is a temporary approach. You will replace it with CSS in Stage 2.
-- **Inline event handler** — `<input type="button" onclick="handleForm()">` — This calls a JavaScript function when clicked. In Stage 3 you will see a cleaner version with `<button>` and `main.js`.
+- **`<label for="...">` paired with `<input id="...">`** - Clicking the label focuses the input. This is essential for accessibility. Every input should have a matching label.
+- **Input `type` attributes** - `type="text"`, `type="email"`, `type="password"`, `type="tel"`, `type="date"` - each type gives the browser hints (e.g., `type="email"` triggers email keyboard on mobile, `type="date"` shows a date picker).
+- **`<select>` with `<option>`** - Used for Gender. It restricts the user to predefined choices.
+- **`<br><br>` for spacing** - This works, but it is a temporary approach. You will replace it with CSS in Stage 2.
+- **Inline event handler** - `<input type="button" onclick="handleForm()">` - This calls a JavaScript function when clicked. In Stage 3 you will see a cleaner version with `<button>` and `main.js`.
 
 **Takeaway:** HTML gives meaning. `<form>` says "this is a form", `<label>` says "this text describes that input", `type="email"` says "this field expects an email". The browser uses all of that even before CSS or JS.
 
 ---
 
-## Stage 2 — CSS - Activities
+## Stage 2 - CSS - Activities
 
 The same form as Stage 1, now styled. This is where you see how much CSS changes the same HTML content.
 
-### `Designed-Form.html` — The Styled Form
+### `Designed-Form.html` - The Styled Form
 
 Compare this file side-by-side with `Basic-form.html`. The fields are identical, but the markup is upgraded:
 
@@ -87,11 +87,11 @@ Compare this file side-by-side with `Basic-form.html`. The fields are identical,
 | `name` and `autocomplete` attributes          | `name="email" autocomplete="email"`                        | Helps browsers autofill correctly                                                    |
 | Default option                                | `<option value="">Select gender</option>`                  | Forces the user to make a choice instead of defaulting to Male                       |
 
-**Lesson:** Same content, better structure. HTML classes like `form-card`, `form-grid`, and `form-field` have no built-in meaning — they exist purely as hooks for CSS.
+**Lesson:** Same content, better structure. HTML classes like `form-card`, `form-grid`, and `form-field` have no built-in meaning - they exist purely as hooks for CSS.
 
 ---
 
-### `style.css` — The Stylesheet
+### `style.css` - The Stylesheet
 
 This is a single stylesheet shared between Stage 2 and Stage 3 (both `style.css` files are identical). Here is what it covers:
 
@@ -112,7 +112,7 @@ This is a single stylesheet shared between Stage 2 and Stage 3 (both `style.css`
 }
 ```
 
-- The `*` reset removes inconsistent default margins/padding across browsers. `box-sizing: border-box` makes width/height include padding and border — without it, layouts break in surprising ways.
+- The `*` reset removes inconsistent default margins/padding across browsers. `box-sizing: border-box` makes width/height include padding and border - without it, layouts break in surprising ways.
 - CSS variables (`--primary`, `--bg`, etc.) in `:root` act as a design system. Change `--primary` once and every button updates.
 
 **2. Page layout**
@@ -172,7 +172,7 @@ body {
 }
 ```
 
-- `:focus` gives a blue ring when the user tabs/clicks into a field — critical for keyboard navigation.
+- `:focus` gives a blue ring when the user tabs/clicks into a field - critical for keyboard navigation.
 - `:hover` gives subtle feedback before clicking.
 - The custom `background-image` on `<select>` replaces the browser's default arrow with an SVG chevron.
 
@@ -196,15 +196,15 @@ body {
 
 **Hints:**
 
-- Always use `box-sizing: border-box`. Forgetting it is one of the most common CSS bugs — an element with `width: 100%` plus `padding: 20px` overflows its container without it.
+- Always use `box-sizing: border-box`. Forgetting it is one of the most common CSS bugs - an element with `width: 100%` plus `padding: 20px` overflows its container without it.
 - Keep colors in CSS variables. If you hardcode `#2563eb` in 10 places, changing the theme later means 10 edits.
 - The media query (`@media`) is what makes the form responsive. Without it, the two-column grid would be cramped on phones.
 
 ---
 
-## Stage 3 — Applying Regex - HTML & CSS & JS
+## Stage 3 - Applying Regex - HTML & CSS & JS
 
-The final stage — the same styled form now validates user input using the regex patterns from Week 01.
+The final stage - the same styled form now validates user input using the regex patterns from Week 01.
 
 The HTML (`index.html`) and CSS (`style.css`) are the same as Stage 2. The only addition is:
 
@@ -214,7 +214,7 @@ The HTML (`index.html`) and CSS (`style.css`) are the same as Stage 2. The only 
 
 This connects the validation logic.
 
-### `main.js` — Form Validation with Regular Expressions
+### `main.js` - Form Validation with Regular Expressions
 
 **1. The regex map**
 
@@ -236,10 +236,10 @@ What each pattern checks:
 | Field         | Pattern                                           | Rule                                                                                                                       |
 | ------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | Name          | `/^[a-zA-Z]+(?:['\s-][a-zA-Z]+)+$/`               | At least two words (first + last name), letters only, allows `'` `-` and spaces between words                              |
-| Email         | `/^[a-zA-Z0-9_.]+@[a-zA-Z.]+\.[a-zA-Z]{2,3}$/`    | Basic email. Note: TLD limited to 2–3 chars (`{2,3}`) — see hint below                                                     |
+| Email         | `/^[a-zA-Z0-9_.]+@[a-zA-Z.]+\.[a-zA-Z]{2,3}$/`    | Basic email. Note: TLD limited to 2 to 3 chars (`{2,3}`) - see hint below                                                     |
 | Username      | `/^@[a-zA-Z_]{5,}$/`                              | Starts with `@`, at least 5 letters/underscores after it                                                                   |
 | Gender        | `/^(male\|female\|other)$/i`                      | One of the three values, case-insensitive (`i` flag)                                                                       |
-| Password      | `/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,}$/` | 8+ chars with lowercase, uppercase, digit, and special character (lookaheads — same technique as Week 01 `password-regex`) |
+| Password      | `/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,}$/` | 8+ chars with lowercase, uppercase, digit, and special character (lookaheads - same technique as Week 01 `password-regex`) |
 | Address       | `/^[A-Z]{2} [a-zA-Z0-9 ]+$/`                      | Two uppercase letters, a space, then letters/digits/spaces (e.g., `KG 123 Kigali`)                                         |
 | Phone         | `/^\+250[0-9]{9}$/`                               | Rwanda number: `+250` followed by exactly 9 digits                                                                         |
 | Date of Birth | `/^\d{4}[-/]\d{1,2}[-/]\d{1,2}$/`                 | `YYYY-MM-DD` or `YYYY/MM/DD` (e.g., `2000-05-15`)                                                                          |
@@ -305,13 +305,13 @@ const cleanPhone = phoneField.value.replace(/\s+/g, "");
 if (expressions.phoneRegex.test(cleanPhone)) { ... }
 ```
 
-The user might type `+250 788 123 456` with spaces (that is what the placeholder shows), but the regex expects `+250788123456` with no spaces. `replace(/\s+/g, "")` strips all whitespace before testing. This is a common pattern — clean the input, then validate.
+The user might type `+250 788 123 456` with spaces (that is what the placeholder shows), but the regex expects `+250788123456` with no spaces. `replace(/\s+/g, "")` strips all whitespace before testing. This is a common pattern - clean the input, then validate.
 
 ---
 
-## Extras — Tables with `Extras/Table.html`
+## Extras - Tables with `Extras/Table.html`
 
-A bonus activity that shows how to build structured data tables in HTML. The example is a recreation of the ALU School Bus Schedule for Kigali (Monday – Thursday).
+A bonus activity that shows how to build structured data tables in HTML. The example is a recreation of the ALU School Bus Schedule for Kigali (Monday to Thursday).
 
 **File:** [`Extras/Table.html`](Extras/Table.html)
 
@@ -321,7 +321,7 @@ A `<table border="1">` with 5 rows:
 
 | Row | Content                                                                 |
 | --- | ----------------------------------------------------------------------- |
-| 1   | Full-width header — Transport Schedule title (uses `colspan="2"`)       |
+| 1   | Full-width header - Transport Schedule title (uses `colspan="2"`)       |
 | 2   | `Morning` + route description (`From Gikondo, Sonatube ...`)            |
 | 3   | `1. Round in Morning.` + detailed timetable with `<ul>` inside a `<td>` |
 | 4   | `Afternoon` + return route description                                  |
@@ -346,7 +346,7 @@ A `<table border="1">` with 5 rows:
 - `<tr>` is a row. Every row contains one or more `<td>` (data) or `<th>` (header) cells.
 - In this file all cells use `<td>`. For a more semantic version, the top title cell and any column headers should use `<th>`.
 
-**2. `colspan` — spanning columns**
+**2. `colspan` - spanning columns**
 
 ```html
 <td colspan="2">
@@ -355,7 +355,7 @@ A `<table border="1">` with 5 rows:
 ```
 
 - `colspan="2"` makes the title cell stretch across both columns. Without it you would have two separate cells on that row.
-- `rowspan` is the vertical equivalent — it makes a cell span multiple rows (not used here, but useful for schedules where one label covers several time slots).
+- `rowspan` is the vertical equivalent - it makes a cell span multiple rows (not used here, but useful for schedules where one label covers several time slots).
 
 **3. Nesting other elements inside `<td>`**
 
@@ -369,20 +369,20 @@ A `<table border="1">` with 5 rows:
 </td>
 ```
 
-- A `<td>` can contain almost any HTML — headings, lists, bold text. Here each timetable cell holds a bold time range plus a `<ul>` of stops.
+- A `<td>` can contain almost any HTML - headings, lists, bold text. Here each timetable cell holds a bold time range plus a `<ul>` of stops.
 - This is valid HTML. Tables are for tabular data, and a list of stops per time slot is tabular data.
 
-**4. `border="1"` — quick borders**
+**4. `border="1"` - quick borders**
 
 - `border="1"` on `<table>` adds a simple border around every cell. It works and is fine for learning.
-- For real projects, prefer CSS: `table, td, th { border: 1px solid #ccc; border-collapse: collapse; }` — it gives you control over color, spacing, and style. The HTML attribute is kept here for simplicity.
+- For real projects, prefer CSS: `table, td, th { border: 1px solid #ccc; border-collapse: collapse; }` - it gives you control over color, spacing, and style. The HTML attribute is kept here for simplicity.
 
 ### How to improve this table
 
 If you want to take it further:
 
-- Replace the title `<td>` with `<th colspan="2">` — screen readers announce `<th>` as headers, which helps accessibility.
-- Wrap header rows in `<thead>` and body rows in `<tbody>` — makes styling easier and helps assistive tech.
+- Replace the title `<td>` with `<th colspan="2">` - screen readers announce `<th>` as headers, which helps accessibility.
+- Wrap header rows in `<thead>` and body rows in `<tbody>` - makes styling easier and helps assistive tech.
 - Move `border="1"` to CSS and add `border-collapse: collapse` so borders don't double up.
 - Add `scope="col"` or `scope="row"` on header cells for accessibility.
 
@@ -390,7 +390,7 @@ If you want to take it further:
 
 - Open `Extras/Table.html` in the browser and inspect the table.
 - Try adding a new row for a Friday schedule.
-- Try changing `colspan="2"` to `colspan="1"` and see how the layout breaks — that shows what spanning does.
+- Try changing `colspan="2"` to `colspan="1"` and see how the layout breaks - that shows what spanning does.
 - Try converting the first row to use `<th>` and see if the text becomes bold/centered by default (browsers style `<th>` differently from `<td>`).
 
 ---
@@ -414,25 +414,25 @@ If you add Stage 3, it guides the user and catches mistakes before submission.
 
 ## How to Run
 
-**Option 1 — Open in browser**
+**Option 1 - Open in browser**
 Double-click any `.html` file. For Stage 3, open `Applying Regex - HTML & CSS & JS/index.html` and try submitting the form with valid and invalid inputs.
 
-**Option 2 — VS Code Live Server**
+**Option 2 - VS Code Live Server**
 Right-click the HTML file and select "Open with Live Server" so changes to CSS/JS reload instantly.
 
 **What to test in Stage 3:**
 
 | Try This                           | Expected                                                                     |
 | ---------------------------------- | ---------------------------------------------------------------------------- |
-| Leave Name as `John` (one word)    | ❌ Error — needs first + last name                                           |
+| Leave Name as `John` (one word)    | ❌ Error - needs first + last name                                           |
 | Enter `John Doe`                   | ✅ Passes                                                                    |
 | Enter `test@gmail.com`             | ✅ Passes                                                                    |
-| Enter `notanemail`                 | ❌ Alert — invalid email                                                     |
-| Enter `@john` for Username         | ❌ Alert — needs 5+ chars after `@`                                          |
+| Enter `notanemail`                 | ❌ Alert - invalid email                                                     |
+| Enter `@john` for Username         | ❌ Alert - needs 5+ chars after `@`                                          |
 | Enter `@johndoe`                   | ✅ Passes                                                                    |
-| Enter `weak` for Password          | ❌ Alert — needs upper, lower, digit, special, 8+ chars                      |
+| Enter `weak` for Password          | ❌ Alert - needs upper, lower, digit, special, 8+ chars                      |
 | Enter `StrongPass1!`               | ✅ Passes                                                                    |
-| Enter `Kigali` for Address         | ❌ Alert — needs two uppercase letters + space first (e.g., `KG 123 Kigali`) |
+| Enter `Kigali` for Address         | ❌ Alert - needs two uppercase letters + space first (e.g., `KG 123 Kigali`) |
 | Enter `+250 788 123 456` for Phone | ✅ Passes (spaces are stripped before validation)                            |
 | Select no Gender                   | ❌ Alert                                                                     |
 
@@ -440,10 +440,10 @@ Right-click the HTML file and select "Open with Live Server" so changes to CSS/J
 
 ## Hints and Common Pitfalls
 
-- **`<br>` is not layout.** It works for quick spacing but breaks as soon as you need responsive design. Use CSS Grid or Flexbox instead — that is exactly what Stage 2 demonstrates.
+- **`<br>` is not layout.** It works for quick spacing but breaks as soon as you need responsive design. Use CSS Grid or Flexbox instead - that is exactly what Stage 2 demonstrates.
 - **`novalidate` matters.** Without it on the `<form>`, the browser shows its own validation popup (e.g., "Please include an @") which conflicts with your custom JS messages.
-- **`.trim()` before testing.** Always trim whitespace — a user who types `  test@gmail.com  ` with accidental spaces should not fail validation.
-- **Inconsistent error display.** In `main.js`, the Name field uses `throwError()` (inline message under the field) while other fields use `alert()`. For a polished form, prefer one approach — inline messages are less disruptive than alerts.
+- **`.trim()` before testing.** Always trim whitespace - a user who types `  test@gmail.com  ` with accidental spaces should not fail validation.
+- **Inconsistent error display.** In `main.js`, the Name field uses `throwError()` (inline message under the field) while other fields use `alert()`. For a polished form, prefer one approach - inline messages are less disruptive than alerts.
 - **Email TLD `{2,3}` is restrictive.** The Week 01 `email-regex` uses `{2,}` (2 or more), but this file uses `{2,3}` which rejects newer TLDs like `.info` or `.travel` (4+ chars). If you want to be more permissive, change it to `{2,}`.
 - **`type="date"` returns `YYYY-MM-DD`.** The `dobRegex` allows both `-` and `/` separators (`[-/]`), but the native date picker always produces `-`. The `/` support is for typed input fallback.
 
@@ -469,46 +469,46 @@ W3Schools is recommended for this week because the explanations are short, visua
 
 **HTML basics (Stage 1)**
 
-- [W3Schools — HTML Introduction](https://www.w3schools.com/html/html_intro.asp) — what HTML is and how a document is structured
-- [W3Schools — HTML Elements](https://www.w3schools.com/html/html_elements.asp) — tags, content, and nesting
-- [W3Schools — HTML Attributes](https://www.w3schools.com/html/html_attributes.asp) — `id`, `class`, `type`, `placeholder`, etc.
-- [W3Schools — HTML Head](https://www.w3schools.com/html/html_head.asp) — `<title>`, `<meta>`, and what goes inside `<head>`
-- [W3Schools — HTML Forms](https://www.w3schools.com/html/html_forms.asp) — overview of `<form>`, `<input>`, `<label>`, `<select>`
-- [W3Schools — HTML Input Types](https://www.w3schools.com/html/html_form_input_types.asp) — `text`, `email`, `password`, `tel`, `date`, `button`
-- [W3Schools — HTML Input Attributes](https://www.w3schools.com/html/html_form_attributes.asp) — `placeholder`, `required`, `autocomplete`, `novalidate`
+- [W3Schools - HTML Introduction](https://www.w3schools.com/html/html_intro.asp) - what HTML is and how a document is structured
+- [W3Schools - HTML Elements](https://www.w3schools.com/html/html_elements.asp) - tags, content, and nesting
+- [W3Schools - HTML Attributes](https://www.w3schools.com/html/html_attributes.asp) - `id`, `class`, `type`, `placeholder`, etc.
+- [W3Schools - HTML Head](https://www.w3schools.com/html/html_head.asp) - `<title>`, `<meta>`, and what goes inside `<head>`
+- [W3Schools - HTML Forms](https://www.w3schools.com/html/html_forms.asp) - overview of `<form>`, `<input>`, `<label>`, `<select>`
+- [W3Schools - HTML Input Types](https://www.w3schools.com/html/html_form_input_types.asp) - `text`, `email`, `password`, `tel`, `date`, `button`
+- [W3Schools - HTML Input Attributes](https://www.w3schools.com/html/html_form_attributes.asp) - `placeholder`, `required`, `autocomplete`, `novalidate`
 
 **HTML tables (Extras)**
 
-- [W3Schools — HTML Tables](https://www.w3schools.com/html/html_tables.asp) — `<table>`, `<tr>`, `<th>`, `<td>` basics
-- [W3Schools — HTML Table Borders](https://www.w3schools.com/html/html_table_borders.asp) — `border`, `border-collapse`
-- [W3Schools — HTML Table Sizes](https://www.w3schools.com/html/html_table_sizes.asp) — width, height, padding
-- [W3Schools — HTML Table Headers](https://www.w3schools.com/html/html_table_headers.asp) — using `<th>` and `scope`
-- [W3Schools — HTML Table Colspan & Rowspan](https://www.w3schools.com/html/html_table_colspan_rowspan.asp) — spanning rows and columns
-- [W3Schools — HTML Table Styling](https://www.w3schools.com/html/html_table_styling.asp) — zebra stripes, hover, responsive tables
+- [W3Schools - HTML Tables](https://www.w3schools.com/html/html_tables.asp) - `<table>`, `<tr>`, `<th>`, `<td>` basics
+- [W3Schools - HTML Table Borders](https://www.w3schools.com/html/html_table_borders.asp) - `border`, `border-collapse`
+- [W3Schools - HTML Table Sizes](https://www.w3schools.com/html/html_table_sizes.asp) - width, height, padding
+- [W3Schools - HTML Table Headers](https://www.w3schools.com/html/html_table_headers.asp) - using `<th>` and `scope`
+- [W3Schools - HTML Table Colspan & Rowspan](https://www.w3schools.com/html/html_table_colspan_rowspan.asp) - spanning rows and columns
+- [W3Schools - HTML Table Styling](https://www.w3schools.com/html/html_table_styling.asp) - zebra stripes, hover, responsive tables
 
 **CSS (Stage 2)**
 
-- [W3Schools — CSS Introduction](https://www.w3schools.com/css/css_intro.asp) — how CSS connects to HTML
-- [W3Schools — CSS Syntax](https://www.w3schools.com/css/css_syntax.asp) — selectors, properties, values
-- [W3Schools — CSS Box Model](https://www.w3schools.com/css/css_boxmodel.asp) — content, padding, border, margin and why `box-sizing: border-box` matters
-- [W3Schools — CSS Selectors](https://www.w3schools.com/css/css_selectors.asp) — class, id, pseudo-classes
-- [W3Schools — CSS Colors & Variables](https://www.w3schools.com/css/css3_variables.asp) — CSS custom properties (`--primary` etc.)
-- [W3Schools — CSS Grid](https://www.w3schools.com/css/css_grid.asp) — `display: grid`, `grid-template-columns`, `gap`
-- [W3Schools — CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) — `display: flex`, `justify-content`, `align-items`
-- [W3Schools — CSS Pseudo-classes](https://www.w3schools.com/css/css_pseudo_classes.asp) — `:hover`, `:focus`, `:active`
-- [W3Schools — CSS Media Queries / Responsive](https://www.w3schools.com/css/css_rwd_mediaqueries.asp) — `@media` and making layouts work on mobile
+- [W3Schools - CSS Introduction](https://www.w3schools.com/css/css_intro.asp) - how CSS connects to HTML
+- [W3Schools - CSS Syntax](https://www.w3schools.com/css/css_syntax.asp) - selectors, properties, values
+- [W3Schools - CSS Box Model](https://www.w3schools.com/css/css_boxmodel.asp) - content, padding, border, margin and why `box-sizing: border-box` matters
+- [W3Schools - CSS Selectors](https://www.w3schools.com/css/css_selectors.asp) - class, id, pseudo-classes
+- [W3Schools - CSS Colors & Variables](https://www.w3schools.com/css/css3_variables.asp) - CSS custom properties (`--primary` etc.)
+- [W3Schools - CSS Grid](https://www.w3schools.com/css/css_grid.asp) - `display: grid`, `grid-template-columns`, `gap`
+- [W3Schools - CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) - `display: flex`, `justify-content`, `align-items`
+- [W3Schools - CSS Pseudo-classes](https://www.w3schools.com/css/css_pseudo_classes.asp) - `:hover`, `:focus`, `:active`
+- [W3Schools - CSS Media Queries / Responsive](https://www.w3schools.com/css/css_rwd_mediaqueries.asp) - `@media` and making layouts work on mobile
 
 **JavaScript + Regex validation (Stage 3)**
 
-- [W3Schools — JavaScript Forms / Validation](https://www.w3schools.com/js/js_validation.asp) — basic form validation flow
-- [W3Schools — JavaScript RegExp](https://www.w3schools.com/js/js_regexp.asp) — `test()`, `match()`, regex in JS
-- [W3Schools — JavaScript HTML DOM](https://www.w3schools.com/js/js_htmldom.asp) — `getElementById`, `createElement`, `appendChild`
-- [W3Schools — JavaScript Events](https://www.w3schools.com/js/js_events.asp) — `onclick`, event handling
+- [W3Schools - JavaScript Forms / Validation](https://www.w3schools.com/js/js_validation.asp) - basic form validation flow
+- [W3Schools - JavaScript RegExp](https://www.w3schools.com/js/js_regexp.asp) - `test()`, `match()`, regex in JS
+- [W3Schools - JavaScript HTML DOM](https://www.w3schools.com/js/js_htmldom.asp) - `getElementById`, `createElement`, `appendChild`
+- [W3Schools - JavaScript Events](https://www.w3schools.com/js/js_events.asp) - `onclick`, event handling
 
 **Other useful tools**
 
-- [Regex101](https://regex101.com) — paste any pattern from `main.js` to see step-by-step matching
-- Week 01 patterns: revisit `week-01-regular-expressions/` — the password lookaheads in `main.js` use the same technique
+- [Regex101](https://regex101.com) - paste any pattern from `main.js` to see step-by-step matching
+- Week 01 patterns: revisit `week-01-regular-expressions/` - the password lookaheads in `main.js` use the same technique
 
 ---
 

@@ -57,7 +57,7 @@ body {
   margin-bottom: 14px;
 }
 
-/* 1 — Hover transition */
+/* 1 - Hover transition */
 .btn-transition {
   padding: 12px 24px;
   border: none;
@@ -82,7 +82,7 @@ body {
   transform: scale(0.97);
 }
 
-/* 2 — Slide in */
+/* 2 - Slide in */
 @keyframes slideIn {
   from {
     transform: translateX(-100%);
@@ -104,7 +104,7 @@ body {
   animation: slideIn 0.8s ease-out;
 }
 
-/* 3 — Pulse */
+/* 3 - Pulse */
 @keyframes pulse {
   0%,
   100% {
@@ -130,7 +130,7 @@ body {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-/* 4 — Bounce */
+/* 4 - Bounce */
 @keyframes bounce {
   0%,
   100% {
@@ -147,7 +147,7 @@ body {
   animation: bounce 0.8s ease-in-out infinite;
 }
 
-/* 5 — Spinner */
+/* 5 - Spinner */
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -163,7 +163,7 @@ body {
   animation: spin 0.8s linear infinite;
 }
 
-/* 6 — Card lift */
+/* 6 - Card lift */
 .lift-card {
   background: #fff;
   border: 1px solid var(--border);

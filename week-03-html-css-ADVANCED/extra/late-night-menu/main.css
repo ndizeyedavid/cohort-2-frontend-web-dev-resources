@@ -1,4 +1,4 @@
-/* Late Night Menu — Pseudo-elements + Transitions + Animations */
+/* Late Night Menu - Pseudo-elements + Transitions + Animations */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -19,7 +19,7 @@ body {
     line-height: 1.6;
 }
 
-/* — Hero — */
+/* Hero */
 .hero {
     text-align: center;
     padding: 40px 20px 28px;
@@ -64,7 +64,7 @@ body {
     font-size: 12px;
 }
 
-/* — Layout: grid — */
+/* Layout: grid */
 .menu-wrap {
     max-width: 1000px;
     margin: 0 auto;
@@ -79,7 +79,7 @@ body {
     .menu-wrap { grid-template-columns: 1fr; }
 }
 
-/* — Menu card — */
+/* Menu card */
 .menu {
     background: var(--card);
     color: var(--ink);
@@ -129,7 +129,7 @@ body {
     margin-bottom: 14px;
 }
 
-/* — Item row: flex + pseudo-element leaders — */
+/* Item row: flex + pseudo-element leaders */
 .item {
     position: relative;
     display: flex;
@@ -141,7 +141,7 @@ body {
     transition: background-color 200ms ease, transform 200ms ease;
 }
 
-/* dotted leader between name and price — ::after */
+/* dotted leader between name and price - ::after */
 .item::after {
     content: "";
     flex: 1;
@@ -193,7 +193,7 @@ body {
     margin-top: 4px;
 }
 
-/* NEW badge — ::before */
+/* NEW badge - ::before */
 .item--new::before {
     content: "NEW";
     position: absolute;
@@ -209,7 +209,7 @@ body {
     transform: rotate(-2deg);
 }
 
-/* SOLD OUT — ::before overlay + dim */
+/* SOLD OUT - ::before overlay + dim */
 .item--sold {
     opacity: 0.55;
 }
@@ -247,7 +247,7 @@ body {
 
 .dot { color: var(--pink); }
 
-/* — Side cards — */
+/* Side cards */
 .side {
     display: flex;
     flex-direction: column;
