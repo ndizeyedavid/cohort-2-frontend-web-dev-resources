@@ -38,6 +38,28 @@ jobs:
       - name: Check issue templates
         run: node scripts/check-issue-templates.js
 
+      - name: Check vault data
+        run: node scripts/check-data-json.js
+
+      - name: Check component size
+        run: node scripts/check-component-lines.js
+
+      - name: Install UI dependencies
+        working-directory: UI
+        run: npm ci
+
+      - name: Lint UI
+        working-directory: UI
+        run: npm run lint
+
+      - name: Test UI
+        working-directory: UI
+        run: npm run test
+
+      - name: Build UI
+        working-directory: UI
+        run: npm run build
+
       - name: Install scraping dependencies
         working-directory: week-05-web-scraping-jquery/web-scraping/04-cheerio
         run: npm install
