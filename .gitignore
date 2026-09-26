@@ -1,2 +1,6 @@
 node_modules
 testing
+.superpowers
+
+# Private design specs. Never push these.
+docs/superpowers/
