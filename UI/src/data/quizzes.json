@@ -1,0 +1,302 @@
+[
+  {
+    "id": "quiz-week-01-regex",
+    "moduleId": "week-01",
+    "title": "Regex Check-in",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "mcq",
+        "prompt": "Which pattern matches the word orange only when it stands alone?",
+        "options": [
+          "/orange/",
+          "/\\borange\\b/",
+          "/.orange./",
+          "/orange.*/"
+        ],
+        "answer": 1,
+        "explanation": "The \\b word boundaries require a transition between word and non word characters, so orangutan does not match."
+      },
+      {
+        "id": "q2",
+        "type": "mcq",
+        "prompt": "In \\d{1,3}, what does the quantifier {1,3} control?",
+        "options": [
+          "The whole pattern must be one to three characters long",
+          "The previous token, one to three times",
+          "At least three matches anywhere in the string",
+          "Exactly one match, then exactly three matches"
+        ],
+        "answer": 1,
+        "explanation": "A quantifier always applies to the token immediately before it, here the single class \\d."
+      },
+      {
+        "id": "q3",
+        "type": "short",
+        "prompt": "Why must the dot before the top level domain in an email pattern be escaped as \\., not written as a plain dot?",
+        "answer": "Because an unescaped dot is a metacharacter that matches any character, while backslash dot matches only a literal dot.",
+        "explanation": "Without the escape, a value such as user@domainXcom can satisfy the pattern even though it has no real dot."
+      },
+      {
+        "id": "q4",
+        "type": "code",
+        "prompt": "Write JavaScript that tests whether the string 4111111111111111 is a 16 digit Visa card number.",
+        "answer": "const visa = /^4[0-9]{15}$/;\nvisa.test(\"4111111111111111\"); // true",
+        "explanation": "Visa numbers start with 4, so 4 plus 15 more digits gives exactly 16 digits, and the anchors stop the pattern matching inside a longer string."
+      },
+      {
+        "id": "q5",
+        "type": "mcq",
+        "prompt": "Which piece of a strong password pattern requires at least one digit?",
+        "options": [
+          "(?=.*[a-z])",
+          "(?=.*[A-Z])",
+          "(?=.*\\d)",
+          "[A-Za-z\\d@$!%*?&]{8,}"
+        ],
+        "answer": 2,
+        "explanation": "The lookahead (?=.*\\d) scans ahead for a digit without consuming anything; the final class only lists which characters are allowed."
+      }
+    ]
+  },
+  {
+    "id": "quiz-week-02-html-css",
+    "moduleId": "week-02",
+    "title": "HTML and CSS Check-in",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "mcq",
+        "prompt": "What does box-sizing: border-box change about an element?",
+        "options": [
+          "Width and height include padding and the border",
+          "Margins are added inside the width",
+          "The element ignores padding completely",
+          "Borders are drawn outside the layout"
+        ],
+        "answer": 0,
+        "explanation": "With the default content-box, width plus padding overflows the container, which is why the class resets every element to border-box."
+      },
+      {
+        "id": "q2",
+        "type": "mcq",
+        "prompt": "Why does the registration form in Week 02 set novalidate on the form element?",
+        "options": [
+          "It disables the browser popup so your custom JavaScript messages can show instead",
+          "It lets the form submit without any JavaScript",
+          "It removes the required attributes from the inputs",
+          "It enables the mobile email keyboard"
+        ],
+        "answer": 0,
+        "explanation": "Without novalidate, the browser shows its own bubble such as Please include an @, which competes with your inline errors."
+      },
+      {
+        "id": "q3",
+        "type": "short",
+        "prompt": "What must match for a label to focus its input when the user clicks it?",
+        "answer": "The for attribute of the label must equal the id attribute of the input.",
+        "explanation": "That pairing is also what lets screen readers announce which text belongs to which field."
+      },
+      {
+        "id": "q4",
+        "type": "code",
+        "prompt": "Write CSS that gives .form-grid two equal columns with a 24px gap, collapsing to a single column on screens narrower than 640px.",
+        "answer": ".form-grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 24px;\n}\n\n@media (max-width: 640px) {\n  .form-grid {\n    grid-template-columns: 1fr;\n  }\n}",
+        "explanation": "1fr 1fr splits the row evenly and the media query is what keeps the form usable on phones."
+      },
+      {
+        "id": "q5",
+        "type": "mcq",
+        "prompt": "Which head element makes a page respond to phone screen sizes?",
+        "options": [
+          "<meta charset=\"UTF-8\" />",
+          "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          "<title>My Page</title>",
+          "<meta name=\"description\" content=\"...\" />"
+        ],
+        "answer": 1,
+        "explanation": "Without the viewport tag, mobile browsers render a zoomed out desktop page and users have to pinch to read it."
+      }
+    ]
+  },
+  {
+    "id": "quiz-week-03-layout",
+    "moduleId": "week-03",
+    "title": "Layout and Semantics Check-in",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "mcq",
+        "prompt": "In a row flex container, which property distributes free space along the main axis?",
+        "options": [
+          "align-items",
+          "justify-content",
+          "flex-direction",
+          "grid-gap"
+        ],
+        "answer": 1,
+        "explanation": "justify-content works on the main axis and align-items on the cross axis; they swap meaning if you change flex-direction to column."
+      },
+      {
+        "id": "q2",
+        "type": "mcq",
+        "prompt": "What must a ::before or ::after rule have to render anything at all?",
+        "options": [
+          "A content property",
+          "An id selector",
+          "A z-index",
+          "position: fixed"
+        ],
+        "answer": 0,
+        "explanation": "content is mandatory, even when it is an empty string, otherwise the pseudo-element is never generated."
+      },
+      {
+        "id": "q3",
+        "type": "short",
+        "prompt": "In one sentence each, what do Flexbox and Grid each arrange?",
+        "answer": "Flexbox arranges items along one axis, one row or one column, while Grid places items across rows and columns at the same time.",
+        "explanation": "That is why a navbar uses flex and a page skeleton or gallery uses grid."
+      },
+      {
+        "id": "q4",
+        "type": "code",
+        "prompt": "Write CSS that centres a .hero box horizontally and vertically.",
+        "answer": ".hero {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n}",
+        "explanation": "The container needs a height, here the full viewport, otherwise centring has no space to work in."
+      },
+      {
+        "id": "q5",
+        "type": "mcq",
+        "prompt": "Which tag holds the primary content of a page and should appear only once?",
+        "options": [
+          "<section>",
+          "<main>",
+          "<article>",
+          "<div>"
+        ],
+        "answer": 1,
+        "explanation": "<main> tells assistive tech where the primary content starts; the others can appear many times on one page."
+      }
+    ]
+  },
+  {
+    "id": "quiz-week-04-javascript",
+    "moduleId": "week-04",
+    "title": "JavaScript Check-in",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "mcq",
+        "prompt": "What does typeof null return?",
+        "options": [
+          "null",
+          "undefined",
+          "object",
+          "boolean"
+        ],
+        "answer": 2,
+        "explanation": "It is a known quirk from the first version of JavaScript, so check for null with value === null instead."
+      },
+      {
+        "id": "q2",
+        "type": "mcq",
+        "prompt": "Given const person = { name: 'Ada' }; which line runs without error?",
+        "options": [
+          "person = { name: 'Lin' };",
+          "person.name = 'Lin';",
+          "const person = {};",
+          "delete person;"
+        ],
+        "answer": 1,
+        "explanation": "const locks the binding, not the object's contents, so mutating a property is allowed while reassigning throws."
+      },
+      {
+        "id": "q3",
+        "type": "short",
+        "prompt": "Why does an arrow function not work as an object method that needs this?",
+        "answer": "An arrow function has no own this binding, so it inherits this from the surrounding scope instead of taking it from the object that called it.",
+        "explanation": "That inheritance is exactly what you want inside a callback, and exactly wrong for object methods and constructors."
+      },
+      {
+        "id": "q4",
+        "type": "code",
+        "prompt": "Given const scores = [45, 82, 91, 37]; write an expression that returns only the scores of 50 or more, sorted ascending.",
+        "answer": "scores.filter((n) => n >= 50).sort((a, b) => a - b); // [82, 91]",
+        "explanation": "filter selects the matching values and sort rearranges them; the compare function stops the default lexicographic order."
+      },
+      {
+        "id": "q5",
+        "type": "mcq",
+        "prompt": "What does a getter in an ES6 class let you do?",
+        "options": [
+          "Read a computed value like a property, for example rect.area",
+          "Make every field of the class private",
+          "Run code only once when the class is defined",
+          "Force a method to become static"
+        ],
+        "answer": 0,
+        "explanation": "A getter runs on access without parentheses, which keeps the outside code reading like plain data."
+      }
+    ]
+  },
+  {
+    "id": "quiz-week-05-jquery",
+    "moduleId": "week-05",
+    "title": "jQuery and Scraping Check-in",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "mcq",
+        "prompt": "Which jQuery method reads the current value of an input field?",
+        "options": [
+          ".text()",
+          ".html()",
+          ".val()",
+          ".attr()"
+        ],
+        "answer": 2,
+        "explanation": "Inputs have no text node, so .val() is the method that reads and writes what the user typed."
+      },
+      {
+        "id": "q2",
+        "type": "short",
+        "prompt": "What problem does event delegation solve?",
+        "answer": "It attaches one handler to a parent so events from child elements added after page load still trigger it.",
+        "explanation": "In jQuery you pass the child selector as the second argument to .on(), as in parent.on('click', '.child', fn)."
+      },
+      {
+        "id": "q3",
+        "type": "code",
+        "prompt": "Write jQuery that changes every .course-card to say Updated, adds the class is-complete, and sets opacity to 0.5.",
+        "answer": "$(\".course-card\")\n  .text(\"Updated!\")\n  .addClass(\"is-complete\")\n  .css(\"opacity\", 0.5);",
+        "explanation": "Most methods return the same collection, so the three steps chain; a reading call such as .text() with no argument would end the chain."
+      },
+      {
+        "id": "q4",
+        "type": "mcq",
+        "prompt": "A page builds its content after load and has a Load more reports button. Which tool fits?",
+        "options": [
+          "Cheerio",
+          "Playwright",
+          "A regular expression on the raw HTML",
+          "A CSS selector run in the stylesheet"
+        ],
+        "answer": 1,
+        "explanation": "Cheerio only reads the HTML you hand it; Playwright drives a real browser so it can wait, click, and then read the new nodes."
+      },
+      {
+        "id": "q5",
+        "type": "mcq",
+        "prompt": "What should you check before scraping a real website?",
+        "options": [
+          "Only the colour scheme of the page",
+          "Its terms of use, its robots.txt, and whether an official API exists",
+          "Nothing, because public pages are free to copy",
+          "Only the errors in the browser console"
+        ],
+        "answer": 1,
+        "explanation": "Publicly visible content is not automatically unrestricted, and an official API is usually the more stable source."
+      }
+    ]
+  }
+]

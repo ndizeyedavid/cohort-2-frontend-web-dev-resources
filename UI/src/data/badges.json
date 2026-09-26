@@ -1,0 +1,186 @@
+{
+  "badges": [
+    {
+      "id": "first-lesson",
+      "name": "First Mark",
+      "description": "Finish your very first lesson in the vault.",
+      "icon": "✓",
+      "rule": {
+        "type": "lessonsCompleted",
+        "target": 1
+      }
+    },
+    {
+      "id": "page-turner",
+      "name": "Page Turner",
+      "description": "Complete 10 lessons and start stacking real progress.",
+      "icon": "📚",
+      "rule": {
+        "type": "lessonsCompleted",
+        "target": 10
+      }
+    },
+    {
+      "id": "vault-regular",
+      "name": "Vault Regular",
+      "description": "Complete 25 lessons. You practically live here now.",
+      "icon": "⚡",
+      "rule": {
+        "type": "lessonsCompleted",
+        "target": 25
+      }
+    },
+    {
+      "id": "quiz-starter",
+      "name": "Pop Quiz",
+      "description": "Pass your first quiz.",
+      "icon": "❓",
+      "rule": {
+        "type": "quizzesPassed",
+        "target": 1
+      }
+    },
+    {
+      "id": "answer-machine",
+      "name": "Answer Machine",
+      "description": "Pass 3 quizzes across the course.",
+      "icon": "🧠",
+      "rule": {
+        "type": "quizzesPassed",
+        "target": 3
+      }
+    },
+    {
+      "id": "quiz-whiz",
+      "name": "Quiz Whiz",
+      "description": "Pass 5 quizzes. The vault knows you studied.",
+      "icon": "🏆",
+      "rule": {
+        "type": "quizzesPassed",
+        "target": 5
+      }
+    },
+    {
+      "id": "streak-7",
+      "name": "Week of Fire",
+      "description": "Keep a study streak alive for 7 days.",
+      "icon": "🔥",
+      "rule": {
+        "type": "streakDays",
+        "target": 7
+      }
+    },
+    {
+      "id": "streak-14",
+      "name": "Fortnight Focus",
+      "description": "Keep a study streak alive for 14 days.",
+      "icon": "📅",
+      "rule": {
+        "type": "streakDays",
+        "target": 14
+      }
+    },
+    {
+      "id": "streak-30",
+      "name": "Month Long",
+      "description": "Study on 30 days in a row. That is a habit.",
+      "icon": "🌟",
+      "rule": {
+        "type": "streakDays",
+        "target": 30
+      }
+    },
+    {
+      "id": "pattern-spotter",
+      "name": "Pattern Spotter",
+      "description": "Finish every lesson in the Regular Expressions module.",
+      "icon": "⭐",
+      "rule": {
+        "type": "moduleCompleted",
+        "target": "week-01"
+      }
+    },
+    {
+      "id": "markup-maestro",
+      "name": "Markup Maestro",
+      "description": "Finish every lesson in HTML and CSS Basics.",
+      "icon": "🌐",
+      "rule": {
+        "type": "moduleCompleted",
+        "target": "week-02"
+      }
+    },
+    {
+      "id": "grid-master",
+      "name": "Grid Master",
+      "description": "Finish every lesson in Advanced HTML and CSS.",
+      "icon": "⚙",
+      "rule": {
+        "type": "moduleCompleted",
+        "target": "week-03"
+      }
+    },
+    {
+      "id": "code-breaker",
+      "name": "Code Breaker",
+      "description": "Finish every lesson in the JavaScript module.",
+      "icon": "📜",
+      "rule": {
+        "type": "moduleCompleted",
+        "target": "week-04"
+      }
+    },
+    {
+      "id": "scraping-scout",
+      "name": "Scraping Scout",
+      "description": "Finish every lesson in jQuery and Web Scraping.",
+      "icon": "🔍",
+      "rule": {
+        "type": "moduleCompleted",
+        "target": "week-05"
+      }
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "name": "Regex Rookie",
+      "xp": 0
+    },
+    {
+      "level": 2,
+      "name": "Tag Wrangler",
+      "xp": 150
+    },
+    {
+      "level": 3,
+      "name": "Selector Scout",
+      "xp": 400
+    },
+    {
+      "level": 4,
+      "name": "Layout Learner",
+      "xp": 800
+    },
+    {
+      "level": 5,
+      "name": "Grid Apprentice",
+      "xp": 1400
+    },
+    {
+      "level": 6,
+      "name": "Script Slinger",
+      "xp": 2200
+    },
+    {
+      "level": 7,
+      "name": "DOM Driver",
+      "xp": 3200
+    },
+    {
+      "level": 8,
+      "name": "Vault Legend",
+      "xp": 4400
+    }
+  ]
+}

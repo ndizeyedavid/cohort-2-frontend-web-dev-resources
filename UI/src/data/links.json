@@ -1,0 +1,200 @@
+[
+  {
+    "id": "mdn-regex-guide",
+    "moduleId": "week-01",
+    "title": "MDN Regular Expressions guide",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions",
+    "kind": "docs",
+    "description": "The official MDN guide to regex syntax, flags, and the RegExp object.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "mdn-regex-cheatsheet",
+    "moduleId": "week-01",
+    "title": "MDN regex cheatsheet",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet",
+    "kind": "docs",
+    "description": "One page listing every special character with a short example for each.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "regex101-tester",
+    "moduleId": "week-01",
+    "title": "regex101 tester",
+    "url": "https://regex101.com",
+    "kind": "tool",
+    "description": "Paste a pattern and test strings, and the side panel explains each token.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "regexr-builder",
+    "moduleId": "week-01",
+    "title": "RegExr pattern builder",
+    "url": "https://regexr.com",
+    "kind": "tool",
+    "description": "Visual regex builder with a reference panel and a community pattern library.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "mdn-html-reference",
+    "moduleId": "week-02",
+    "title": "MDN HTML reference",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    "kind": "docs",
+    "description": "The home of every HTML element and attribute reference on MDN.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "w3schools-html-intro",
+    "moduleId": "week-02",
+    "title": "W3Schools HTML introduction",
+    "url": "https://www.w3schools.com/html/html_intro.asp",
+    "kind": "practice",
+    "description": "Short visual explanation with a Try it Yourself editor on the same page.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "mdn-css-selectors",
+    "moduleId": "week-02",
+    "title": "MDN CSS selectors",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors",
+    "kind": "docs",
+    "description": "Reference for the selector types you use to target elements with CSS.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "w3schools-css-box-model",
+    "moduleId": "week-02",
+    "title": "W3Schools CSS box model",
+    "url": "https://www.w3schools.com/css/css_boxmodel.asp",
+    "kind": "practice",
+    "description": "Interactive diagram of content, padding, border, and margin with live examples.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "css-tricks-flexbox",
+    "moduleId": "week-03",
+    "title": "CSS-Tricks complete guide to Flexbox",
+    "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
+    "kind": "docs",
+    "description": "The visual cheatsheet for main axis, cross axis, and every flex property.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "css-tricks-grid",
+    "moduleId": "week-03",
+    "title": "CSS-Tricks complete guide to Grid",
+    "url": "https://css-tricks.com/snippets/css/complete-guide-grid/",
+    "kind": "docs",
+    "description": "Diagram by diagram reference for grid templates, areas, and spanning.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "flexbox-froggy",
+    "moduleId": "week-03",
+    "title": "Flexbox Froggy game",
+    "url": "https://flexboxfroggy.com",
+    "kind": "practice",
+    "description": "Learn flexbox by dragging frogs into place with the right properties.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "grid-garden",
+    "moduleId": "week-03",
+    "title": "Grid Garden game",
+    "url": "https://cssgridgarden.com",
+    "kind": "practice",
+    "description": "Water a carrot garden by writing grid properties, level by level.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "caniuse",
+    "moduleId": "week-03",
+    "title": "Can I use",
+    "url": "https://caniuse.com",
+    "kind": "tool",
+    "description": "Check browser support for any CSS or HTML feature before you rely on it.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "javascript-info",
+    "moduleId": "week-04",
+    "title": "JavaScript.info modern tutorial",
+    "url": "https://javascript.info",
+    "kind": "docs",
+    "description": "Deep, well ordered chapters covering variables, types, classes, and more.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "mdn-javascript",
+    "moduleId": "week-04",
+    "title": "MDN JavaScript reference",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    "kind": "docs",
+    "description": "The reference home for the JavaScript language and its built in objects.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "freecodecamp-js",
+    "moduleId": "week-04",
+    "title": "freeCodeCamp JavaScript algorithms",
+    "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
+    "kind": "practice",
+    "description": "Free interactive lessons and challenges that score your code as you go.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "devdocs",
+    "moduleId": "week-04",
+    "title": "DevDocs combined documentation",
+    "url": "https://devdocs.io/",
+    "kind": "tool",
+    "description": "Searchable offline friendly docs for JavaScript, HTML, CSS, and more.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "jquery-api",
+    "moduleId": "week-05",
+    "title": "jQuery API documentation",
+    "url": "https://api.jquery.com/",
+    "kind": "docs",
+    "description": "The official reference for every jQuery method, with examples per page.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "jquery-learning-center",
+    "moduleId": "week-05",
+    "title": "jQuery learning center",
+    "url": "https://learn.jquery.com/",
+    "kind": "docs",
+    "description": "Guides on selectors, events, and delegation written by the jQuery team.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "cheerio-docs",
+    "moduleId": "week-05",
+    "title": "Cheerio documentation",
+    "url": "https://cheerio.js.org/",
+    "kind": "docs",
+    "description": "How to load HTML and query it with CSS selectors inside Node.js.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "playwright-docs",
+    "moduleId": "week-05",
+    "title": "Playwright documentation",
+    "url": "https://playwright.dev/docs/intro",
+    "kind": "docs",
+    "description": "Official guide to installing browsers, waiting, clicking, and scraping.",
+    "verifiedOn": "2026-09-26"
+  },
+  {
+    "id": "mdn-fetch-api",
+    "moduleId": "week-05",
+    "title": "MDN Fetch API",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API",
+    "kind": "docs",
+    "description": "How to request pages and data properly before you write any scraper.",
+    "verifiedOn": "2026-09-26"
+  }
+]

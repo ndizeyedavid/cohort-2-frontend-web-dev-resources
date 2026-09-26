@@ -1,0 +1,278 @@
+[
+  {
+    "id": "week-01",
+    "week": 1,
+    "title": "Regular Expressions",
+    "summary": "Build pattern matching intuition with character classes, quantifiers, groups, and the validation patterns used in class.",
+    "color": "#12A37B",
+    "lessons": [
+      {
+        "id": "01-introduction-to-regex",
+        "title": "Introduction to Regular Expressions",
+        "summary": "What regex is for, and how to test your very first pattern.",
+        "minutes": 12,
+        "content": "Regular expressions, shortened to regex, are search patterns used to match, validate, and extract text. One pattern syntax works in JavaScript, Python, and most editors, so what you learn here travels with you.\n\n## What a Pattern Does\n\nEvery pattern answers one of three needs:\n\n- **Match**: find a substring that fits the shape you describe.\n- **Validate**: confirm a whole value (an email, a phone number) before you accept it.\n- **Extract**: pull a piece out of a larger line of text.\n\n## Your First Pattern\n\n```text\ncat\n```\n\nThat pattern matches the literal letters c, a, t wherever they appear. In JavaScript you wrap a pattern in slashes and ask a question with `test()`:\n\n```js\n/cat/.test(\"the cat sat\");   // true\n/cat/.test(\"concatenate\");   // true, it matches inside the word\n```\n\n## How to Read One\n\n- Patterns read left to right, one token at a time.\n- A token is either a literal character or a metacharacter with special meaning.\n- Metacharacters are the small set you will learn this week: `.`, `*`, `+`, `?`, `[]`, `()`, `|^`, `$`, and `\\`.\n- Test every pattern in regex101.com with several good strings and several bad strings before you trust it.\n\nRegex is a very small language that is easy to write and subtly easy to get wrong. Read it slowly and check edge cases like empty strings."
+      },
+      {
+        "id": "02-character-classes",
+        "title": "Character Classes",
+        "summary": "Pick exactly one character from a menu written in square brackets.",
+        "minutes": 14,
+        "content": "A character class is a menu in square brackets. The engine looks at one position and picks a single character that the menu allows.\n\n## Building the Menu\n\n- `[abc]` matches a, b, or c.\n- `a-z` matches any lowercase letter, `A-Z` any uppercase, `0-9` any digit.\n- `[a-zA-Z0-9]` matches any alphanumeric character.\n- `[^0-9]` matches any character that is **not** a digit. The caret only negates when it is the first character inside the class.\n\n```text\n[a-zA-Z0-9]\n```\n\nThat pattern from `01-character-classes.regex` matches **one** alphanumeric character. Add a quantifier such as `+` when you need a run of them.\n\n## Escaping Inside Brackets\n\nInside a class most characters lose their special meaning. A dot is a literal dot there, and a dash written last is a literal dash.\n\n```js\n/^[a-zA-Z0-9._-]+$/.test(\"first.last-2026\"); // true\n/^[^0-9]+$/.test(\"hello\");   // true, no digits allowed\n```\n\n## Common Traps\n\n- A class without a quantifier matches exactly one character, so `[0-9]` never matches `42` as a whole.\n- Put `-` last or escape it, otherwise it can form an unintended range.\n- `[A-z]` is a mistake: it also covers the punctuation between `Z` and `a`.\n- A caret anywhere but the first position is a literal caret."
+      },
+      {
+        "id": "03-quantifiers",
+        "title": "Quantifiers",
+        "summary": "Control how many times the previous token may repeat.",
+        "minutes": 14,
+        "content": "Quantifiers say how many times the previous token may repeat. Choosing the wrong one is the most common source of a regex bug.\n\n## The Core Four\n\n- `*` zero or more\n- `+` one or more\n- `?` zero or one\n- `{n}` exactly n times, `{n,}` at least n, `{n,m}` between n and m\n\n```text\n\\d{1,3}\n```\n\nHere `\\d` is any digit and `{1,3}` allows one to three of them, so the pattern reads as one to three digits in a row.\n\n## Greedy by Default\n\nQuantifiers are greedy: they grab as much as they can, then give characters back (backtracking) to satisfy the rest of the pattern.\n\n```js\n/^[a-z]+$/.test(\"abc\");       // true\n\"4111111111111111\".match(/^\\d{13,16}$/); // matches the whole string\n/[a-z]+/.exec(\"abc123\")[0];   // \"abc\", digits are left alone\n```\n\n## Watch Out\n\n- A character class needs a quantifier to match a run: `[0-9]+`, not `[0-9]`.\n- Add `?` after a greedy quantifier to make it lazy, so it stops at the first chance.\n- `{0,}` and `*` mean the same thing, and `{1,}` and `+` mean the same thing.\n- Always test the empty string: many patterns pass until a user submits nothing."
+      },
+      {
+        "id": "04-groups-and-alternation",
+        "title": "Groups and Alternation",
+        "summary": "Bundle parts of a pattern and choose between alternatives.",
+        "minutes": 15,
+        "content": "Groups bundle pieces of a pattern so you can quantify or reuse them. Alternation with the pipe character means \"or\".\n\n## Grouping With Parentheses\n\nParentheses create a group, and the group behaves as one unit for quantifiers.\n\n```text\n(https|http)://\n```\n\nThe group matches either `https` or `http`. The shorthand `https?` says the s is optional, which is the same idea in less space.\n\n## Alternation Choices\n\n- `|` has low precedence: `cat|dog` means `cat` or `dog`, not `ca(t|d)og`.\n- Group first when you need `gr(a|e)y` to accept both gray and grey.\n- `(?:...)` is a non capturing group: it groups without storing a match for later.\n\n```js\n/^(male|female|other)$/i.test(\"Female\"); // true, the i flag ignores case\n/gr(a|e)y/.test(\"grey\");                 // true\n```\n\n## Capture Groups\n\nCaptured text can be read after a match, which is how extraction tasks pull fields out of a line.\n\n```js\nconst m = \"Anna,21\".match(/^(\\w+),(\\d+)$/);\nm[1]; // \"Anna\"\nm[2]; // \"21\"\n```\n\nEach open parenthesis gets its own number, and `m[0]` is always the whole match."
+      },
+      {
+        "id": "05-anchors-and-boundaries",
+        "title": "Anchors and Word Boundaries",
+        "summary": "Match positions instead of characters to pin a pattern down.",
+        "minutes": 13,
+        "content": "Anchors do not match characters. They assert positions, which is how you control where a pattern is allowed to succeed.\n\n## Start and End\n\n- `^` asserts the start of the string (or the line with the m flag).\n- `$` asserts the end of the string (or the line with the m flag).\n\n```text\n^[a-zA-Z0-9._\\-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\n```\n\nThat email pattern only succeeds when the **whole string** is an email, not when an email happens to appear somewhere inside a longer value.\n\n## Word Boundaries\n\n`\\b` sits between a word character and a non word character. It is how you match a whole word.\n\n```js\n/\\borange\\b/.test(\"I like orange juice\"); // true\n/\\borange\\b/.test(\"orangutan\");           // false\n/\\borange\\b/.test(\"my orange\");           // true\n```\n\n## Practical Rules\n\n- Validate input with `^` and `$`, or test the trimmed full value.\n- Without anchors, `4111111111111111` would happily match inside `x4111111111111111y`.\n- Use `\\b` whenever the task says \"whole word\" or \"standalone\".\n- Forgetting an anchor is a classic exam trap: the pattern looks right and still lets junk through."
+      },
+      {
+        "id": "06-practical-validation",
+        "title": "Practical Validation",
+        "summary": "Build the email, password, and card number patterns used in class.",
+        "minutes": 18,
+        "content": "Validation patterns combine everything from the week: classes, quantifiers, groups, lookaheads, and anchors. These three are the ones you will reuse in every later week.\n\n## Email Addresses\n\n```text\n^[a-zA-Z0-9._\\-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\n```\n\nRead it in parts: a local part, a literal at sign, a domain, a literal dot, then a top level domain of at least two letters. This is a class level pattern, not a full RFC parser, and that is expected here.\n\n## Password Strength\n\n```text\n^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$\n```\n\nEach `(?=...)` is a positive lookahead: it checks a condition **without moving forward**, so all four requirements are checked from position zero. The final class lists which characters are allowed and `{8,}` sets the minimum length. Without `^` and `$`, a weak substring such as `abcStrongPass1@` would pass.\n\n## Card Numbers\n\n```js\nconst visa = /^4[0-9]{12}(?:[0-9]{3})?$/;\nvisa.test(\"4111111111111111\"); // true, 16 digits\nvisa.test(\"5111111111111111\"); // false, starts with 5\n```\n\nVisa starts with 4 and is 13 or 16 digits. Mastercard covers 51 to 55 plus the newer 2221 to 2720 range, which is why its pattern is a group of alternatives followed by twelve digits.\n\n## Testing Habit\n\nPaste every pattern into regex101.com with good and bad strings first. In a form you will call `regex.test(value.trim())` and show an inline error whenever it returns false."
+      }
+    ]
+  },
+  {
+    "id": "week-02",
+    "week": 2,
+    "title": "HTML and CSS Basics",
+    "summary": "Structure a page with HTML, style it with CSS, and validate a real form with the regex skills from Week 01.",
+    "color": "#2563EB",
+    "lessons": [
+      {
+        "id": "01-html-document-structure",
+        "title": "HTML Document Structure",
+        "summary": "The HTML5 skeleton that every page starts from.",
+        "minutes": 12,
+        "content": "Every web page starts from the same skeleton. Learn it once and you can open a new file without guessing what goes where.\n\n## The Minimal Document\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>My Page</title>\n  </head>\n  <body>\n    <h1>Hello</h1>\n  </body>\n</html>\n```\n\n## What Each Line Does\n\n- `<!DOCTYPE html>` tells the browser this is an HTML5 document.\n- `lang=\"en\"` helps screen readers and search engines pronounce the page.\n- `charset` allows accents and emoji to display correctly.\n- `viewport` makes the page respond to phone screens. Without it, phones render a zoomed out desktop page.\n- Everything visible lives inside `<body>`; everything the browser needs to know lives inside `<head>`.\n\n## Elements and Nesting\n\nTags come in pairs such as `<p>...</p>`, and elements nest like folders. Never overlap them, because the browser silently repairs broken structure for you.\n\n```html\n<p>Hello <strong>world</strong></p>\n```\n\nThe `<strong>` element is a child of `<p>`, so styling and screen readers understand the relationship. Your page for this week is `Basic-html-structure.html`, which is intentionally empty inside the body and acts as your starting template."
+      },
+      {
+        "id": "02-text-lists-links-images",
+        "title": "Text, Lists, Links, and Images",
+        "summary": "The content elements that fill almost every page.",
+        "minutes": 14,
+        "content": "Content is what visitors actually read. Headings, lists, links, and images cover most of a page, and each one carries meaning for assistive technology.\n\n## Headings and Paragraphs\n\nHeadings run from `<h1>` down to `<h6>`, and a page normally has one `<h1>`. Paragraphs use `<p>`. Avoid `<br>` for spacing, because it is line breaking, not layout.\n\n## Lists That Mean Something\n\n```html\n<ol>\n  <li>Open the file</li>\n  <li>Edit the styles</li>\n</ol>\n<ul>\n  <li>Fries</li>\n  <li>Pizza</li>\n</ul>\n```\n\nUse `<ol>` when sequence matters (steps, ranks, instructions) and `<ul>` when it does not (features, favourites, nav links). `<li>` must be a direct child of the list, and a list can nest inside an `<li>` to form sub items.\n\n## Links and Images\n\n```html\n<a href=\"https://developer.mozilla.org/\">MDN</a>\n<img src=\"logo.png\" alt=\"Course logo\" />\n```\n\n- `href` is the destination; use full URLs for external sites.\n- `alt` describes the image for screen readers and appears when the file fails to load.\n- Every image needs `alt`, just as every input later needs a matching `<label for>`.\n\n## Forms Preview\n\nA form collects input with `<label>`, `<input>`, `<select>`, and `<button>`. `Basic-form.html` shows all of them with correctly paired `for` and `id` attributes so clicking the label focuses the field."
+      },
+      {
+        "id": "03-css-selectors",
+        "title": "CSS Selectors",
+        "summary": "Choose exactly which elements a rule is allowed to style.",
+        "minutes": 14,
+        "content": "A selector decides which elements a rule touches. Getting it wrong is the number one reason a stylesheet seems to do nothing.\n\n## The Main Selectors\n\n- Element: `p` styles every paragraph.\n- Class: `.form-field` styles anything with `class=\"form-field\"`.\n- ID: `#submit` styles the single element with that id.\n- Descendant: `.form-grid input` styles inputs inside the grid.\n- Group: `h1, h2` applies one rule to both.\n\n```css\n.form-field label {\n  font-weight: 600;\n}\n#submit {\n  background: #2563eb;\n}\n```\n\n## Pseudo Classes\n\nPseudo classes describe a state rather than a tag name.\n\n```css\n.btn:hover {\n  background: #1d4ed8;\n}\n.btn:focus {\n  outline: 3px solid #93c5fd;\n}\n```\n\n`:hover` reacts to the pointer, `:focus` reacts to keyboard and click focus, and `:active` is the pressed moment. A visible `:focus` style is not optional, because keyboard users navigate your form with the tab key.\n\n## Specificity Rules\n\n1. Inline styles beat everything else.\n2. IDs beat classes, and classes beat element selectors.\n3. When two rules tie, the last one in the stylesheet wins.\n\nKeep selectors short. Three chained classes usually means the markup needs a rethink instead."
+      },
+      {
+        "id": "04-box-model",
+        "title": "The Box Model",
+        "summary": "Content, padding, border, and margin, and why border-box matters.",
+        "minutes": 13,
+        "content": "Every element is a box made of four layers. Once you can picture them, padding versus margin stops being a guessing game.\n\n## The Four Layers\n\n- **Content**: the text, input, or image itself.\n- **Padding**: space inside the border, around the content.\n- **Border**: the edge line around the padding.\n- **Margin**: space outside the box, between it and its neighbours.\n\n## Why border-box Wins\n\n```css\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n.card {\n  width: 100%;\n  padding: 20px;\n  border: 1px solid #ccc;\n}\n```\n\nWith the default `content-box`, that card is 100 percent wide **plus** 40 pixels of padding plus borders, so it overflows its container. With `border-box`, width includes padding and border, and the card stays put. This single line prevents a whole family of layout bugs.\n\n## Spacing in Practice\n\n```css\n.form-field {\n  margin-bottom: 20px;\n  padding: 12px;\n}\n```\n\nUse margin to separate siblings and padding to give content breathing room inside its own box.\n\n## Common Bugs\n\n- A child with `width: 100%` and horizontal padding overflows without `border-box`.\n- Adjacent vertical margins collapse to the larger value instead of adding up.\n- Inline elements ignore top and bottom margin; wrap them in a block element.\n- DevTools shows the box model diagram for the node you select, which is the fastest way to find an unexpected 8 pixel gap."
+      },
+      {
+        "id": "05-styling-basics",
+        "title": "Styling Basics",
+        "summary": "Colour, type, spacing, CSS variables, and responsive tweaks.",
+        "minutes": 15,
+        "content": "With selectors and the box model in place, styling becomes a set of repeatable choices: colour, type, spacing, and one central place to change them.\n\n## Connecting CSS to HTML\n\n```html\n<link rel=\"stylesheet\" href=\"style.css\" />\n```\n\nA linked stylesheet is the right default for every page. Inline styles and `<style>` blocks are for one-off exceptions only, because scattered rules are hard to find later.\n\n## CSS Variables as a Design System\n\n```css\n:root {\n  --primary: #2563eb;\n  --primary-hover: #1d4ed8;\n}\n.btn-primary {\n  background: var(--primary);\n  color: #fff;\n}\n.btn-primary:hover {\n  background: var(--primary-hover);\n}\n```\n\nDefine each value once in `:root` and reference it with `var()`. Changing the theme later becomes one edit instead of ten, exactly like the `style.css` you styled the form with this week.\n\n## Layout and Responsive Basics\n\n- `display: flex` with `justify-content: center` centres a card horizontally.\n- `grid-template-columns: 1fr 1fr` gives two equal columns for a form.\n- A media query collapses that grid on phones:\n\n```css\n@media (max-width: 640px) {\n  .form-grid {\n    grid-template-columns: 1fr;\n  }\n}\n```\n\n## Practical Tips\n\n- Give every interactive element `:hover`, `:focus`, and `:active` states.\n- Reset default margins with a small `*` rule, but keep `box-sizing: border-box`.\n- Style in order: structure, fields, error states, then buttons."
+      },
+      {
+        "id": "06-applying-regex-forms",
+        "title": "Applying Regex to Forms",
+        "summary": "Wire Week 01 patterns into a styled, validated registration form.",
+        "minutes": 18,
+        "content": "Stage 3 of Week 02 connects your Week 01 patterns to a real form: HTML collects input, CSS shows states, and JavaScript runs each regex before anything is submitted.\n\n## The Wiring\n\n```html\n<form novalidate>\n  <label for=\"email\">Email</label>\n  <input id=\"email\" name=\"email\" type=\"email\" autocomplete=\"email\" />\n  <button type=\"button\" class=\"btn btn-primary\">Register</button>\n</form>\n<script src=\"main.js\"></script>\n```\n\n`novalidate` switches off the browser popup so your own inline messages appear instead of competing with it.\n\n## The Regex Map\n\n```js\nconst expressions = {\n  emailRegex: /^[a-zA-Z0-9_.]+@[a-zA-Z.]+\\.[a-zA-Z]{2,3}$/,\n  phoneRegex: /^\\+250[0-9]{9}$/,\n  passwordRegex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*\\W).{8,}$/,\n};\n```\n\nEach field gets its own pattern so the error message can be specific.\n\n## The Validation Flow\n\n- Trim the value first, and strip spaces from phone numbers with `replace(/\\s+/g, \"\")`.\n- Call `regex.test(value)`. On true, clear the old error; on false, turn the border red.\n- Build the message with `document.createElement(\"span\")` and remove any previous one, so errors never stack.\n- Track a single `isValid` flag and only announce success when every field passed.\n\n## Debugging Tips\n\n- Test the pattern in regex101 before blaming the JavaScript.\n- The `{2,3}` TLD in the class email pattern rejects four letter TLDs such as `.info`; `{2,}` is more permissive.\n- Keep one error style: inline messages under the field beat alerts."
+      }
+    ]
+  },
+  {
+    "id": "week-03",
+    "week": 3,
+    "title": "Advanced HTML and CSS",
+    "summary": "Semantic markup, data tables, Flexbox, Grid, pseudo-elements, and motion with transitions and keyframes.",
+    "color": "#D97706",
+    "lessons": [
+      {
+        "id": "01-semantic-html",
+        "title": "Semantic HTML",
+        "summary": "Tags that tell browsers and screen readers what each region is.",
+        "minutes": 13,
+        "content": "Semantic tags tell the browser, search engines, and screen readers what each part of a page actually is. The page looks the same either way; the meaning does not.\n\n## The Core Tags\n\n```html\n<header>\n  <nav><a href=\"#\">Courses</a><a href=\"#\">Pricing</a></nav>\n</header>\n<main>\n  <h1>Get Schooled</h1>\n</main>\n<section id=\"testimonial\">\n  <blockquote>\"Those tutorials are concise.\"</blockquote>\n</section>\n<footer>&copy; 2026 The Cohort</footer>\n```\n\n## Why Not Divs Everywhere\n\n- `<header>`, `<nav>`, `<main>`, and `<footer>` let a screen reader jump straight to that region.\n- Only one `<main>` belongs on a page, and it holds the primary content.\n- `<section>` groups related content; `<article>` is content that stands on its own.\n- `<blockquote>` is announced as a quotation, while a plain div says nothing.\n\n## Rules of Thumb\n\n1. Start with the semantic tag and reach for `<div>` only when you need a styling hook.\n2. Give a `<nav>` an `aria-label` when a page has more than one.\n3. Wrap images with captions in `<figure>` and `<figcaption>`.\n\n```html\n<figure>\n  <img src=\"quote.png\" alt=\"Tutor explaining flexbox\" />\n  <figcaption>Live coding during Week 03</figcaption>\n</figure>\n```\n\nThe landing page in `semantic-html/index.html` shows all of these working together."
+      },
+      {
+        "id": "02-lists",
+        "title": "Lists",
+        "summary": "Ordered and unordered lists, attributes, and nesting.",
+        "minutes": 11,
+        "content": "Lists are free structure. Used well, they make instructions scannable and menus readable without any custom CSS.\n\n## Choosing the Right List\n\n```html\n<ol>\n  <li>Clone the repo</li>\n  <li>Open index.html</li>\n</ol>\n<ul>\n  <li>Ghost of Yotei</li>\n  <li>GTA VI</li>\n</ul>\n```\n\n`<ol>` numbers items automatically, so use it for steps, ranks, and instructions. `<ul>` uses bullets, so use it for features, favourites, and navigation links.\n\n## Attributes Worth Knowing\n\n- `type=\"A\"` counts with letters and `type=\"i\"` uses roman numerals.\n- `start=\"5\"` begins counting at 5 instead of 1.\n- `<li>` is the only element allowed as a direct child of the list.\n\n## Nesting Sub Lists\n\nPut the nested `<ul>` inside an `<li>`, never between the list and its items.\n\n```html\n<ul>\n  <li>Week 03\n    <ul>\n      <li>Flexbox</li>\n      <li>Grid</li>\n    </ul>\n  </li>\n</ul>\n```\n\n## Styling Notes\n\nReset the default markers with `list-style: none` when you build a nav bar. Removing the bullets does not remove the list semantics for screen readers, which is exactly what you want."
+      },
+      {
+        "id": "03-tables",
+        "title": "Data Tables",
+        "summary": "Accessible tables with thead, tbody, th, and spanning cells.",
+        "minutes": 14,
+        "content": "Tables are for data that has rows and columns. Week 02 introduced `colspan`; this lesson adds the semantics that make a timetable or schedule accessible.\n\n## Table Structure\n\n```html\n<table>\n  <thead>\n    <tr>\n      <th scope=\"col\">Time</th>\n      <th scope=\"col\">Mon</th>\n      <th scope=\"col\">Tue</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>09:00 - 11:00</td>\n      <td>Frontend Web Development</td>\n      <td></td>\n    </tr>\n  </tbody>\n</table>\n```\n\n- `<thead>` and `<tbody>` split header from body so styling and assistive tech can tell them apart.\n- `<th>` is announced as a header; `<td>` is plain data.\n- `scope=\"col\"` says the header labels the column below it.\n- An empty period still needs an empty `<td></td>`, or every later column shifts out of line.\n\n## Spanning Cells\n\n- `colspan=\"2\"` stretches a cell across two columns, such as a title row.\n- `rowspan` is the vertical version, for a label that covers several rows.\n- Check the `Extras/Table.html` bus schedule for a real `colspan` in use.\n\n## Styling and Responsiveness\n\n```css\ntable, th, td {\n  border: 1px solid #ccc;\n  border-collapse: collapse;\n}\n.table-wrap {\n  overflow-x: auto;\n}\n```\n\n`border-collapse` stops the double borders you get from the HTML `border=\"1\"` attribute, and the scrolling wrapper keeps a wide timetable usable on phones."
+      },
+      {
+        "id": "04-pseudo-elements",
+        "title": "Pseudo-elements",
+        "summary": "Decorate with ::before and ::after without extra markup.",
+        "minutes": 14,
+        "content": "Pseudo-elements let you inject decorative content before or after an element without adding a single tag to the HTML.\n\n## The Two You Will Use\n\n```css\nh2::before {\n  content: \"\\2192 \";\n  color: #2563eb;\n}\nh2::after {\n  content: \"\";\n  display: block;\n  width: 40px;\n  height: 3px;\n  background: #2563eb;\n}\n```\n\nBoth require a `content` property, even when it is empty. Without `content`, nothing renders at all.\n\n## Decorations From the Class Demos\n\n- Custom bullets: `li::before` with `content: \"Fries icon\"` and `list-style: none`.\n- Tooltips: `content: attr(data-tip)` on hover, faded in with an `opacity` transition.\n- Badges: `content: \"NEW\"` positioned absolutely in a corner.\n- Numbered steps: `counter-reset` on the list and `content: counter(step)` on each item.\n\n## An Underline That Grows on Hover\n\n```css\nh2 {\n  position: relative;\n  display: inline-block;\n}\nh2::after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  bottom: -4px;\n  width: 0;\n  height: 3px;\n  background: #2563eb;\n  transition: width 0.3s ease;\n}\nh2:hover::after {\n  width: 100%;\n}\n```\n\n## Limits\n\n`::before` and `::after` are not real DOM nodes: JavaScript cannot `querySelector` them and screen readers may skip their text. Keep important information in the HTML and use these for decoration only."
+      },
+      {
+        "id": "05-flexbox",
+        "title": "Flexbox",
+        "summary": "One dimensional layouts along a main axis and a cross axis.",
+        "minutes": 16,
+        "content": "Flexbox is a one dimensional layout system. Items line up along a single main axis, and a perpendicular cross axis, and you control the two axes separately.\n\n## Container Controls\n\n```css\n.navbar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n```\n\n- `justify-content` distributes space along the main axis: `flex-start`, `center`, `end`, `space-between`, `space-around`.\n- `align-items` aligns on the cross axis: `stretch`, `center`, `flex-start`.\n- `flex-wrap: wrap` lets items move to a new line instead of shrinking forever.\n\n## The Rule That Centres Anything\n\n```css\n.center {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n}\n```\n\nThe container needs a height, otherwise centring has no space to work in. This is the classic flexbox trick from the class demos.\n\n## Responsive Cards Without Media Queries\n\n```css\n.card-row {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 16px;\n}\n.card-row .card {\n  flex: 1 1 200px;\n}\n```\n\n`flex` is grow, shrink, basis. A 200px basis means the cards wrap naturally as the window narrows, which is how the record shelf in `extra/crate-digging` works.\n\n## Watch the Axis Swap\n\nWhen you set `flex-direction: column`, `justify-content` controls vertical spacing and `align-items` controls horizontal. Forgetting that swap is the classic flexbox bug."
+      },
+      {
+        "id": "06-grid",
+        "title": "CSS Grid",
+        "summary": "Two dimensional layouts, named areas, and responsive galleries.",
+        "minutes": 16,
+        "content": "Grid is two dimensional: you decide rows and columns at the same time, which is why whole page layouts become short and readable.\n\n## Defining Tracks\n\n```css\n.gallery {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));\n  gap: 16px;\n}\n```\n\n`gap` replaces margin hacks, `fr` means a share of the free space, and `auto-fit` adds or removes columns as you resize, so no media query is needed at all.\n\n## Named Areas\n\n```css\n.page {\n  display: grid;\n  grid-template-columns: 200px 1fr 200px;\n  grid-template-areas:\n    \"header header header\"\n    \"nav    main   aside\"\n    \"footer footer footer\";\n  gap: 12px;\n}\n.page header { grid-area: header; }\n.page main   { grid-area: main; }\n```\n\nRearranging the whole page then becomes one edit to the template string, which is exactly what `extra/the-kigali-review` does with its editorial layout.\n\n## Spanning\n\n- `grid-column: span 2` makes a featured card two columns wide.\n- `grid-row: span 2` stretches it down as well.\n- Each named area must be rectangular or the template will not parse.\n\n## Grid or Flexbox\n\n- Rows and columns together, or a page skeleton: Grid.\n- A single row of items that must centre or space evenly: Flexbox.\n- They compose: a grid cell can itself be a flex container."
+      },
+      {
+        "id": "07-animations",
+        "title": "Transitions and Animations",
+        "summary": "Smooth state changes, keyframe animations, and reduced motion.",
+        "minutes": 15,
+        "content": "Two tools create motion. A `transition` smooths a change between two states, and `@keyframes` scripts a custom movement over time.\n\n## Transitions\n\n```css\n.button {\n  background: #2563eb;\n  transition: background-color 0.3s ease, transform 0.3s ease;\n}\n.button:hover {\n  background: #1d4ed8;\n  transform: scale(1.05);\n}\n```\n\nThe shorthand reads property, duration, timing function, delay. Only properties you change on the target state animate, so a hover rule with no changed property does nothing.\n\n## Keyframe Animations\n\n```css\n@keyframes bounce {\n  0%, 100% { transform: translateY(0); }\n  50%      { transform: translateY(-20px); }\n}\n.ball {\n  animation: bounce 0.8s ease-in-out infinite;\n}\n```\n\nPercentages are stops along the timeline. Class demos also include a slide in, a pulsing dot, a spinner, and a shake on error.\n\n## Performance Rules\n\n- Animate `transform` and `opacity`: they are composited and stay smooth at 60fps.\n- Avoid animating `width`, `height`, `top`, and `left` on large elements, because each change forces layout.\n- Prefer `transition` for hover states and `animation` for anything that runs on load or loops.\n\n## Respect Reduced Motion\n\n```css\n@media (prefers-reduced-motion: reduce) {\n  .pulse, .bounce, .spinner { animation: none; }\n  .btn-transition { transition: none; }\n}\n```\n\nSome visitors feel unwell from moving content. Switch infinite loops off completely rather than speeding them up, because a faster infinite bounce is still an infinite bounce."
+      }
+    ]
+  },
+  {
+    "id": "week-04",
+    "week": 4,
+    "title": "JavaScript Deep Dive",
+    "summary": "Variables, types, the DOM, arrays, objects, classes, functions, and the map, filter, reduce toolkit.",
+    "color": "#7C3AED",
+    "lessons": [
+      {
+        "id": "01-variables-and-scopes",
+        "title": "Variables and Scopes",
+        "summary": "var versus let versus const, block scope, hoisting, and the temporal dead zone.",
+        "minutes": 15,
+        "content": "Variables store values, and scope decides where a variable can be seen. Week 04 starts here because every other topic depends on getting this right.\n\n## var, let, const\n\n```js\nvar city = \"Kigali\";    // can be redeclared\nlet country = \"Rwanda\"; // can be reassigned\nconst pi = 3.14;        // cannot be reassigned\n```\n\nUse `const` by default, `let` when you must reassign, and avoid `var` in modern code. Note that `const` locks the binding, not the contents, so `person.name = \"Mellow\"` still works on a `const` object while `person = {}` throws.\n\n## Block, Function, and Global Scope\n\n```js\n{\n  let inside = 1;\n  var leaked = 2;\n}\nconsole.log(leaked); // 2, var ignores the braces\nconsole.log(inside); // ReferenceError\n```\n\n`let` and `const` are block scoped to the braces. `var` is function scoped, so it ignores blocks but still stops at the function edge. Globals are visible everywhere, so name them carefully to avoid collisions.\n\n## Hoisting and the Temporal Dead Zone\n\n- Declarations are hoisted to the top of their scope.\n- A hoisted `var` reads as `undefined` until its line runs.\n- A hoisted `let` or `const` throws a ReferenceError until its line runs, and that gap is the temporal dead zone.\n- In loops, `for (let i ...)` gives each iteration its own binding, while `for (var i ...)` leaks one shared value to the callback."
+      },
+      {
+        "id": "02-data-types",
+        "title": "Data Types and Equality",
+        "summary": "Primitives, references, typeof, coercion, and strict equality.",
+        "minutes": 15,
+        "content": "Knowing the type of a value prevents a whole class of bugs, from `5 == \"5\"` surprises to arrays that compare the wrong way.\n\n## Primitive and Reference Types\n\n```js\nconst a = \"David\";          // string\nconst b = 22;               // number\nconst c = true;             // boolean\nconst d = { name: \"Aline\" }; // object, reference type\nconst e = [\"red\", \"blue\"];   // array, reference type\n```\n\nPrimitives are copied by value. Objects, arrays, and functions are copied by reference, so two variables can point at the same data and one change affects both.\n\n## typeof and Proper Checks\n\n- `typeof null` returns `\"object\"`, a bug from the first version of JavaScript that was never fixed; check null with `value === null`.\n- Arrays report `\"object\"`, so use `Array.isArray([])`.\n- Use `Number.isNaN(NaN)` rather than the global `isNaN`, which coerces first and gives confusing answers.\n\n## Coercion and Equality\n\n```js\n\"5\" + 3;   // \"53\", the string wins\n\"5\" - 3;   // 2, subtraction forces numbers\n5 == \"5\";  // true, it coerces first\n5 === \"5\"; // false, strict, no coercion\n```\n\nAlways use `===`. Conversion should be a choice you make with `Number()`, `String()`, or `Boolean()`, not something that happens behind your back.\n\n## Truthy, Falsy, and Templates\n\nFalsy values are `false`, `0`, `\"\"`, `null`, `undefined`, and `NaN`; everything else is truthy. Template literals with backticks interpolate values and can span multiple lines, which makes building messages much cleaner."
+      },
+      {
+        "id": "03-dom-manipulation",
+        "title": "DOM Manipulation",
+        "summary": "Selecting elements and changing text, value, style, and classes.",
+        "minutes": 16,
+        "content": "The DOM is the browser's live tree of elements. JavaScript selects parts of it and changes them to make a page interactive. This folder needs a browser.\n\n## Selecting Elements\n\n```js\ndocument.getElementById(\"greeting\");     // one element or null\ndocument.querySelector(\".highlight\");    // first match or null\ndocument.querySelectorAll(\".highlight\"); // NodeList of all matches\n```\n\n`querySelector` accepts any CSS selector you know: `\".item\"`, `\"#name\"`, `\"ul li\"`. Prefer it over the older `getElementsByClassName`, which returns a live collection that changes under you.\n\n## Reading and Writing Content\n\n- `textContent` sets plain text and is the safe default, because tags are never parsed.\n- `innerHTML` parses HTML; use it only when you need markup and you trust the source.\n- `value` reads inputs, selects, and textareas. `textContent` does nothing on an `<input>`.\n\n## Style, Classes, and New Nodes\n\n```js\nelement.style.backgroundColor = \"#2563eb\"; // camelCase in JavaScript\nelement.classList.add(\"active\");\nelement.classList.toggle(\"active\");\n\nconst li = document.createElement(\"li\");\nli.textContent = \"New item\";\ndocument.querySelector(\"ul\").appendChild(li);\n```\n\nPrefer class toggles over long `style` assignments: the CSS stays in one file and states stay easy to find.\n\n## A Practical Pattern\n\nSelect once, update, then remove old nodes before adding new ones. The Week 02 form validator uses this to keep a single error message per field instead of stacking duplicates."
+      },
+      {
+        "id": "04-array-and-string-methods",
+        "title": "Array and String Methods",
+        "summary": "Adding, slicing, searching, sorting, and the string toolkit.",
+        "minutes": 16,
+        "content": "Arrays and strings both have rich method sets. Learning them replaces most manual loops and almost every hand written splitter.\n\n## Adding and Removing\n\n```js\nconst queue = [\"a\", \"b\", \"c\"];\nqueue.push(\"d\");     // end, returns the new length\nqueue.unshift(\"z\");  // front\nqueue.pop();         // removes from the end\nqueue.shift();       // removes from the front\n```\n\nThese mutate the original array. Know which methods mutate before you share a reference with another variable.\n\n## slice, splice, and sort\n\n- `arr.slice(1, 3)` returns a copy of a range and leaves the original alone.\n- `arr.splice(2, 2)` removes items in place, and can insert with a third argument.\n- `arr.sort((a, b) => a - b)` sorts numbers. Without a compare function, `[30, 1, 200].sort()` gives `[1, 200, 30]`.\n\n## Searching and Joining\n\n```js\n[9, 4, 7].indexOf(4);        // 1\n[9, 4, 7].find((n) => n > 5); // 9\n[9, 4, 7].join(\" - \");       // \"9 - 4 - 7\"\n[...a, ...b];                // concat without mutation\n```\n\n## The String Toolkit\n\n```js\n\"  hi  \".trim();        // \"hi\"\n\"a,b,c\".split(\",\");     // [\"a\", \"b\", \"c\"]\n\"hi hi\".replaceAll(\"hi\", \"hey\");\n\"5\".padStart(3, \"0\");   // \"005\"\n```\n\n`replace` with a string only touches the first match, so use `replaceAll` or a regex with the `g` flag when you need every occurrence."
+      },
+      {
+        "id": "05-objects",
+        "title": "Objects",
+        "summary": "Creating, accessing, methods with this, destructuring, and spread.",
+        "minutes": 15,
+        "content": "Objects group related data and behaviour. Nearly every real dataset in JavaScript is an object, or an array of objects.\n\n## Creating and Accessing\n\n```js\nconst student = { name: \"David\", cohort: \"C2\" };\nstudent.name;      // dot access\nstudent[\"cohort\"]; // bracket access\nstudent.city = \"Kigali\"; // add a property\ndelete student.city;     // remove a property\n```\n\nBrackets are required for keys with spaces, or when the key lives in a variable: `student[key]`.\n\n## Methods and this\n\n```js\nconst counter = {\n  total: 0,\n  add(n) {\n    this.total += n;\n    return this;\n  },\n};\ncounter.add(5).add(3); // chained, total is 8\n```\n\nA method's `this` is the object that called it. An arrow function has no `this` of its own, so never write object methods or constructors as arrows.\n\n## Destructuring, Spread, and Nesting\n\n```js\nconst { name, cohort = \"C1\" } = student;\nconst merged = { ...defaults, ...overrides };\nuniversity.location?.coordinates; // optional chaining\nObject.entries({ a: 1 });         // [[\"a\", 1]]\n```\n\n- Destructure in function parameters for clean signatures such as `printUser({ name, email })`.\n- Spread copies shallowly, so nested objects are still shared.\n- `Object.keys`, `Object.values`, and `Object.entries` make looping over data simple."
+      },
+      {
+        "id": "06-es6-classes",
+        "title": "ES6 Classes",
+        "summary": "Constructors, getters, static methods, inheritance, and private fields.",
+        "minutes": 16,
+        "content": "Classes are templates for objects that share structure and behaviour. They organise bigger programs so related data and functions live together instead of drifting apart.\n\n## Class and Constructor\n\n```js\nclass Student {\n  constructor(name, cohort) {\n    this.name = name;\n    this.cohort = cohort;\n  }\n  introduce() {\n    return \"Hi, I am \" + this.name;\n  }\n}\nconst d = new Student(\"David\", \"C2\");\n```\n\n`new` creates the object and calls `constructor` for you. Methods are shared on the prototype, so every instance reuses one copy.\n\n## Getters, Setters, and Static\n\n```js\nclass Rectangle {\n  constructor(w, h) { this.w = w; this.h = h; }\n  get area() { return this.w * this.h; }\n  static units() { return \"metres\"; }\n}\nRectangle.units(); // called on the class, not on an instance\n```\n\nA getter runs like a property (`rect.area`), a setter intercepts assignment, and `static` members belong to the class itself, which is how `MathHelper.add()` style helpers work.\n\n## Inheritance and Privacy\n\n```js\nclass SavingsAccount extends BankAccount {\n  constructor(owner) {\n    super(owner); // must run before this\n    this.rate = 0.05;\n  }\n}\n```\n\n- `extends` links the child to the parent, and `super()` must be called before you use `this`.\n- Override a method by redefining it, and call `super.method()` to reuse the parent version.\n- Private fields use `#balance` and truly hide data, unlike a leading underscore, which is only a naming convention."
+      },
+      {
+        "id": "07-functions",
+        "title": "Functions",
+        "summary": "Declarations, expressions, arrow functions, and callbacks.",
+        "minutes": 14,
+        "content": "There are three ways to write a function, and each has a different relationship with hoisting, `this`, and `arguments`.\n\n## The Three Forms\n\n```js\nfunction add(a, b) { return a + b; }           // declaration, hoisted\nconst mul = function (a, b) { return a * b; }; // expression, not hoisted\nconst sub = (a, b) => a - b;                   // arrow, no own this\n```\n\nDeclarations are safest for main logic, expressions for functions assigned conditionally, and arrows for callbacks and array methods.\n\n## Arrow Functions and this\n\n```js\nconst counter = {\n  count: 0,\n  bumpOk() {\n    setTimeout(() => console.log(this.count), 0);\n  },\n  bumpBad() {\n    setTimeout(function () { console.log(this.count); }, 0);\n  },\n};\n```\n\nThe arrow inherits `this` from `bumpOk`, so it prints the counter. The `function` gets its own `this` and the value is wrong. This is exactly why arrows replaced the old `let self = this` trick.\n\n## Rest, Spread, and Callbacks\n\n- `function sum(...nums)` collects extra arguments into an array.\n- Spreading passes elements as separate arguments when you call something.\n- `doTwice(() => console.log(\"hi\"))` hands a function to be run later.\n\n## Choosing Well\n\n| Situation | Use |\n| --- | --- |\n| Object or class method | normal function |\n| Array method or timer | arrow function |\n| Reusable utility | declaration |"
+      },
+      {
+        "id": "08-map-filter-reduce",
+        "title": "Map, Filter, Reduce",
+        "summary": "Transform, select, and combine arrays, then chain the three together.",
+        "minutes": 15,
+        "content": "`map`, `filter`, and `reduce` transform arrays declaratively. Together they replace most `for` loops in day to day code.\n\n## map: Transform Each Item\n\n```js\n[1, 2, 3].map((n) => n * 2);          // [2, 4, 6]\n[\"david\", \"aline\"].map((s) => s.toUpperCase());\nstudents.map((s) => s.name);          // pluck one field\n```\n\n`map` always returns a new array of the same length, and the original is never modified.\n\n## filter: Keep What Matches\n\n```js\n[45, 82, 91].filter((n) => n >= 50);   // [82, 91]\nproducts.filter((p) => p.inStock);\nmixed.filter(Boolean);                // drop falsy values\n```\n\n## reduce: Boil Down to One Value\n\n```js\n[1, 2, 3, 4].reduce((acc, n) => acc + n, 0);   // 10\nitems.reduce((sum, i) => sum + i.price, 0);    // total price\n```\n\nThe second argument is the initial accumulator. Always pass one: without it an empty array throws, and the first element silently becomes the starting value.\n\n## Chaining Them Together\n\n```js\nstudents\n  .filter((s) => s.score >= 50)\n  .map((s) => s.name);\n```\n\nEach step returns a new array that the next step consumes. Use `forEach` when you only need side effects such as logging or DOM updates, and `map` or `filter` whenever you need a new array back."
+      }
+    ]
+  },
+  {
+    "id": "week-05",
+    "week": 5,
+    "title": "jQuery and Web Scraping",
+    "summary": "Select and change elements with jQuery, then read data from pages with a careful scraping pipeline.",
+    "color": "#0891B2",
+    "lessons": [
+      {
+        "id": "01-jquery-selectors",
+        "title": "jQuery Selectors",
+        "summary": "Finding elements with CSS style syntax inside the dollar function.",
+        "minutes": 13,
+        "content": "jQuery is a small JavaScript library that gives you shorter, chainable ways to work with the DOM. It starts with selectors you already know from CSS.\n\n## Selector Syntax\n\n```js\n$(\"#featured-card\");              // by id\n$(\".course-card\");                // by class\n$(\"[data-level]\");                // by attribute\n$(\".course-grid .course-card\");   // descendants\n$(\"button\");                      // by tag\n```\n\nEverything is wrapped in `$()`, which is a shorthand for `jQuery()`. The result is always a collection, even when it holds a single element or nothing at all.\n\n## Inspecting a Collection\n\n```js\nconst cards = $(\".course-card\");\ncards.length;             // how many matched\ncards.first().text();     // text of the first card\ncards.eq(1).text();       // text of the second card\ncards.find(\"h3\").text();  // search inside each card\ncards.each(function (index, el) {\n  console.log(index, $(el).text());\n});\n```\n\n## Habits That Save Time\n\n- Check `.length` first when a selector seems to do nothing. Usual causes are spelling, capitalisation, or the element not existing yet.\n- Wrap any element in `$()` before calling jQuery methods on it: `$(this)`.\n- Open DevTools with F12 and log the selection before you start changing anything.\n- The shared library lives at `shared/jquery-3.7.1.min.js`, so the activities work offline."
+      },
+      {
+        "id": "02-jquery-manipulation",
+        "title": "jQuery Manipulation",
+        "summary": "Changing text, values, attributes, classes, and CSS.",
+        "minutes": 14,
+        "content": "Once you can select elements, the next step is reading and changing them. jQuery groups this into a small set of memorable methods.\n\n## Content and Values\n\n```js\n$(\"#preview-title\").text(\"Plain text\");\n$(\"#preview-copy\").html(\"Text with <strong>HTML</strong>\");\nconst email = $(\"#email\").val();\n```\n\n`.text()` is the safe default. Use `.html()` only when you intend to insert markup, and `.val()` for form fields, because inputs have no text node for you to read.\n\n## Attributes, Classes, and CSS\n\n```js\n$(\".preview-card\").attr(\"data-state\", \"updated\");\n$(\".preview-card\").addClass(\"is-highlighted\");\n$(\".preview-card\").toggleClass(\"is-compact\");\n$(\"#preview-title\").css(\"color\", \"#d94841\");\n```\n\nPrefer classes for reusable visual states. One class change keeps the styling in your stylesheet instead of scattered across your JavaScript.\n\n## Adding and Removing Nodes\n\n```js\nconst item = $(\"<li>\", { text: \"New item\", class: \"new-item\" });\n$(\"#created-list\").append(item);\n$(\"#created-list\").children(\"li\").last().remove();\n```\n\n- `.append()` and `.prepend()` add content inside the parent.\n- `.before()` and `.after()` insert around the selection.\n- `.remove()` deletes the element, `.empty()` clears its children, `.clone()` copies it."
+      },
+      {
+        "id": "03-method-chaining",
+        "title": "Method Chaining",
+        "summary": "Linking operations because most methods return the same collection.",
+        "minutes": 11,
+        "content": "Most jQuery methods return the same collection they received, so you can link calls into one readable statement.\n\n## The Chain\n\n```js\n$(\".chain-target\")\n  .text(\"Updated!\")\n  .addClass(\"is-complete\")\n  .css(\"opacity\", 1);\n```\n\nEach step acts on the elements selected by the previous one: select, change the text, add a class, set the CSS. Click `Run chain` in `03-method-chaining/index.html` and watch all three changes land together.\n\n## When Not to Chain\n\n```js\nconst value = $(\"#title\").text(); // a string, not a collection\nconst count = $(\".card\").length;  // a number\n```\n\nReading methods return plain values. Chaining a jQuery method onto a string or a number fails, so stop the chain the moment you extract data.\n\n## The Separate Version\n\n```js\nconst targets = $(\".chain-target\");\ntargets.text(\"Updated!\");\ntargets.addClass(\"is-complete\");\ntargets.css(\"opacity\", 1);\n```\n\nThe separate version is easier to debug line by line, and the chained version is shorter and keeps related work together. Use chaining for a clear sequence of transformations, and split the steps when you need a breakpoint."
+      },
+      {
+        "id": "04-event-handling",
+        "title": "Event Handling",
+        "summary": "Clicks, input, submit, the event object, and event delegation.",
+        "minutes": 15,
+        "content": "Events connect the page to the user: clicks, typing, submits. In jQuery one method, `.on()`, covers them all.\n\n## Wiring a Handler\n\n```js\n$(\"#count-button\").on(\"click\", function () {\n  $(\"#click-output\").text(\"The button was clicked.\");\n});\n```\n\nCommon events are `click`, `change`, `input`, `submit`, `keydown`, `mouseenter`, and `mouseleave`. Attach the handler after the element exists, or jQuery will find nothing to bind to.\n\n## The Event Object\n\n```js\n$(\"form\").on(\"submit\", function (event) {\n  event.preventDefault(); // stop the browser submitting\n  console.log(event.type); // \"submit\"\n});\n```\n\n`preventDefault()` is how you take over a form so your own validation runs first. Inside a normal function, `this` is the element that received the event, and you can wrap it with `$(this)` to call jQuery methods on it.\n\n## Event Delegation\n\n```js\n$(\"#button-rack\").on(\"click\", \".dynamic-button\", function () {\n  $(\"#output\").text($(this).data(\"message\"));\n});\n```\n\nThe handler sits on a parent and fires only for matching descendants, so buttons created after page load still work. Use delegation whenever the child elements are added dynamically, and check `event.which` when you need a key or button number."
+      },
+      {
+        "id": "05-web-scraping",
+        "title": "Web Scraping",
+        "summary": "Read, select, extract, clean, and validate data from a page responsibly.",
+        "minutes": 18,
+        "content": "Web scraping reads data from a page and turns it into useful application data. The class pipeline keeps each stage separate so bugs stay small and fixable.\n\n## The Pipeline\n\n```text\nCheck permission -> read the page -> select elements\n-> extract values -> clean -> validate -> save\n```\n\nStart with permission: check the site's terms, its `robots.txt`, and whether an official API exists. Publicly visible does not mean free to collect.\n\n## Reading a Source with Node\n\n```js\nconst fs = require(\"node:fs\");\nconst html = fs.readFileSync(\"../local-blog/index.html\", \"utf8\");\nconst titles = Array.from(\n  html.matchAll(/<h3 class=\"post-title\">\\s*<a[^>]*>([\\s\\S]*?)<\\/a>/g)\n);\n```\n\nRegex works when the target is small and predictable. It gets painful once you need many fields from nested markup, which is where CSS selectors take over.\n\n## Cleaning and Normalising\n\n- Trim whitespace and collapse repeated spaces.\n- Convert numbers and dates to one consistent format.\n- Build URL slugs from titles.\n- Handle missing values explicitly instead of letting `undefined` leak into your data.\n- Check for duplicates and expected fields before you save anything.\n\n## Responsible Practice\n\nAdd delays between requests, request only the pages you need, never bypass logins or paywalls, and avoid collecting personal data. Record when and how the data was collected whenever that matters."
+      },
+      {
+        "id": "06-cheerio-and-playwright",
+        "title": "Cheerio and Playwright",
+        "summary": "Pick a static parser or a real browser depending on where the data lives.",
+        "minutes": 16,
+        "content": "Two tools cover most scraping needs. Cheerio parses static HTML with familiar CSS selectors, and Playwright drives a real browser for content that JavaScript creates.\n\n## Cheerio for Static Pages\n\n```js\nconst cheerio = require(\"cheerio\");\nconst $ = cheerio.load(html);\n$(\".post\").length;\n$(\".post-title\").text().trim();\n$(\".post-link\").attr(\"href\");\n```\n\nInstall it inside the activity folder with `npm install`, then run `npm run scrape`. If the data is already in the initial HTML and nothing needs clicking, Cheerio is enough and much faster.\n\n## Playwright for Dynamic Pages\n\n```js\nconst browser = await chromium.launch({ headless: true });\nconst page = await browser.newPage();\nawait page.goto(url);\nawait page.locator(\".post\").first().waitFor();\nawait page.getByRole(\"button\", { name: \"Load more reports\" }).click();\n```\n\nPlaywright waits for content, clicks, fills forms, and takes screenshots. Setup is heavier because it downloads a browser with `npx playwright install chromium`.\n\n## Choosing a Tool\n\n| Situation | Tool |\n| --- | --- |\n| Data already in the HTML | Cheerio |\n| Load more buttons or scrolling | Playwright |\n| JSON or XML from an API | fetch, not a scraper |\n| Structured data in the page | read the JSON-LD first |\n\n## Rule of Thumb\n\nUse the simplest tool that does the job, and prefer an official API whenever one exists. Browser automation is powerful, but slower and more expensive than parsing HTML you already have."
+      }
+    ]
+  }
+]
