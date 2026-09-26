@@ -2,7 +2,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.join(__dirname, "..");
-const ignoredDirectories = new Set([".git", "node_modules", ".github", "scripts"]);
+const ignoredDirectories = new Set([".git", "node_modules", ".github", "scripts", "dist"]);
 
 function collectFiles(directory, found = []) {
     for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
@@ -60,7 +60,10 @@ for (const filePath of files) {
         }
 
         const decoded = decodeURIComponent(value.split("#")[0]);
-        if (!fs.existsSync(path.join(base, decoded))) {
+        const candidates = decoded.startsWith("/")
+            ? [path.join(base, decoded.slice(1)), path.join(base, "public", decoded.slice(1))]
+            : [path.join(base, decoded)];
+        if (!candidates.some((candidate) => fs.existsSync(candidate))) {
             report(filePath, `local reference does not exist: ${value}`);
         }
     }

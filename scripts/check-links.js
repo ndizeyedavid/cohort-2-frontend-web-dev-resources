@@ -3,7 +3,7 @@ const path = require("node:path");
 
 const root = path.join(__dirname, "..");
 
-const ignoredDirectories = new Set([".git", "node_modules", ".github"]);
+const ignoredDirectories = new Set([".git", "node_modules", ".github", "dist"]);
 
 function collectFiles(directory, matcher, found = []) {
     for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {

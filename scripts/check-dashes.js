@@ -3,7 +3,7 @@ const path = require("node:path");
 
 const root = path.join(__dirname, "..");
 
-const ignoredDirectories = new Set([".git", "node_modules", ".github", "scripts"]);
+const ignoredDirectories = new Set([".git", "node_modules", ".github", "scripts", ".superpowers", "dist"]);
 
 function collectFiles(directory, found = []) {
     for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
@@ -25,7 +25,7 @@ const disallowed = [
     { character: "–", name: "en dash" }
 ];
 
-const extensions = new Set([".md", ".html", ".css", ".js", ".json"]);
+const extensions = new Set([".md", ".html", ".css", ".js", ".jsx", ".json", ".ts", ".tsx"]);
 
 function collectContentFiles(directory, found = []) {
     for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
